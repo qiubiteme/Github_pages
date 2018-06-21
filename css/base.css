@@ -1,0 +1,14 @@
+/*
+ * 1. 样式都通过class去限定,新添加要检查,是否覆盖
+ * 2. 尽可能多使用直接子代选择器
+*/
+/*设置默认字体*/
+body {
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+/*所有的padding不会影响最终样式*/
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+

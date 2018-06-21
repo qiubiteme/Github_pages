@@ -1,0 +1,15 @@
+/*
+ * 1. 样式都通过class去限定,新添加要检查,是否覆盖
+ * 2. 尽可能多使用直接子代选择器
+*/
+
+/*.container-fluid{*/
+/*height: 50px;*/
+/*background: rebeccapurple;*/
+/*}*/
+nav > a > img{
+    width: 125px;
+}
+#mian > .row  .card{
+    margin-top: 40px;
+}
