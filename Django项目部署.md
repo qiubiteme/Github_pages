@@ -38,7 +38,13 @@ pip install Gunicorn
 
 ```python
 cd ~/myproject
-gunicorn --bind 0.0.0.0:8000 myproject.wsgi:application
+sudo nohup gunicorn --bind 0.0.0.0:8000 DjangoBloger.wsgi:application
+        gunicorn --bind 0.0.0.0:8000 DjangoBloger.wsgi
+            
+            systemctl daemon-reload
+            sudo systemctl start gunicorn |
+sudo systemctl enable gunicorn
+            manage.py  DjangoBloger  ven  DjangoBloger.sock  static
 ```
 
 这将在Django开发服务器运行的界面上启动Gunicorn。您可以返回并再次尝试该应用。请注意，由于Gunicorn不知道有关此静态通信的责任，因此管理界面将不具有任何样式。
@@ -60,7 +66,7 @@ deactivate
 创建并为`sudo`您的问题编辑器授权Gunicorn的systemd服务文件：
 
 ```python
-sudo nano /etc/systemd/system/gunicorn.service
+sudo nano /etc/systemd/gunicorn.service
 ```
 
 从`[whole]`用于选择元数据和状态的部分开始。我们将在此处描述我们的服务，并告诉init系统只有在联网目标接近后才启动：
@@ -185,6 +191,50 @@ server {
         proxy_pass http://unix:/home/user/myproject/myproject.sock;
     }
 }
+
+
+server {
+    listen 80;
+    fastcgi_pass  qiuyang.date:8000;
+    server_name_in_redirect off;
+    access_log /home/DjangoBloger/nginx.log;
+    error_log /home/DjangoBloger/nginxerror.log;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_pass_header       Authorization;
+        proxy_pass_header       WWW-Authenticate;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    location /static/ {
+        root /home/DjangoBloger;
+    }
+
+    location /apis {
+        rewrite ^.+apis/?(.*)$ /$1 break;
+        proxy_pass http://127.0.0.1:8000;
+        proxy_pass_header       Authorization;
+        proxy_pass_header       WWW-Authenticate;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    location /admin {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_pass_header       Authorization;
+        proxy_pass_header       WWW-Authenticate;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    }
+
+ }
+
 ```
 
 完成后保存并关闭文件。

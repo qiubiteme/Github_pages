@@ -2,6 +2,11 @@
 
 ## 一、安装
 
+**mysql依赖VS C++ 57依赖13版本,8.0依赖15版本,要是提前安装,否则会报错**
+```
+找不到MSVCP120dll
+```
+
 MySQL8.0 Windows zip包下载地址：<https://cdn.mysql.com//Downloads/MySQL-8.0/mysql-8.0.11-winx64.zip>
 
 环境：Windows 10

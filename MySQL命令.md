@@ -1,6 +1,27 @@
 
 
+
+
 # MySQL命令
+
+### mysql区域语言编码设置
+
+用于解决乱码问题,和
+
+#### 查看当前区域语言编码
+
+```
+SELECT @@lc_time_names;
+```
+
+#### 查看mysql编码格式
+
+```
+SHOW VARIABLES LIKE 'char%';
+```
+
+### 数据库编码格式错误的问题解决 三种方法
+
 
 
 
@@ -57,6 +78,12 @@ mysql -u root -p;
 Enter password:*******
 ```
 
+设置密码
+
+```
+SET PASSWORD FOR 'root'@'localhost' = 'root';
+```
+
 
 
 ##  重启MySQL 
@@ -66,6 +93,32 @@ service mysqld restart
 ```
 
 
+
+| auth_group                 |
+| auth_group_permissions     |
+| auth_permission            |
+| auth_user                  |
+| auth_user_groups           |
+| auth_user_user_permissions |
+| comment_comment            |
+| django_admin_log           |
+| django_content_type        |
+| django_migrations          |
+| django_session             |
+| front_category             |
+| front_options              |
+| front_posts                |
+| front_tag                  |
+| front_users                |
++----------------------------+
+
+ALTER TABLE auth_group_permissions     CONVERT TO CHARACTER SET utf8mb4; 
+
+```
+CREATE DATABASE bloger CHARACTER SET utf8;
+```
+
+show variables like 'char%';
 
 ## 重置密码 
 
@@ -99,7 +152,7 @@ mysql -uroot -p
 5. **修改root密码，并刷新权限** 
 
 ```
-update user set authentication_string=password('wert123456') where user='root' ; 
+update user set authentication_string=password('root') where user='root' ; 
 ```
 
 **执行**
@@ -161,12 +214,12 @@ set global validate_password_policy=0; set global validate_password_mixed_case_c
 这时你再执行
 
 ```
-SET PASSWORD = PASSWORD('wert23456');
+SET PASSWORD = PASSWORD('wroot');
 ```
 
 
 
-
+SET lc_time_names = 'zh_CN '; 
 
 ## Centos7 修改mysql默认字符
 
@@ -213,3 +266,92 @@ alter table testtb convert to charset utf8;
 ```
 drop database <数据库名>;
 ```
+# ubuntu下mysql的使用
+
+### 安装mysql 服务
+
+```
+sudo apt-get install mysql-server
+```
+
+#### 安装mysql客户端
+
+```
+sudo apt install mysql-client
+```
+
+#### 安装mysql libmysqlclient
+
+```
+sudo apt install libmysqlclient-dev
+```
+
+　　**安装成功后可以通过下面的命令测试是否安装成功：**
+
+```
+sudo netstat -tap | grep mysql
+```
+
+**如下输出安装成功**
+
+```
+
+tcp        0      0 localhost.localdo:mysql *:*                     LISTEN      9020/mysqld
+
+```
+
+#### 登录mysql 
+
+```
+mysql -u root -p
+```
+
+### 配置mysql
+
+**在 /etc/mysql/mysql.conf.d  下编辑 mysqld.cnf** 
+
+
+
+```
+在[client]下配置：
+default-character-set=utf8
+
+在[mysqld]下配置：
+default-character-set=utf8
+init_connect=’SET NAMES utf8′
+ 
+注意：新版MySQL(如：5.5）或MariaDB等，mysqld启动时可能会遇到“[ERROR] /usr/libexec/mysqld: unknown variable ‘default_character_set=utf8’”的错误；就应该在[mysqld]中用 character_set_server=utf8 替换掉 default_character_set=utf8 。
+ 
+2.如果还没有解决，那么就得删掉原来建的DB，重新建并制定字符集为utf8，如：CREATE DATABASE jay_db DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+```
+
+
+
+
+
+## ubuntu卸载mysql 
+
+```
+sudo apt-get remove mysql-common
+```
+
+##### 首先删除
+
+```
+sudo apt-get remove mysql-* 
+```
+
+##### 然后清理残留的数据
+
+```
+ dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
+```
+
+ 它会跳出一个对话框，你选择yes就好了
+ 然后安装mysql
+ `sudo apt-get install mysql-client mysql-server`
+
+安装过程中会提示,输入两次密码
+
+记住你的密码就好
