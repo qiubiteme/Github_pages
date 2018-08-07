@@ -132,19 +132,19 @@ script 标签用于定义客户端脚本，比如 JavaScript。
 
 ### 水平线标签
 
-```html
+```
 <hr/>
 ```
 
 ### 换行标签
 
-```html
+```
 <br/>
 ```
 
 ### 文本格式化标签
 
-```html
+```
 <b>文本格式化标签,加粗</b>
 <strong>文本格式化标签,加粗,推荐使用</strong>
 <i>斜体</i>
@@ -206,7 +206,7 @@ script 标签用于定义客户端脚本，比如 JavaScript。
 
 ### style属性
 
-```html
+```
 <p style="font-family:verdana;color:red">一般卸载css文件中</P>
 ```
 下面列出了适用于大多数 HTML 元素的属性：
@@ -239,13 +239,13 @@ script 标签用于定义客户端脚本，比如 JavaScript。
 
 HTML 注释标签
 
-```html
+```
 <!-- 在此处写注释 -->
 ```
 
 ### 超链接标签
 
-```html
+```
 <a href="url">Link text</a>
 ```
 
@@ -274,7 +274,7 @@ New : HTML5 中的新属性。
 
 ### 图像标签
 
-```html
+```
 <img src="timg.jpg" alt="替换文本">
 ```
 
@@ -344,7 +344,7 @@ New : HTML5 中的新属性。
 
 ###  div 和 span块级元素
 
-```html
+```
 <div>块级元素,主要用于盒子布局</div>
 <span>块级元素,单行块级元素</span>
 ```
@@ -442,7 +442,7 @@ input 元素有很多形态，根据不同的 *type* 属性。
 
  定义用于*文本输入*的单行输入字段：
 
-```html
+```
 <input type="text" name="firstname">
 ```
 
@@ -452,7 +452,7 @@ input 元素有很多形态，根据不同的 *type* 属性。
 
 单选按钮允许用户在有限数量的选项中选择其中之一：
 
-```html
+```
 <form>
 <input type="radio" name="sex" value="男" checked>男
 <br>
@@ -468,7 +468,7 @@ input 元素有很多形态，根据不同的 *type* 属性。
 
 表单处理程序在表单的 *action* 属性中指定：
 
-```html
+```
 <form action="action_page.php">
     First name:<br>
     <input type="text" name="firstname" value="Mickey">
@@ -519,7 +519,7 @@ input 元素根据不同的 *type* 属性，可以变化为多种形态。
 
 实例
 
-```html
+```
 <select name="cars">
 <option value="volvo">Volvo</option>
 <option value="saab">Saab</option>
@@ -538,7 +538,7 @@ input 元素根据不同的 *type* 属性，可以变化为多种形态。
 
 实例
 
-```html
+```
 <textarea name="message" rows="10" cols="30">
 The cat was playing in the garden.
 </textarea>
@@ -572,7 +572,7 @@ The cat was playing in the garden.
 
 实例
 
-```html
+```
 <button type="button" onclick="alert('Hello World!')">Click Me!</button>
 ```
 
@@ -602,7 +602,7 @@ input 元素的 *list* 属性必须引用 datalist 元素的 *id* 属性。
 
 通过 datalist 设置预定义值的 input 元素：
 
-```html
+```
 <form action="action_page.php">
 <input list="browsers">
 <datalist id="browsers">
@@ -625,7 +625,7 @@ input 元素的 *list* 属性必须引用 datalist 元素的 *id* 属性。
 
 实例
 
-```html
+```
 <form>
  First name:<br>
 <input type="text" name="firstname">
@@ -648,7 +648,7 @@ Last name:
 
 实例
 
-```html
+```
 <form>
  User name:<br>
 <input type="text" name="username">
@@ -677,7 +677,7 @@ User password:
 
 实例
 
-```html
+```
 <form action="action_page.php">
 First name:<br>
 <input type="text" name="firstname" value="Mickey">
@@ -722,7 +722,7 @@ Radio buttons let a user select ONLY ONE of a limited number of choices:
 
 实例
 
-```html
+```
 <form>
 <input type="radio" name="sex" value="male" checked>Male
 <br>
@@ -745,7 +745,7 @@ input type="checkbox" 定义复选框。
 
 实例
 
-```html
+```
 <form>
 <input type="checkbox" name="vehicle" value="Bike">I have a bike
 <br>
@@ -766,7 +766,7 @@ I have a car
 
 实例
 
-```html
+```
 <input type="button" onclick="alert('Hello World!')" value="Click Me!">
 ```
 
@@ -796,7 +796,7 @@ tel		time		url		week
 
 实例
 
-```html
+```
 <form>
   Quantity (between 1 and 5):
   <input type="number" name="quantity" min="1" max="5">
@@ -843,7 +843,7 @@ form
 
 实例
 
-```html
+```
 <form>
   Birthday:
   <input type="date" name="bday">
@@ -875,7 +875,7 @@ form
 
 实例
 
-```html
+```
 <form>
   Select your favorite color:
   <input type="color" name="favcolor">
@@ -892,7 +892,7 @@ form
 
 实例
 
-```html
+```
 <form>
   <input type="range" name="points" min="0" max="10">
 </form>
@@ -910,7 +910,7 @@ form
 
 实例
 
-```html
+```
 <form>
   Birthday (month and year):
   <input type="month" name="bdaymonth">
@@ -927,7 +927,7 @@ form
 
 实例
 
-```html
+```
 <form>
   Select a week:
   <input type="week" name="week_year">
@@ -944,7 +944,7 @@ form
 
 实例
 
-```html
+```
 <form>
   Select a time:
   <input type="time" name="usr_time">
@@ -961,7 +961,7 @@ form
 
 实例
 
-```html
+```
 <form>
   Birthday (date and time):
   <input type="datetime" name="bdaytime">
@@ -978,7 +978,7 @@ form
 
 实例
 
-```html
+```
 <form>
   Birthday (date and time):
   <input type="datetime-local" name="bdaytime">
@@ -997,7 +997,7 @@ form
 
 实例
 
-```html
+```
 <form>
   E-mail:
   <input type="email" name="email">
@@ -1012,7 +1012,7 @@ form
 
 实例
 
-```html
+```
 <form>
   Search Google:
   <input type="search" name="googlesearch">
@@ -1029,7 +1029,7 @@ form
 
 实例
 
-```html
+```
 <form>
   Telephone:
   <input type="tel" name="usrtel">

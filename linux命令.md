@@ -68,6 +68,14 @@ which (软件名)
  cat /proc/version 
 ```
 
+开启端口
+
+```
+iptables -A INPUT -ptcp --dport  443 -j ACCEPT
+```
+
+
+
 # 进程状态 
 
 linux上进程有5种状态: 

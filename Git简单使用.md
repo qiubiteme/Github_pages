@@ -6,13 +6,13 @@
 
 **基本的 Git 工作流程概念如下：**
 
-1. 在工作目录中修改文件。git仓库存在的父目录,就是工作目录
+1.  在工作目录中修改文件。git仓库存在的父目录,就是工作目录
 
-2. 暂存文件，将文件的快照放入暂存区域。就是使用**git add**添加到,的区域
+2.  暂存文件，将文件的快照放入暂存区域。就是使用**git add**添加到,的区域
 
-3. 提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。
+3.  提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。
 
-   **git commit**  把暂存区的内容提交到仓库
+    **git commit**  把暂存区的内容提交到仓库
 
 ## 初始化仓库
 
@@ -20,9 +20,9 @@
 
 **init 初始化进入的文件夹(目录)为一个Git仓库,初始化后仓库就建好了**
 
-````
+```
 git init
-````
+```
 
 ### git添加文件到暂存区
 
@@ -44,7 +44,7 @@ git add test.txt
 git status
 ```
 
-### 查看暂存前后的变化 
+### 查看暂存前后的变化
 
 查看当前仓库文件的详细改动状态,
 
@@ -56,7 +56,7 @@ git diff
 
 博主很懒, 一般我们不这么干,使用图形界面程序查看改动内容
 
-### 查看已暂存的将要添加到下次提交里的内容 
+### 查看已暂存的将要添加到下次提交里的内容
 
 ```
 git diff --staged
@@ -447,12 +447,14 @@ a6b4c97498bd301d84096da251c98a07c7723e65 beginning write support
 9fceb02d0ae598e95dc970b74767f19372d61af8 updated rakefile
 964f16d36dfccde844893cac5b347e7b3d44abbc commit the todo
 8a5cbc430f1a9c3d00faaeffd07798508422908a updated readme
+
 ```
 
 现在，假设在 v1.2 时你忘记给项目打标签，也就是在 “updated rakefile” 提交。 你可以在之后补上标签。 要在那个提交上打标签，你需要在命令的末尾指定提交的校验和（或部分校验和）:
 
 ```
 $ git tag -a v1.2 9fceb02
+
 ```
 
 可以看到你已经在那次提交上打上标签了：
@@ -478,6 +480,7 @@ Date:   Sun Apr 27 20:43:35 2008 -0700
 
     updated rakefile
 ...
+
 ```
 
 ### 共享标签
@@ -493,6 +496,7 @@ Writing objects: 100% (14/14), 2.05 KiB | 0 bytes/s, done.
 Total 14 (delta 3), reused 0 (delta 0)
 To git@github.com:schacon/simplegit.git
  * [new tag]         v1.5 -> v1.5
+
 ```
 
 如果想要一次性推送很多标签，也可以使用带有 `--tags` 选项的 `git push` 命令。 这将会把所有不在远程仓库服务器上的标签全部传送到那里。
@@ -505,6 +509,7 @@ Total 1 (delta 0), reused 0 (delta 0)
 To git@github.com:schacon/simplegit.git
  * [new tag]         v1.4 -> v1.4
  * [new tag]         v1.4-lw -> v1.4-lw
+
 ```
 
 现在，当其他人从仓库中克隆或拉取，他们也能得到你的那些标签。
@@ -516,6 +521,7 @@ To git@github.com:schacon/simplegit.git
 ```
 $ git checkout -b version2 v2.0.0
 Switched to a new branch 'version2'
+
 ```
 
 当然，如果在这之后又进行了一次提交，`version2` 分支会因为改动向前移动了，那么 `version2` 分支就会和 `v2.0.0` 标签稍微有些不同，这时就应该当心了。
@@ -526,6 +532,7 @@ Switched to a new branch 'version2'
 
 ```
 git reset --hard HEAD
+
 ```
 
 当你回退到指定版本,然后又想找回,最新版本时,现在Git log已经查看不到,最新版本的信息了,
@@ -534,6 +541,7 @@ git reset --hard HEAD
 
 ```
 git reflog
+
 ```
 
 看到的代码一般如下,最前面的就是版本简写,编号 ,可以使用 git reset --hard 切换到指定版本,这里可以看到,git的,本排序也是有编号的,按最新排序号是0,依次到第一次排列,每一次改动都会有一条记录
@@ -545,12 +553,14 @@ git reflog
 23ae68b HEAD@{3}: commit: two
 7f5bedf HEAD@{4}: commit: one
 d2f0286 HEAD@{5}: commit (initial): frist
+
 ```
 
 查看git每次提交的,版本简写编号,用于回退版本,git log 的版本代码太长,不易书写,使用 reflog
 
 ```
 git reset --hard 1ecb918
+
 ```
 
 ## 查看工作区和版本库的区别
@@ -559,6 +569,7 @@ git reset --hard 1ecb918
 
 ```
 git diff HEAD
+
 ```
 
 
@@ -571,22 +582,24 @@ git diff HEAD
 .gitignore
 *.[oa]
 *~
+
 ```
 
 第一行告诉 Git 忽略所有以 `.o` 或 `.a` 结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的。 第二行告诉 Git 忽略所有以波浪符（~）结尾的文件，许多文本编辑软件（比如 Emacs）都用这样的文件名保存副本。 此外，你可能还需要忽略 log，tmp 或者 pid 目录，以及自动生成的文档等等。 要养成一开始就设置好 .gitignore 文件的习惯，以免将来误提交这类无用的文件。
 
 文件 `.gitignore` 的格式规范如下：
 
-- 所有空行或者以 `＃` 开头的行都会被 Git 忽略。
-- 可以使用标准的 glob 模式匹配。
-- 匹配模式可以以（`/`）开头防止递归。
-- 匹配模式可以以（`/`）结尾指定目录。
-- 要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（`!`）取反。
+-   所有空行或者以 `＃` 开头的行都会被 Git 忽略。
+-   可以使用标准的 glob 模式匹配。
+-   匹配模式可以以（`/`）开头防止递归。
+-   匹配模式可以以（`/`）结尾指定目录。
+-   要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（`!`）取反。
 
 ## 克隆现有的仓库
 
 ```
 git clone url
+
 ```
 
 
@@ -603,6 +616,7 @@ git clone url
 
 ```
 git log 
+
 ```
 
 ### 限制输出长度
@@ -612,7 +626,8 @@ git log
 另外还有按照时间作限制的选项，比如`--since`和`--until`也很有用。例如，下面的命令列出所有最近两周内的提交：
 
 ```
-$ git log --since=2.weeks
+ git log --since=2.weeks
+
 ```
 
 ## 代学习Git 分支 - 分支简介

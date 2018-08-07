@@ -2,7 +2,7 @@
 
 
 
-# MySQL命令
+# MySQL安装卸载与编码
 
 ### mysql区域语言编码设置
 
@@ -350,7 +350,10 @@ sudo apt-get remove mysql-*
 
  它会跳出一个对话框，你选择yes就好了
  然后安装mysql
- `sudo apt-get install mysql-client mysql-server`
+
+````
+sudo apt-get install mysql-client mysql-server
+````
 
 安装过程中会提示,输入两次密码
 

@@ -1,7 +1,5 @@
 
 
-[TOC]
-
 # jQuery基本概念
 
 > 学习目标：学会如何使用jQuery，掌握jQuery的常用api，能够使用jQuery实现常见的效果。
