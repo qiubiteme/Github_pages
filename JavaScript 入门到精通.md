@@ -1,3 +1,5 @@
+
+
 # JavaScript 入门
 
 ## JavaScript 简介
@@ -897,4 +899,1044 @@ JavaScript 变量均为对象。当您声明一个变量时，就创建了一个
 
 
 
+## JavaScript 对象
+
+
+
+**JavaScript 中的所有事物都是对象：字符串、数字、数组、日期，等等。**
+
+**在 JavaScript 中，对象是拥有属性和方法的数据。**
+
+### 属性和方法
+
+属性是与对象相关的值。
+
+方法是能够在对象上执行的动作。
+
+举例：汽车就是现实生活中的对象。
+
+汽车的属性：
+
+```
+car.name=Fiat
+
+car.model=500
+
+car.weight=850kg
+
+car.color=white 
+```
+
+汽车的方法：
+
+```
+car.start()
+
+car.drive()
+
+car.brake()
+```
+
+汽车的属性包括名称、型号、重量、颜色等。
+
+所有汽车都有这些属性，但是每款车的属性都不尽相同。
+
+汽车的方法可以是启动、驾驶、刹车等。
+
+所有汽车都拥有这些方法，但是它们被执行的时间都不尽相同。
+
+### JavaScript 中的对象
+
+在 JavaScript 中，对象是数据（变量），拥有属性和方法。
+
+当您像这样声明一个 JavaScript 变量时：
+
+```
+var txt = "Hello";
+```
+
+您实际上已经创建了一个 JavaScript 字符串对象。字符串对象拥有内建的属性 length。对于上面的字符串来说，length 的值是 5。字符串对象同时拥有若干个内建的方法。
+
+属性：
+
+```
+txt.length=5
+```
+
+方法：
+
+```
+txt.indexOf()
+
+txt.replace()
+
+txt.search()
+```
+
+提示：在面向对象的语言中，属性和方法常被称为对象的成员。
+
+在本教程稍后的章节中，您将学到有关字符串对象的更多属性和方法。
+
+### 创建 JavaScript 对象
+
+JavaScript 中的几乎所有事务都是对象：字符串、数字、数组、日期、函数，等等。
+
+你也可以创建自己的对象。
+
+本例创建名为 "person" 的对象，并为其添加了四个属性：
+
+**实例**
+
+```
+person=new Object();
+person.firstname="Bill";
+person.lastname="Gates";
+person.age=56;
+person.eyecolor="blue";
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_create_object)
+
+创建新 JavaScript 对象有很多不同的方法，并且您还可以向已存在的对象添加属性和方法。
+
+您将在本教程稍后的章节学到更多相关的内容。
+
+### 访问对象的属性
+
+访问对象属性的语法是：
+
+```
+objectName.propertyName
+```
+
+本例使用 String 对象的 length 属性来查找字符串的长度：
+
+```
+var message="Hello World!";
+var x=message.length;
+```
+
+在以上代码执行后，x 的值是：
+
+```
+12
+```
+
+### 访问对象的方法
+
+您可以通过下面的语法调用方法：
+
+```
+objectName.methodName()
+```
+
+这个例子使用 String 对象的 toUpperCase() 方法来把文本转换为大写：
+
+```
+var message="Hello world!";
+var x=message.toUpperCase();
+```
+
+在以上代码执行后，x 的值是：
+
+```
+HELLO WORLD!
+```
+
+### 您知道吗？
+
+提示：在面向对象的语言中，使用 camel-case 标记法的函数是很常见的。您会经常看到 someMethod() 这样的函数名，而不是 some_method()。
+
+##   JavaScript 函数
+
+
+
+**函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。**
+
+**实例**
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction()
+{
+alert("Hello World!");
+}
+</script>
+</head>
+
+<body>
+<button onclick="myFunction()">点击这里</button>
+</body>
+</html>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_function1)
+
+### JavaScript 函数语法
+
+函数就是包裹在花括号中的代码块，前面使用了关键词 function：
+
+```
+function functionname()
+{
+这里是要执行的代码
+}
+```
+
+当调用该函数时，会执行函数内的代码。
+
+可以在某事件发生时直接调用函数（比如当用户点击按钮时），并且可由 JavaScript 在任何位置进行调用。
+
+提示：JavaScript 对大小写敏感。关键词 function 必须是小写的，并且必须以与函数名称相同的大小写来调用函数。
+
+### 调用带参数的函数
+
+在调用函数时，您可以向其传递值，这些值被称为参数。
+
+这些参数可以在函数中使用。
+
+您可以发送任意多的参数，由逗号 (,) 分隔：
+
+```
+myFunction(argument1,argument2)
+```
+
+当您声明函数时，请把参数作为变量来声明：
+
+```
+function myFunction(var1,var2)
+{
+这里是要执行的代码
+}
+```
+
+变量和参数必须以一致的顺序出现。第一个变量就是第一个被传递的参数的给定的值，以此类推。
+
+**实例**
+
+```
+<button onclick="myFunction('Bill Gates','CEO')">点击这里</button>
+
+<script>
+function myFunction(name,job)
+{
+alert("Welcome " + name + ", the " + job);
+}
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_function2)
+
+上面的函数会当按钮被点击时提示 "Welcome Bill Gates, the CEO"。
+
+函数很灵活，您可以使用不同的参数来调用该函数，这样就会给出不同的消息：
+
+**实例**
+
+```
+<button onclick="myFunction('Harry Potter','Wizard')">点击这里</button>
+<button onclick="myFunction('Bob','Builder')">点击这里</button>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_function3)
+
+根据您点击的不同的按钮，上面的例子会提示 "Welcome Harry Potter, the Wizard" 或 "Welcome Bob, the Builder"。
+
+### 带有返回值的函数
+
+有时，我们会希望函数将值返回调用它的地方。
+
+通过使用 return 语句就可以实现。
+
+在使用 return 语句时，函数会停止执行，并返回指定的值。
+
+### 语法
+
+```
+function myFunction()
+{
+var x=5;
+return x;
+}
+```
+
+上面的函数会返回值 5。
+
+注释：整个 JavaScript 并不会停止执行，仅仅是函数。JavaScript 将继续执行代码，从调用函数的地方。
+
+函数调用将被返回值取代：
+
+```
+var myVar=myFunction();
+```
+
+myVar 变量的值是 5，也就是函数 "myFunction()" 所返回的值。
+
+即使不把它保存为变量，您也可以使用返回值：
+
+```
+document.getElementById("demo").innerHTML=myFunction();
+```
+
+"demo" 元素的 innerHTML 将成为 5，也就是函数 "myFunction()" 所返回的值。
+
+您可以使返回值基于传递到函数中的参数：
+
+**实例**
+
+计算两个数字的乘积，并返回结果：
+
+```
+function myFunction(a,b)
+{
+return a*b;
+}
+
+document.getElementById("demo").innerHTML=myFunction(4,3);
+```
+
+"demo" 元素的 innerHTML 将是：
+
+```
+12
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_function_return)
+
+在您仅仅希望退出函数时 ，也可使用 return 语句。返回值是可选的：
+
+```
+function myFunction(a,b)
+{
+if (a>b)
+  {
+  return;
+  }
+x=a+b
+}
+```
+
+如果 a 大于 b，则上面的代码将退出函数，并不会计算 a 和 b 的总和。
+
+### 局部 JavaScript 变量
+
+在 JavaScript 函数内部声明的变量（使用 var）是*局部*变量，所以只能在函数内部访问它。（该变量的作用域是局部的）。
+
+您可以在不同的函数中使用名称相同的局部变量，因为只有声明过该变量的函数才能识别出该变量。
+
+只要函数运行完毕，本地变量就会被删除。
+
+### 全局 JavaScript 变量
+
+在函数外声明的变量是*全局*变量，网页上的所有脚本和函数都能访问它。
+
+### JavaScript 变量的生存期
+
+JavaScript 变量的生命期从它们被声明的时间开始。
+
+局部变量会在函数运行以后被删除。
+
+全局变量会在页面关闭后被删除。
+
+### 向未声明的 JavaScript 变量来分配值
+
+如果您把值赋给尚未声明的变量，该变量将被自动作为全局变量声明。
+
+这条语句：
+
+```
+carname="Volvo";
+```
+
+将声明一个*全局*变量 carname，即使它在函数内执行。
+
+## JavaScript 运算符
+
+
+
+**运算符 = 用于赋值。**
+
+**运算符 + 用于加值。**
+
+运算符 = 用于给 JavaScript 变量赋值。
+
+算术运算符 + 用于把值加起来。
+
+```
+y=5;
+z=2;
+x=y+z; 
+```
+
+在以上语句执行后，x 的值是 7。
+
+### JavaScript 算术运算符
+
+算术运算符用于执行变量与/或值之间的算术运算。
+
+给定 *y=5*，下面的表格解释了这些算术运算符：
+
+| 运算符 | 描述              | 例子  | 结果  |
+| ------ | ----------------- | ----- | ----- |
+| +      | 加                | x=y+2 | x=7   |
+| -      | 减                | x=y-2 | x=3   |
+| *      | 乘                | x=y*2 | x=10  |
+| /      | 除                | x=y/2 | x=2.5 |
+| %      | 求余数 (保留整数) | x=y%2 | x=1   |
+| ++     | 累加              | x=++y | x=6   |
+| --     | 递减              | x=--y | x=4   |
+
+### JavaScript 赋值运算符
+
+赋值运算符用于给 JavaScript 变量赋值。
+
+给定 *x=10* 和 *y=5*，下面的表格解释了赋值运算符：
+
+| 运算符 | 例子 | 等价于 | 结果 |
+| ------ | ---- | ------ | ---- |
+| =      | x=y  |        | x=5  |
+| +=     | x+=y | x=x+y  | x=15 |
+| -=     | x-=y | x=x-y  | x=5  |
+| *=     | x*=y | x=x*y  | x=50 |
+| /=     | x/=y | x=x/y  | x=2  |
+| %=     | x%=y | x=x%y  | x=0  |
+
+### 用于字符串的 + 运算符
+
+\+ 运算符用于把文本值或字符串变量加起来（连接起来）。
+
+如需把两个或多个字符串变量连接起来，请使用 + 运算符。
+
+```
+txt1="What a very";
+txt2="nice day";
+txt3=txt1+txt2;
+```
+
+在以上语句执行后，变量 txt3 包含的值是 "What a verynice day"。
+
+要想在两个字符串之间增加空格，需要把空格插入一个字符串之中：
+
+```
+txt1="What a very ";
+txt2="nice day";
+txt3=txt1+txt2;
+```
+
+或者把空格插入表达式中：
+
+```
+txt1="What a very";
+txt2="nice day";
+txt3=txt1+" "+txt2;
+```
+
+在以上语句执行后，变量 txt3 包含的值是：
+
+"What a very nice day"
+
+### 对字符串和数字进行加法运算
+
+请看这些例子：
+
+```
+x=5+5;
+document.write(x);
+
+x="5"+"5";
+document.write(x);
+
+x=5+"5";
+document.write(x);
+
+x="5"+5;
+document.write(x);
+```
+
+[TIY](http://www.w3school.com.cn/tiy/t.asp?f=jseg_variables)
+
+### 规则是：
+
+**如果把数字与字符串相加，结果将成为字符串。**
+
+## JavaScript 比较和逻辑运算符
+
+
+
+**比较和逻辑运算符用于测试 true 或 false。**
+
+### 比较运算符
+
+比较运算符在逻辑语句中使用，以测定变量或值是否相等。
+
+给定 x=5，下面的表格解释了比较运算符：
+
+| 运算符 | 描述             | 例子                            |
+| ------ | ---------------- | ------------------------------- |
+| ==     | 等于             | x==8 为 false                   |
+| ===    | 全等（值和类型） | x===5 为 true；x==="5" 为 false |
+| !=     | 不等于           | x!=8 为 true                    |
+| >      | 大于             | x>8 为 false                    |
+| <      | 小于             | x<8 为 true                     |
+| >=     | 大于或等于       | x>=8 为 false                   |
+| <=     | 小于或等于       | x<=8 为 true                    |
+
+### 如何使用
+
+可以在条件语句中使用比较运算符对值进行比较，然后根据结果来采取行动：
+
+```
+if (age<18) document.write("Too young");
+```
+
+您将在本教程的下一节中学习更多有关条件语句的知识。
+
+### 逻辑运算符
+
+逻辑运算符用于测定变量或值之间的逻辑。
+
+给定 x=6 以及 y=3，下表解释了逻辑运算符：
+
+| 运算符 | 描述 | 例子                      |
+| ------ | ---- | ------------------------- |
+| &&     | and  | (x < 10 && y > 1) 为 true |
+| \|\|   | or   | (x==5 \|\| y==5) 为 false |
+| !      | not  | !(x==y) 为 true           |
+
+### 条件运算符
+
+JavaScript 还包含了基于某些条件对变量进行赋值的条件运算符。
+
+### 语法
+
+```
+variablename=(condition)?value1:value2 
+```
+
+**例子**
+
+```
+greeting=(visitor=="PRES")?"Dear President ":"Dear ";
+```
+
+如果变量 visitor 中的值是 "PRES"，则向变量 greeting 赋值 "Dear President "，否则赋值 "Dear"。
+
+## JavaScript If...Else 语句
+
+
+
+**条件语句用于基于不同的条件来执行不同的动作。**
+
+### 条件语句
+
+通常在写代码时，您总是需要为不同的决定来执行不同的动作。您可以在代码中使用条件语句来完成该任务。
+
+在 JavaScript 中，我们可使用以下条件语句：
+
+- *if 语句* - 只有当指定条件为 true 时，使用该语句来执行代码
+- *if...else 语句* - 当条件为 true 时执行代码，当条件为 false 时执行其他代码
+- *if...else if....else 语句* - 使用该语句来选择多个代码块之一来执行
+- *switch 语句* - 使用该语句来选择多个代码块之一来执行
+
+### If 语句
+
+只有当指定条件为 true 时，该语句才会执行代码。
+
+### 语法
+
+```
+if (条件)
+  {
+  只有当条件为 true 时执行的代码
+  }
+```
+
+注意：请使用小写的 if。使用大写字母（IF）会生成 JavaScript 错误！
+
+**实例**
+
+当时间小于 20:00 时，生成一个“Good day”问候：
+
+```
+if (time<20)
+  {
+  x="Good day";
+  }
+```
+
+x 的结果是：
+
+```
+Good day
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_ifthen)
+
+请注意，在这个语法中，没有 ..else..。您已经告诉浏览器只有在指定条件为 true 时才执行代码。
+
+### If...else 语句
+
+请使用 if....else 语句在条件为 true 时执行代码，在条件为 false 时执行其他代码。
+
+### 语法
+
+```
+if (条件)
+  {
+  当条件为 true 时执行的代码
+  }
+else
+  {
+  当条件不为 true 时执行的代码
+  }
+```
+
+**实例**
+
+当时间小于 20:00 时，将得到问候 "Good day"，否则将得到问候 "Good evening"。
+
+```
+if (time<20)
+  {
+  x="Good day";
+  }
+else
+  {
+  x="Good evening";
+  }
+```
+
+x 的结果是：
+
+```
+Good day
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_ifthenelse)
+
+### If...else if...else 语句
+
+使用 if....else if...else 语句来选择多个代码块之一来执行。
+
+### 语法
+
+```
+if (条件 1)
+  {
+  当条件 1 为 true 时执行的代码
+  }
+else if (条件 2)
+  {
+  当条件 2 为 true 时执行的代码
+  }
+else
+  {
+  当条件 1 和 条件 2 都不为 true 时执行的代码
+  }
+```
+
+**实例**
+
+如果时间小于 10:00，则将发送问候 "Good morning"，否则如果时间小于 20:00，则发送问候 "Good day"，否则发送问候 "Good evening"：
+
+```
+if (time<10)
+  {
+  x="Good morning";
+  }
+else if (time<20)
+  {
+  x="Good day";
+  }
+else
+  {
+  x="Good evening";
+  }
+```
+
+x 的结果是：
+
+```
+Good day
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_elseif)
+
+### 更多实例
+
+- 随机的链接
+
+  本例将输出 W3School 或微软公司的链接。通过使用随机数，每个链接被输出的机会为 50%。
+
+## JavaScript Switch 语句
+
+
+
+**switch 语句用于基于不同的条件来执行不同的动作。**
+
+### JavaScript Switch 语句
+
+请使用 switch 语句来选择要执行的多个代码块之一。
+
+### 语法
+
+```
+switch(n)
+{
+case 1:
+  执行代码块 1
+  break;
+case 2:
+  执行代码块 2
+  break;
+default:
+  n 与 case 1 和 case 2 不同时执行的代码
+}
+```
+
+工作原理：首先设置表达式 n（通常是一个变量）。随后表达式的值会与结构中的每个 case 的值做比较。如果存在匹配，则与该 case 关联的代码块会被执行。请使用 *break* 来阻止代码自动地向下一个 case 运行。
+
+**实例**
+
+显示今日的周名称。请注意 Sunday=0, Monday=1, Tuesday=2, 等等：
+
+```
+var day=new Date().getDay();
+switch (day)
+{
+case 0:
+  x="Today it's Sunday";
+  break;
+case 1:
+  x="Today it's Monday";
+  break;
+case 2:
+  x="Today it's Tuesday";
+  break;
+case 3:
+  x="Today it's Wednesday";
+  break;
+case 4:
+  x="Today it's Thursday";
+  break;
+case 5:
+  x="Today it's Friday";
+  break;
+case 6:
+  x="Today it's Saturday";
+  break;
+}
+```
+
+x 的结果：
+
+```
+Today it's Monday
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_switch)
+
+### default 关键词
+
+请使用 default 关键词来规定匹配不存在时做的事情：
+
+**实例**
+
+如果今天不是周六或周日，则会输出默认的消息：
+
+```
+var day=new Date().getDay();
+switch (day)
+{
+case 6:
+  x="Today it's Saturday";
+  break;
+case 0:
+  x="Today it's Sunday";
+  break;
+default:
+  x="Looking forward to the Weekend";
+}
+```
+
+x 的结果：
+
+```
+Looking forward to the Weekend
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_switch2)
+
+### JavaScript For 循环
+
+
+
+**循环可以将代码块执行指定的次数。**
+
+## JavaScript 循环
+
+如果您希望一遍又一遍地运行相同的代码，并且每次的值都不同，那么使用循环是很方便的。
+
+我们可以这样输出数组的值：
+
+```
+document.write(cars[0] + "<br>");
+document.write(cars[1] + "<br>");
+document.write(cars[2] + "<br>");
+document.write(cars[3] + "<br>");
+document.write(cars[4] + "<br>");
+document.write(cars[5] + "<br>");
+```
+
+不过通常我们这样写：
+
+```
+for (var i=0;i<cars.length;i++)
+{
+document.write(cars[i] + "<br>");
+}
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_loop_for)
+
+### 不同类型的循环
+
+JavaScript 支持不同类型的循环：
+
+- *for* - 循环代码块一定的次数
+- *for/in* - 循环遍历对象的属性
+- *while* - 当指定的条件为 true 时循环指定的代码块
+- *do/while* - 同样当指定的条件为 true 时循环指定的代码块
+
+### For 循环
+
+for 循环是您在希望创建循环时常会用到的工具。
+
+下面是 for 循环的语法：
+
+```
+for (语句 1; 语句 2; 语句 3)
+  {
+  被执行的代码块
+  }
+```
+
+*语句 1* 在循环（代码块）开始前执行
+
+*语句 2* 定义运行循环（代码块）的条件
+
+*语句 3* 在循环（代码块）已被执行之后执行
+
+**实例**
+
+```
+for (var i=0; i<5; i++)
+  {
+  x=x + "The number is " + i + "<br>";
+  }
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_loop_for2)
+
+从上面的例子中，您可以看到：
+
+Statement 1 在循环开始之前设置变量 (var i=0)。
+
+Statement 2 定义循环运行的条件（i 必须小于 5）。
+
+Statement 3 在每次代码块已被执行后增加一个值 (i++)。
+
+#### 语句 1
+
+通常我们会使用语句 1 初始化循环中所用的变量 (var i=0)。
+
+语句 1 是可选的，也就是说不使用语句 1 也可以。
+
+您可以在语句 1 中初始化任意（或者多个）值：
+
+**实例**:
+
+```
+for (var i=0,len=cars.length; i<len; i++)
+{
+document.write(cars[i] + "<br>");
+}
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_loop_for_s1)
+
+同时您还可以省略语句 1（比如在循环开始前已经设置了值时）：
+
+**实例**:
+
+```
+var i=2,len=cars.length;
+for (; i<len; i++)
+{
+document.write(cars[i] + "<br>");
+}
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_loop_for_s1_2)
+
+#### 语句 2
+
+通常语句 2 用于评估初始变量的条件。
+
+语句 2 同样是可选的。
+
+如果语句 2 返回 true，则循环再次开始，如果返回 false，则循环将结束。
+
+提示：如果您省略了语句 2，那么必须在循环内提供 *break*。否则循环就无法停下来。这样有可能令浏览器崩溃。请在本教程稍后的章节阅读有关 break 的内容。
+
+#### 语句 3
+
+通常语句 3 会增加初始变量的值。
+
+语句 3 也是可选的。
+
+语句 3 有多种用法。增量可以是负数 (i--)，或者更大 (i=i+15)。
+
+语句 3 也可以省略（比如当循环内部有相应的代码时）：
+
+**实例**:
+
+```
+var i=0,len=cars.length;
+for (; i<len; )
+{
+document.write(cars[i] + "<br>");
+i++;
+}
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_loop_for_s3)
+
+### For/In 循环
+
+JavaScript for/in 语句循环遍历对象的属性：
+
+**实例**
+
+```
+var person={fname:"John",lname:"Doe",age:25};
+
+for (x in person)
+  {
+  txt=txt + person[x];
+  }
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_object_for_in)
+
+您将在有关 JavaScript 对象的章节学到更多有关 for / in 循环的知识。
+
+
+
+##   JavaScript While 循环
+
+**只要指定条件为 true，循环就可以一直执行代码。**
+
+### while 循环
+
+While 循环会在指定条件为真时循环执行代码块。
+
+#### 语法
+
+```
+while (条件)
+  {
+  需要执行的代码
+  }
+```
+
+**实例**
+
+本例中的循环将继续运行，只要变量 i 小于 5：
+
+```
+while (i<5)
+  {
+  x=x + "The number is " + i + "<br>";
+  i++;
+  }
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_while)
+
+提示：如果您忘记增加条件中所用变量的值，该循环永远不会结束。该可能导致浏览器崩溃。
+
+### do/while 循环
+
+do/while 循环是 while 循环的变体。该循环会执行一次代码块，在检查条件是否为真之前，然后如果条件为真的话，就会重复这个循环。
+
+#### 语法
+
+```
+do
+  {
+  需要执行的代码
+  }
+while (条件);
+```
+
+**实例**
+
+下面的例子使用 do/while 循环。该循环至少会执行一次，即使条件是 false，隐藏代码块会在条件被测试前执行：
+
+```
+do
+  {
+  x=x + "The number is " + i + "<br>";
+  i++;
+  }
+while (i<5);
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_dowhile)
+
+别忘记增加条件中所用变量的值，否则循环永远不会结束！
+
+## 比较 for 和 while
+
+如果您已经阅读了前面那一章关于 for 循环的内容，您会发现 while 循环与 for 循环很像。
+
+### for 语句实例
+
+本例中的循环使用 for 循环来显示 cars 数组中的所有值：
+
+```
+cars=["BMW","Volvo","Saab","Ford"];
+var i=0;
+for (;cars[i];)
+{
+document.write(cars[i] + "<br>");
+i++;
+}
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_loop_for_cars)
+
+### while 语句实例
+
+本例中的循环使用使用 while 循环来显示 cars 数组中的所有值：
+
+```
+cars=["BMW","Volvo","Saab","Ford"];
+var i=0;
+while (cars[i])
+{
+document.write(cars[i] + "<br>");
+i++;
+}
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_loop_while_cars)
+
+  
+
+  
 
