@@ -1936,7 +1936,629 @@ i++;
 
 [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_loop_while_cars)
 
-  
+##   JavaScript Break 和 Continue 语句
 
-  
+**break 语句用于跳出循环。**
 
+**continue 用于跳过循环中的一个迭代。**
+
+### Break 语句
+
+我们已经在本教程稍早的章节中见到过 break 语句。它用于跳出 switch() 语句。
+
+break 语句可用于跳出循环。
+
+break 语句跳出循环后，会继续执行该循环之后的代码（如果有的话）：
+
+**实例**
+
+```
+for (i=0;i<10;i++)
+  {
+  if (i==3)
+    {
+    break;
+    }
+  x=x + "The number is " + i + "<br>";
+  }
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_break)
+
+由于这个 if 语句只有一行代码，所以可以省略花括号：
+
+```
+for (i=0;i<10;i++)
+  {
+  if (i==3) break;
+  x=x + "The number is " + i + "<br>";
+  }
+```
+
+### Continue 语句
+
+continue 语句中断循环中的迭代，如果出现了指定的条件，然后继续循环中的下一个迭代。
+
+该例子跳过了值 3：
+
+**实例**
+
+```
+for (i=0;i<=10;i++)
+ {
+ if (i==3) continue;
+  x=x + "The number is " + i + "<br>";
+  }
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_continue)
+
+### JavaScript 标签
+
+正如您在 switch 语句那一章中看到的，可以对 JavaScript 语句进行标记。
+
+如需标记 JavaScript 语句，请在语句之前加上冒号：
+
+```
+label:
+语句
+```
+
+break 和 continue 语句仅仅是能够跳出代码块的语句。
+
+### 语法
+
+```
+break labelname;
+
+continue labelname;
+```
+
+continue 语句（带有或不带标签引用）只能用在循环中。
+
+break 语句（不带标签引用），只能用在循环或 switch 中。
+
+通过标签引用，break 语句可用于跳出任何 JavaScript 代码块：
+
+**实例**
+
+```
+cars=["BMW","Volvo","Saab","Ford"];
+list:
+{
+document.write(cars[0] + "<br>");
+document.write(cars[1] + "<br>");
+document.write(cars[2] + "<br>");
+break list;
+document.write(cars[3] + "<br>");
+document.write(cars[4] + "<br>");
+document.write(cars[5] + "<br>");
+}
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_break_label)
+
+## JavaScript 错误 - Throw、Try 和 Catch
+
+
+
+*try* 语句测试代码块的错误。
+
+*catch* 语句处理错误。
+
+*throw* 语句创建自定义错误。
+
+### 错误一定会发生
+
+当 JavaScript 引擎执行 JavaScript 代码时，会发生各种错误：
+
+可能是语法错误，通常是程序员造成的编码错误或错别字。
+
+可能是拼写错误或语言中缺少的功能（可能由于浏览器差异）。
+
+可能是由于来自服务器或用户的错误输出而导致的错误。
+
+当然，也可能是由于许多其他不可预知的因素。
+
+### JavaScript 抛出错误
+
+当错误发生时，当事情出问题时，JavaScript 引擎通常会停止，并生成一个错误消息。
+
+描述这种情况的技术术语是：JavaScript 将*抛出*一个错误。
+
+### JavaScript 测试和捕捉
+
+*try* 语句允许我们定义在执行时进行错误测试的代码块。
+
+*catch* 语句允许我们定义当 try 代码块发生错误时，所执行的代码块。
+
+JavaScript 语句 *try* 和 *catch* 是成对出现的。
+
+#### 语法
+
+```
+try
+  {
+  //在这里运行代码
+  }
+catch(err)
+  {
+  //在这里处理错误
+  }
+```
+
+**实例**
+
+在下面的例子中，我们故意在 try 块的代码中写了一个错字。
+
+catch 块会捕捉到 try 块中的错误，并执行代码来处理它。
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var txt="";
+function message()
+{
+try
+  {
+  adddlert("Welcome guest!");
+  }
+catch(err)
+  {
+  txt="There was an error on this page.\n\n";
+  txt+="Error description: " + err.message + "\n\n";
+  txt+="Click OK to continue.\n\n";
+  alert(txt);
+  }
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="View message" onclick="message()">
+</body>
+
+</html>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_try_catch)
+
+### Throw 语句
+
+throw 语句允许我们创建自定义错误。
+
+正确的技术术语是：创建或*抛出异常*（exception）。
+
+如果把 throw 与 try 和 catch 一起使用，那么您能够控制程序流，并生成自定义的错误消息。
+
+#### 语法
+
+```
+throw exception
+```
+
+异常可以是 JavaScript 字符串、数字、逻辑值或对象。
+
+**实例**
+
+本例检测输入变量的值。如果值是错误的，会抛出一个异常（错误）。catch 会捕捉到这个错误，并显示一段自定义的错误消息：
+
+```
+<script>
+function myFunction()
+{
+try
+  {
+  var x=document.getElementById("demo").value;
+  if(x=="")    throw "empty";
+  if(isNaN(x)) throw "not a number";
+  if(x>10)     throw "too high";
+  if(x<5)      throw "too low";
+  }
+catch(err)
+  {
+  var y=document.getElementById("mess");
+  y.innerHTML="Error: " + err + ".";
+  }
+}
+</script>
+
+<h1>My First JavaScript</h1>
+<p>Please input a number between 5 and 10:</p>
+<input id="demo" type="text">
+<button type="button" onclick="myFunction()">Test Input</button>
+<p id="mess"></p>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_throw_error)
+
+请注意，如果 getElementById 函数出错，上面的例子也会抛出一个错误。  
+
+##   JavaScript 表单验证
+
+
+
+**JavaScript 可用来在数据被送往服务器前对 HTML 表单中的这些输入数据进行验证。**
+
+### JavaScript 表单验证
+
+JavaScript 可用来在数据被送往服务器前对 HTML 表单中的这些输入数据进行验证。
+
+被 JavaScript 验证的这些典型的表单数据有：
+
+- 用户是否已填写表单中的必填项目？
+- 用户输入的邮件地址是否合法？
+- 用户是否已输入合法的日期？
+- 用户是否在数据域 (numeric field) 中输入了文本？
+
+### 必填（或必选）项目
+
+下面的函数用来检查用户是否已填写表单中的必填（或必选）项目。假如必填或必选项为空，那么警告框会弹出，并且函数的返回值为 false，否则函数的返回值则为 true（意味着数据没有问题）：
+
+```
+function validate_required(field,alerttxt)
+{
+with (field)
+{
+if (value==null||value=="")
+  {alert(alerttxt);return false}
+else {return true}
+}
+}
+```
+
+下面是连同 HTML 表单的代码：
+
+```
+<html>
+<head>
+<script type="text/javascript">
+
+function validate_required(field,alerttxt)
+{
+with (field)
+  {
+  if (value==null||value=="")
+    {alert(alerttxt);return false}
+  else {return true}
+  }
+}
+
+function validate_form(thisform)
+{
+with (thisform)
+  {
+  if (validate_required(email,"Email must be filled out!")==false)
+    {email.focus();return false}
+  }
+}
+</script>
+</head>
+
+<body>
+<form action="submitpage.htm" onsubmit="return validate_form(this)" method="post">
+Email: <input type="text" name="email" size="30">
+<input type="submit" value="Submit"> 
+</form>
+</body>
+
+</html>
+```
+
+### E-mail 验证
+
+下面的函数检查输入的数据是否符合电子邮件地址的基本语法。
+
+意思就是说，输入的数据必须包含 @ 符号和点号(.)。同时，@ 不可以是邮件地址的首字符，并且 @ 之后需有至少一个点号：
+
+```
+function validate_email(field,alerttxt)
+{
+with (field)
+{
+apos=value.indexOf("@")
+dotpos=value.lastIndexOf(".")
+if (apos<1||dotpos-apos<2) 
+  {alert(alerttxt);return false}
+else {return true}
+}
+}
+```
+
+下面是连同 HTML 表单的完整代码：
+
+```
+<html>
+<head>
+<script type="text/javascript">
+function validate_email(field,alerttxt)
+{
+with (field)
+{
+apos=value.indexOf("@")
+dotpos=value.lastIndexOf(".")
+if (apos<1||dotpos-apos<2) 
+  {alert(alerttxt);return false}
+else {return true}
+}
+}
+
+function validate_form(thisform)
+{
+with (thisform)
+{
+if (validate_email(email,"Not a valid e-mail address!")==false)
+  {email.focus();return false}
+}
+}
+</script>
+</head>
+
+<body>
+<form action="submitpage.htm"onsubmit="return validate_form(this);" method="post">
+Email: <input type="text" name="email" size="30">
+<input type="submit" value="Submit"> 
+</form>
+</body>
+
+</html>
+```
+
+# JavaScript HTML DOM
+
+## DOM简介
+
+**通过 HTML DOM，可访问 JavaScript HTML 文档的所有元素。**
+
+### HTML DOM （文档对象模型）
+
+当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model）。
+
+HTML DOM 模型被构造为对象的树。
+
+### HTML DOM 树
+
+
+
+通过可编程的对象模型，JavaScript 获得了足够的能力来创建动态的 HTML。
+
+- JavaScript 能够改变页面中的所有 HTML 元素
+- JavaScript 能够改变页面中的所有 HTML 属性
+- JavaScript 能够改变页面中的所有 CSS 样式
+- JavaScript 能够对页面中的所有事件做出反应
+
+### 查找 HTML 元素
+
+通常，通过 JavaScript，您需要操作 HTML 元素。
+
+为了做到这件事情，您必须首先找到该元素。有三种方法来做这件事：
+
+- 通过 id 找到 HTML 元素
+- 通过标签名找到 HTML 元素
+- 通过类名找到 HTML 元素
+
+### 通过 id 查找 HTML 元素
+
+在 DOM 中查找 HTML 元素的最简单的方法，是通过使用元素的 id。
+
+**实例**
+
+本例查找 id="intro" 元素：
+
+```
+var x=document.getElementById("intro");
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_dom_getelementbyid)
+
+如果找到该元素，则该方法将以对象（在 x 中）的形式返回该元素。
+
+如果未找到该元素，则 x 将包含 null。
+
+### 通过标签名查找 HTML 元素
+
+**实例**
+
+本例查找 id="main" 的元素，然后查找 "main" 中的所有 <p> 元素：
+
+```
+var x=document.getElementById("main");
+var y=x.getElementsByTagName("p");
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_dom_getelementsbytagname)
+
+提示：通过类名查找 HTML 元素在 IE 5,6,7,8 中无效。
+
+### HTML DOM 教程
+
+在本教程接下来的篇幅中，您将学到：
+
+- 如何改变 HTML 元素的内容 (innerHTML)
+
+- 如何改变 HTML 元素的样式 (CSS)
+
+- 如何对 HTML DOM 事件对做出反应
+
+- 如何添加或删除 HTML 元素
+
+
+
+  ## 改变 HTML
+
+  **HTML DOM 允许 JavaScript 改变 HTML 元素的内容。**
+
+  ### 改变 HTML 输出流
+
+  JavaScript 能够创建动态的 HTML 内容：
+
+  **今天的日期是：** Mon Sep 17 2018 11:21:35 GMT+0800 (中国标准时间)
+
+  在 JavaScript 中，document.write() 可用于直接向 HTML 输出流写内容。
+
+**实例**
+
+  ```
+  <!DOCTYPE html>
+  <html>
+  <body>
+  
+  <script>
+  document.write(Date());
+  </script>
+  
+  </body>
+  </html>
+  ```
+
+  [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_dom_change_html_output_stream)
+
+  提示：绝不要使用在文档加载之后使用 document.write()。这会覆盖该文档。
+
+  ### 改变 HTML 内容
+
+  修改 HTML 内容的最简单的方法时使用 innerHTML 属性。
+
+  如需改变 HTML 元素的内容，请使用这个语法：
+
+  ```
+  document.getElementById(id).innerHTML=new HTML
+  ```
+
+**实例**
+
+  本例改变了 <p> 元素的内容：
+
+  ```
+  <html>
+  <body>
+  
+  <p id="p1">Hello World!</p>
+  
+  <script>
+  document.getElementById("p1").innerHTML="New text!";
+  </script>
+  
+  </body>
+  </html>
+  ```
+
+  [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_dom_change_html_innerhtml)
+
+**实例**
+
+  本例改变了 <h1> 元素的内容：
+
+  ```
+  <!DOCTYPE html>
+  <html>
+  <body>
+  
+  <h1 id="header">Old Header</h1>
+  
+  <script>
+  var element=document.getElementById("header");
+  element.innerHTML="New Header";
+  </script>
+  
+  </body>
+  </html>
+  ```
+
+  [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_dom_change_html_innerhtml2)
+
+  例子解释：
+
+  - 上面的 HTML 文档含有 id="header" 的 <h1> 元素
+  - 我们使用 HTML DOM 来获得 id="header" 的元素
+  - JavaScript 更改此元素的内容 (innerHTML)
+
+  ### 改变 HTML 属性
+
+  如需改变 HTML 元素的属性，请使用这个语法：
+
+  ```
+  document.getElementById(id).attribute=new value
+  ```
+
+**实例**
+
+  本例改变了 <img> 元素的 src 属性：
+
+  ```
+  <!DOCTYPE html>
+  <html>
+  <body>
+  
+  <img id="image" src="smiley.gif">
+  
+  <script>
+  document.getElementById("image").src="landscape.jpg";
+  </script>
+  
+  </body>
+  </html>
+  ```
+
+  [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_dom_change_html_attribute)
+
+  例子解释：
+
+  - 上面的 HTML 文档含有 id="image" 的 <img> 元素
+  - 我们使用 HTML DOM 来获得 id="image" 的元素
+  - JavaScript 更改此元素的属性（把 "smiley.gif" 改为 "landscape.jpg"）
+
+
+## 改变 CSS
+
+
+
+**HTML DOM 允许 JavaScript 改变 HTML 元素的样式。**
+
+### 改变 HTML 样式
+
+如需改变 HTML 元素的样式，请使用这个语法：
+
+```
+document.getElementById(id).style.property=new style
+```
+
+**例子** 1
+
+下面的例子会改变 <p> 元素的样式：
+
+```
+<p id="p2">Hello World!</p>
+
+<script>
+document.getElementById("p2").style.color="blue";
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_change_style)
+
+**例子** 2
+
+本例改变了 id="id1" 的 HTML 元素的样式，当用户点击按钮时：
+
+```
+<h1 id="id1">My Heading 1</h1>
+
+<button type="button" onclick="document.getElementById('id1').style.color='red'">
+点击这里
+</button>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=js_change_style2)
+
+### 更多实例
+
+- [Visibility](http://www.w3school.com.cn/tiy/t.asp?f=js_change_style_visibility)
+
+  如何使元素不可见。您希望元素显示或消失吗？
+
+### HTML DOM Style 对象参考手册
+
+如需完整的 HTML DOM Style 对象属性，请参阅我们的 [HTML DOM Style 对象参考手册](http://www.w3school.com.cn/jsref/dom_obj_style.asp)。
