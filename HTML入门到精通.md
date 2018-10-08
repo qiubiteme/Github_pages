@@ -8433,3 +8433,46 @@ HTML5 仍处于完善之中。然而，大部分现代浏览器已经具备了�
 
 [现在就开始学习 HTML 5](http://www.w3school.com.cn/html5/index.asp) ！
 
+# 独立知识点实例
+
+## js原生图片轮播
+
+**原理**：
+
+　　将一些图片在一行中平铺，然后计算偏移量再利用定时器实现定时轮播。
+
+### 1-建立html静态布局
+
+　 只有五张图片，却使用7张来轮播，这是为了实现无缝轮播，后面会详细介绍。
+
+　　而5个span，即我们可以实时看到轮播图目前所处的位置。
+
+　　最后是两个按钮，可以通过它来控制前进与后退。
+
+　　这里我们需要对wrap使用绝对定位，所以用left:-600px;将第一张图片显示出来。
+
+```
+<div class="container">
+    <div class="wrap" style="left: -600px;">
+        <img src="../mi-shop/images/lb5.jpg" alt="">
+        <img src="../mi-shop/images/lb1.jpg" alt="">
+        <img src="../mi-shop/images/lb2.jpg" alt="">
+        <img src="../mi-shop/images/lb3.jpg" alt="">
+        <img src="../mi-shop/images/lb4.jpg" alt="">
+        <img src="../mi-shop/images/lb5.jpg" alt="">
+        <img src="../mi-shop/images/lb1.jpg" alt="">
+    </div>
+    <div class="buttons">
+        <span class="on">1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+    </div>
+    <a href="javascript:;" class="arrow arrow_left">&lt;</a>
+    <a href="javascript:;" class="arrow arrow_right">&gt;</a>
+</div>
+```
+
+### 2-css布局样式
+
