@@ -7836,7 +7836,7 @@ function stopWorker() {
 - window 对象
 - document 对象
 - parent 对象
-    
+  
 
 ## HTML Server-Sent 事件
 
@@ -7938,4 +7938,498 @@ Response.Flush()
 | onerror   | 当发生错误               |
 
 
-  
+
+# 实例-测验-总结
+
+## HTML 实例
+
+
+
+### HTML 基础标签实例
+
+- [一个简单的 HTML 文件](http://www.w3school.com.cn/tiy/t.asp?f=html_basic)
+
+  这个例子是一个很简单的 HTML 文件，使用了尽可能少的 HTML 标签。它向您演示了 body 元素中的内容是如何被浏览器显示的。
+
+- [简单的段落](http://www.w3school.com.cn/tiy/t.asp?f=html_paragraphs1)
+
+  此例演示：段落元素中的文字如何被浏览器显示。
+
+- [更多的段落](http://www.w3school.com.cn/tiy/t.asp?f=html_paragraphs2)
+
+  本例演示段落元素的某些缺省的行为。
+
+- [“诗歌”问题](http://www.w3school.com.cn/tiy/t.asp?f=html_poem)
+
+  本例演示 HTML 格式化的某些问题。
+
+- [折行](http://www.w3school.com.cn/tiy/t.asp?f=html_paragraphs)
+
+  本例演示在 HTML 文档中折行的使用。
+
+- [标题](http://www.w3school.com.cn/tiy/t.asp?f=html_headers)
+
+  本例演示在 HTML 文档中显示标题的标签。
+
+- [居中排列的标题](http://www.w3school.com.cn/tiy/t.asp?f=html_header)
+
+  本例演示一个居中排列的标题。
+
+- [水平线](http://www.w3school.com.cn/tiy/t.asp?f=html_hr)
+
+  本例演示如何插入水平线。
+
+- [隐藏的注释](http://www.w3school.com.cn/tiy/t.asp?f=html_comment)
+
+  本例演示如何在 HTML 源代码中插入隐藏的注释。
+
+- [背景颜色](http://www.w3school.com.cn/tiy/t.asp?f=html_bgcolor)
+
+  本例演示如何为 HTML 页面添加背景颜色。
+
+*例子解释*
+
+### HTML 文本格式化实例
+
+- [文本格式化](http://www.w3school.com.cn/tiy/t.asp?f=html_textformatting)
+
+  此例演示如何在一个 HTML 文件中对文本进行格式化
+
+- [预格式文本](http://www.w3school.com.cn/tiy/t.asp?f=html_preformattedtext)
+
+  此例演示如何使用 pre 标签对空行和空格进行控制。
+
+- [“计算机输出”标签](http://www.w3school.com.cn/tiy/t.asp?f=html_computeroutput)
+
+  此例演示不同的“计算机输出”标签的显示效果。
+
+- [地址](http://www.w3school.com.cn/tiy/t.asp?f=html_address)
+
+  此例演示如何在 HTML 文件中写地址。
+
+- [缩写和首字母缩写](http://www.w3school.com.cn/tiy/t.asp?f=html_abbracronym)
+
+  此例演示如何实现缩写或首字母缩写。
+
+- [文字方向](http://www.w3school.com.cn/tiy/t.asp?f=html_bdo)
+
+  此例演示如何改变文字的方向。
+
+- [块引用](http://www.w3school.com.cn/tiy/t.asp?f=html_quotations)
+
+  此例演示如何实现长短不一的引用语。
+
+- [删除字效果和插入字效果](http://www.w3school.com.cn/tiy/t.asp?f=html_delins)
+
+  此例演示如何标记删除文本和插入文本。
+
+*例子解释*
+
+### HTML 链接实例
+
+- [创建超级链接](http://www.w3school.com.cn/tiy/t.asp?f=html_links)
+
+  本例演示如何在 HTML 文档中创建链接。
+
+- [将图像作为链接](http://www.w3school.com.cn/tiy/t.asp?f=html_imglink)
+
+  本例演示如何使用图像作为链接。
+
+- [在新的浏览器窗口打开链接](http://www.w3school.com.cn/tiy/t.asp?f=html_link_target)
+
+  本例演示如何在新窗口打开一个页面，这样的话访问者就无需离开你的站点了。
+
+- [链接到同一个页面的不同位置](http://www.w3school.com.cn/tiy/t.asp?f=html_link_locations)
+
+  本例演示如何使用链接跳转至文档的另一个部分
+
+- [跳出框架](http://www.w3school.com.cn/tiy/t.asp?f=html_frame_getfree)
+
+  本例演示如何跳出框架，假如你的页面被固定在框架之内。
+
+- [创建电子邮件链接](http://www.w3school.com.cn/tiy/t.asp?f=html_mailto)
+
+  本例演示如何如何链接到一个邮件。（本例在安装邮件客户端程序后才能工作。）
+
+- [创建电子邮件链接 2](http://www.w3school.com.cn/tiy/t.asp?f=html_mailto2)
+
+  本例演示更加复杂的邮件链接。
+
+*例子解释*
+
+### HTML 框架实例
+
+- [垂直框架](http://www.w3school.com.cn/tiy/t.asp?f=html_frame_cols)
+
+  本例演示：如何使用三份不同的文档制作一个垂直框架。
+
+- [水平框架](http://www.w3school.com.cn/tiy/t.asp?f=html_frame_rows)
+
+  本例演示：如何使用三份不同的文档制作一个水平框架。
+
+- [如何使用  标签](http://www.w3school.com.cn/tiy/t.asp?f=html_noframes)
+
+  本例演示：如何使用 <noframes> 标签。
+
+- [混合框架结构](http://www.w3school.com.cn/tiy/t.asp?f=html_frame_mix)
+
+  本例演示如何制作含有三份文档的框架结构，同时将他们混合置于行和列之中。
+
+- [含有 noresize="noresize" 属性的框架结构](http://www.w3school.com.cn/tiy/t.asp?f=html_frame_noresize)
+
+  本例演示 noresize 属性。在本例中，框架是不可调整尺寸的。在框架间的边框上拖动鼠标，你会发现边框是无法移动的。
+
+- [导航框架](http://www.w3school.com.cn/tiy/t.asp?f=html_frame_navigation)
+
+  本例演示如何制作导航框架。导航框架包含一个将第二个框架作为目标的链接列表。名为 "contents.htm" 的文件包含三个链接。
+
+- [内联框架](http://www.w3school.com.cn/tiy/t.asp?f=html_iframe)
+
+  本例演示如何创建内联框架（HTML 页中的框架）。
+
+- [跳转至框架内的一个指定的节](http://www.w3school.com.cn/tiy/t.asp?f=html_frame_jump)
+
+  本例演示两个框架。其中的一个框架设置了指向另一个文件内指定的节的链接。这个"link.htm"文件内指定的节使用 <a name="C10"> 进行标识。
+
+- [使用框架导航跳转至指定的节](http://www.w3school.com.cn/tiy/t.asp?f=html_frame_navigation2)
+
+  本例演示两个框架。左侧的导航框架包含了一个链接列表，这些链接将第二个框架作为目标。第二个框架显示被链接的文档。导航框架其中的链接指向目标文件中指定的节。
+
+*例子解释*
+
+### HTML 表格实例
+
+- [表格](http://www.w3school.com.cn/tiy/t.asp?f=html_tables)
+
+  这个例子演示如何在 HTML 文档中创建表格。
+
+- [表格边框](http://www.w3school.com.cn/tiy/t.asp?f=html_table_borders)
+
+  本例演示各种类型的表格边框。
+
+- [没有边框的表格](http://www.w3school.com.cn/tiy/t.asp?f=html_tables2)
+
+  本例演示一个没有边框的表格。
+
+- [表格中的表头(Heading)](http://www.w3school.com.cn/tiy/t.asp?f=html_table_headers)
+
+  本例演示如何显示表格表头。
+
+- [空单元格](http://www.w3school.com.cn/tiy/t.asp?f=html_table_nbsp)
+
+  本例展示如何使用 "&nbsp;" 处理没有内容的单元格。
+
+- [带有标题的表格](http://www.w3school.com.cn/tiy/t.asp?f=html_tables3)
+
+  本例演示一个带标题 (caption) 的表格
+
+- [跨行或跨列的表格单元格](http://www.w3school.com.cn/tiy/t.asp?f=html_table_span)
+
+  本例演示如何定义跨行或跨列的表格单元格。
+
+- [表格内的标签](http://www.w3school.com.cn/tiy/t.asp?f=html_table_elements)
+
+  本例演示如何显示在不同的元素内显示元素。
+
+- [单元格边距(Cell padding)](http://www.w3school.com.cn/tiy/t.asp?f=html_table_cellpadding)
+
+  本例演示如何使用 Cell padding 来创建单元格内容与其边框之间的空白。
+
+- [单元格间距(Cell spacing)](http://www.w3school.com.cn/tiy/t.asp?f=html_table_cellspacing)
+
+  本例演示如何使用 Cell spacing 增加单元格之间的距离。
+
+- [向表格添加背景颜色或背景图像](http://www.w3school.com.cn/tiy/t.asp?f=html_table_background)
+
+  本例演示如何向表格添加背景。
+
+- [向表格单元添加背景颜色或者背景图像](http://www.w3school.com.cn/tiy/t.asp?f=html_table_cellbackground)
+
+  本例演示如何向一个或者更多表格单元添加背景。
+
+- [在表格单元中排列内容](http://www.w3school.com.cn/tiy/t.asp?f=html_table_align)
+
+  本例演示如何使用 "align" 属性排列单元格内容,以便创建一个美观的表格。
+
+- [框架(frame)属性](http://www.w3school.com.cn/tiy/t.asp?f=html_table_frame)
+
+  本例演示如何使用 "frame" 属性来控制围绕表格的边框。
+
+*例子解释*
+
+### HTML 列表实例
+
+- [无序列表](http://www.w3school.com.cn/tiy/t.asp?f=html_list_unordered)
+
+  本例演示无序列表。
+
+- [有序列表](http://www.w3school.com.cn/tiy/t.asp?f=html_list_ordered)
+
+  本例演示有序列表。
+
+- [不同类型的无序列表](http://www.w3school.com.cn/tiy/t.asp?f=html_lists_unordered)
+
+  本例演示一个无序列表。
+
+- [不同类型的有序列表](http://www.w3school.com.cn/tiy/t.asp?f=html_lists_ordered)
+
+  本例演示不同类型的有序列表。
+
+- [嵌套列表](http://www.w3school.com.cn/tiy/t.asp?f=html_lists_nested)
+
+  本例演示如何嵌套列表。
+
+- [嵌套列表 2](http://www.w3school.com.cn/tiy/t.asp?f=html_lists_nested2)
+
+  本例演示更复杂的嵌套列表。
+
+- [定义列表](http://www.w3school.com.cn/tiy/t.asp?f=html_list_definition)
+
+  本例演示一个定义列表。
+
+*例子解释*
+
+### HTML 表单与输入实例
+
+- [文本域(Text fields)](http://www.w3school.com.cn/tiy/t.asp?f=html_inputfields)
+
+  本例演示如何在 HTML 页面创建文本域。用户可以在文本域中写入文本。
+
+- [密码域](http://www.w3school.com.cn/tiy/t.asp?f=html_passwordfields)
+
+  本例演示如何创建 HTML 的密码域。
+
+- [复选框](http://www.w3school.com.cn/tiy/t.asp?f=html_checkboxes)
+
+  本例演示如何在 HTML 页中创建复选框。用户可以选中或取消选取复选框。
+
+- [单选按钮](http://www.w3school.com.cn/tiy/t.asp?f=html_radiobuttons)
+
+  本例演示如何在 HTML 中创建单选按钮。
+
+- [简单的下拉列表](http://www.w3school.com.cn/tiy/t.asp?f=html_dropdownbox)
+
+  本例演示如何在 HTML 页面中创建简单的下拉列表框。下拉列表框是一个可选列表。
+
+- [另一个下拉列表](http://www.w3school.com.cn/tiy/t.asp?f=html_dropdownbox2)
+
+  本例演示如何创建一个简单的带有预选值的下拉列表。（译者注：预选值指预先指定的首选项。）
+
+- [文本域(Textarea)](http://www.w3school.com.cn/tiy/s.asp?f=demo_html_textarea)
+
+  本例演示如何创建一个文本域（多行文本输入控件）。用户可以在文本域中写入文本。在文本域中，可写入的字符字数不受限制。
+
+- [创建按钮](http://www.w3school.com.cn/tiy/t.asp?f=html_button)
+
+  本例演示如何创建按钮。你可以对按钮上的文字进行自定义。
+
+- [Fieldset around data](http://www.w3school.com.cn/tiy/t.asp?f=html_fieldset)
+
+  本例演示如何在数据周围绘制一个带标题的框。
+
+### 表单实例
+
+- [带有输入框和确认按钮的表单](http://www.w3school.com.cn/tiy/t.asp?f=html_form_submit)
+
+  本例演示如何向页面添加表单。此表单包含两个输入框和一个确认按钮。
+
+- [带有复选框的表单](http://www.w3school.com.cn/tiy/t.asp?f=html_form_checkbox)
+
+  此表单包含两个复选框和一个确认按钮。
+
+- [带有单选按钮的表单](http://www.w3school.com.cn/tiy/t.asp?f=html_form_radio)
+
+  此表单包含两个单选框和一个确认按钮。
+
+- [从表单发送电子邮件](http://www.w3school.com.cn/tiy/t.asp?f=html_form_mail)
+
+  此例演示如何从表单发送电子邮件。
+
+*例子解释*
+
+### HTML 图像实例
+
+- [插入图像](http://www.w3school.com.cn/tiy/t.asp?f=html_image)
+
+  本例演示如何在网页中显示图像。
+
+- [从不同的位置插入图片](http://www.w3school.com.cn/tiy/t.asp?f=html_image2)
+
+  本例演示如何将其他文件夹或服务器的图片显示到网页中。
+
+- [背景图片](http://www.w3school.com.cn/tiy/t.asp?f=html_backgroundimage)
+
+  本例演示如何向 HTML 页面添加背景图片。
+
+- [排列图片](http://www.w3school.com.cn/tiy/t.asp?f=html_image_align)
+
+  本例演示如何在文字中排列图像。
+
+- [浮动图像](http://www.w3school.com.cn/tiy/t.asp?f=html_image_float)
+
+  本例演示如何使图片浮动至段落的左边或右边。
+
+- [调整图像尺寸](http://www.w3school.com.cn/tiy/t.asp?f=html_image_size)
+
+  本例演示如何将图片调整到不同的尺寸。
+
+- [为图片显示替换文本](http://www.w3school.com.cn/tiy/t.asp?f=html_image_alt)
+
+  本例演示如何为图片显示替换文本。在浏览器无法载入图像时，替换文本属性告诉读者们失去的信息。为页面上的图像都加上替换文本属性是个好习惯。
+
+- [制作图像链接](http://www.w3school.com.cn/tiy/t.asp?f=html_image_link)
+
+  本例演示如何将图像作为一个链接使用。
+
+- [创建图像映射](http://www.w3school.com.cn/tiy/t.asp?f=html_areamap)
+
+  本例显示如何创建带有可供点击区域的图像地图。其中的每个区域都是一个超级链接。
+
+- [把图像转换为图像映射](http://www.w3school.com.cn/tiy/t.asp?f=html_ismap)
+
+  本例显示如何把一幅普通的图像设置为图像映射。
+
+*例子解释*
+
+### HTML 背景实例
+
+- [搭配良好的背景和颜色](http://www.w3school.com.cn/tiy/t.asp?f=html_back_good)
+
+  一个背景颜色和文字颜色搭配良好的例子，使页面中的文字易于阅读。
+
+- [搭配得不好的背景和颜色](http://www.w3school.com.cn/tiy/t.asp?f=html_back_bad)
+
+  一个背景颜色和文字颜色搭配得不好的例子，使页面中的文字难于阅读。
+
+- [可用性强的背景图像](http://www.w3school.com.cn/tiy/t.asp?f=html_back_img)
+
+  背景图像和文字颜色使页面文本易于阅读的例子。
+
+- [可用性强的背景图像 2](http://www.w3school.com.cn/tiy/t.asp?f=html_back_img2)
+
+  另一个背景图像和文字颜色使页面文本易于阅读的例子。
+
+- [可用性差的背景图像](http://www.w3school.com.cn/tiy/t.asp?f=html_back_imgbad)
+
+  背景图像和文字颜色使页面文本不易阅读的例子。
+
+*例子解释*
+
+### HTML 样式 (style) 实例
+
+- [HTML中的样式](http://www.w3school.com.cn/tiy/t.asp?f=html_style)
+
+  本例演示如何使用添加到 <head> 部分的样式信息对 HTML 进行格式化。
+
+- [没有下划线的链接](http://www.w3school.com.cn/tiy/t.asp?f=html_linknoline)
+
+  本例演示如何使用样式属性做一个没有下划线的链接。
+
+- [链接到一个外部样式表](http://www.w3school.com.cn/tiy/t.asp?f=html_link)
+
+  本例演示如何 <link> 标签链接到一个外部样式表。
+
+*例子解释*
+
+### HTML 头部 (head) 实例
+
+- [文档的标题](http://www.w3school.com.cn/tiy/t.asp?f=html_title)
+
+  头元素内部的标题信息不会显示在浏览器窗口中。
+
+- [一个 target，所有的链接](http://www.w3school.com.cn/tiy/t.asp?f=html_base)
+
+  本例显示如何使用 base 标签使页面中的所有标签在新窗口中打开。
+
+*例子解释*
+
+### HTML 元信息 (meta) 实例
+
+- [文档描述](http://www.w3school.com.cn/tiy/t.asp?f=html_meta)
+
+  Meta 元素中的信息可以描述 HTML 文档。
+
+- [文档关键字](http://www.w3school.com.cn/tiy/t.asp?f=html_keywords)
+
+  Meta 元素中的信息可以描述文档的关键词。
+
+- [重定向](http://www.w3school.com.cn/tiy/t.asp?f=html_redirect)
+
+  这个例子演示：在网址已经变更的情况下，将用户重定向到另外一个地址。
+
+*例子解释*
+
+### HTML 脚本 (Script) 实例
+
+- [插入一段脚本](http://www.w3school.com.cn/tiy/t.asp?f=html_script)
+
+  本例演示如何将脚本插入 HTML 文档。
+
+- [运行于不支持脚本的浏览器](http://www.w3school.com.cn/tiy/t.asp?f=html_noscript)
+
+  本例演示如何对付不支持脚本的浏览器。
+
+[**例子解释**](http://www.w3school.com.cn/html/html_scripts.asp)
+
+## HTML 测验
+
+**您可以通过 W3SCHOOL 的测验程序来测试您的 HTML 技能。**
+
+### 关于本测验
+
+本测验包含 20 道题，每道题的最长答题时间是 20 分钟（这是由于每个 session 的默认有效时间是20钟）。
+
+本测验是非官方的测试，它仅仅提供了一个了解您对 HTML 的掌握程度的工具。
+
+### 测验会被记分
+
+每道题的分值是 1 分。在您完成全部的 20 道题之后，系统会为您的测验打分，并提供您做错的题目的正确答案。其中，绿色为正确答案，而红色为错误答案。
+
+[现在就开始测验](http://www.w3school.com.cn/quiz/quiz.asp?quiz=html)！祝您好运。
+
+## 总结
+
+### 你已经将 HTML 教程学习完毕，下一步该学习什么呢？
+
+### HTML 概要
+
+本教程已教你如何使用 HTML 创建站点。
+
+HTML 是一种在 Web 上使用的通用标记语言。HTML 允许你格式化文本，添加图片，创建链接、输入表单、框架和表格等等，并可将之存为文本文件，浏览器即可读取和显示。
+
+HTML 的关键是标签，其作用是指示将出现的内容。
+
+如需更多关于 HTML 的信息，请查看我们的 [HTML 实例](http://www.w3school.com.cn/example/html_examples.asp) 和 [HTML 参考手册](http://www.w3school.com.cn/tags/index.asp) 。
+
+### 现在，你已学完HTML，接下来该学习什么呢？
+
+下一步，你应该学习 XHTML 和 CSS 。
+
+### XHTML
+
+XHTML 是新的 HTML 。最新的HTML版本是 HTML 4.01，同时也是最终的版本。
+
+HTML 将被 XHTML 取代，XHTML 是更严格且更纯净的 HTML 版本。
+
+如需学习 XHTML，请访问我们的 [XHTML 教程](http://www.w3school.com.cn/xhtml/index.asp) 。
+
+### CSS
+
+CSS被用来同时控制多重网页的样式和布局。
+
+通过使用 CSS，所有的格式化均可从 HTML 中剥离出来，并存储于一个独立的文件中。
+
+CSS 给予你对布局的完全控制，同时不会弄乱文档内容。
+
+如需学习如何创建样式表，请访问我们的 [CSS 教程](http://www.w3school.com.cn/css/index.asp) 。
+
+### 选修课：HTML 5
+
+HTML 5 是下一代的 HTML。
+
+HTML5 仍处于完善之中。然而，大部分现代浏览器已经具备了某些 HTML5 支持。
+
+在 W3School 的 HTML 5 教程中，您将了解 HTML5 中的新特性。
+
+[现在就开始学习 HTML 5](http://www.w3school.com.cn/html5/index.asp) ！
+
