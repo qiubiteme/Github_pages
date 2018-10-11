@@ -482,31 +482,7 @@ p {
 
 但是我们还需要将 CSS 文件应用到 HTML 文档内，否则的话 CSS 代码不会影响到 HTML 文档在浏览器里的显示。（如果你没有完整地跟随我们的指导，在[文件处理](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/Dealing_with_files)和 [HTML 基础](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/HTML_basics)中查看你所需的内容。）
 
-1.  打开
-
-    
-
-   ```
-   index.html
-   ```
-
-    
-
-   文件，然后将下面一行粘贴到头部（也就是
-
-    
-
-   ```
-   <head>
-   ```
-
-    和 
-
-   ```
-   </head>
-   ```
-
-    标签之间）。
+1.  打开 `index.html` 文件，然后将下面一行粘贴到头部（也就是 `<head>` 和 `</head>` 标签之间）。
 
    ```html
    <link href="styles/style.css" rel="stylesheet" type="text/css">
@@ -514,13 +490,13 @@ p {
 
 2. 保存 `index.html` 并用浏览器将其打开。你应该看到这样的页面：
 
-![A mozilla logo and some paragraphs. The paragraph text has been styled red by our css.](https://mdn.mozillademos.org/files/9435/website-screenshot-styled.png)如果你的段落文字现在是红色的了，那么祝贺你，你已经成功地写下了你的第一句 CSS 代码！
+![A mozilla logo and some paragraphs. The paragraph text has been styled red by our css.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\website-screenshot-styled.png)如果你的段落文字现在是红色的了，那么祝贺你，你已经成功地写下了你的第一句 CSS 代码！
 
 ### 解析CSS规则集[Section](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics#%E8%A7%A3%E6%9E%90CSS%E8%A7%84%E5%88%99%E9%9B%86)
 
 让我们仔细看一看 CSS ：
 
-![img](https://mdn.mozillademos.org/files/9461/css-declaration-small.png)
+![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\css-declaration-small.png)
 
 整个结构称为 CSS 的**规则集**（通常被简称为“规则”），注意里面单独的部分也是一样：
 
@@ -580,53 +556,11 @@ p, li, h1 {
 
 这里有更多选择器可供探索，在[选择器指南](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/Selectors)中你可以查看更多详细的信息。
 
-## 字体和文本[Section](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics#%E5%AD%97%E4%BD%93%E5%92%8C%E6%96%87%E6%9C%AC)
+### 字体和文本[Section](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics#%E5%AD%97%E4%BD%93%E5%92%8C%E6%96%87%E6%9C%AC)
 
 既然我们已经探索了一些 CSS 基础，现在就让我们开始添加更多规则和信息到我们的 `style.css` 文件中来让我们的示例更加美观。首先，让我们的字体和文本变得更加漂亮。
 
-1. 首先，找到我们在之前访问 Google Fonts
-
-    
-
-   中
-
-   保存的内容
-
-   。在
-
-    
-
-   ```
-   index.html
-   ```
-
-    
-
-   的头部中任意位置添加
-
-    
-
-   `<link>`
-
-    
-
-   元素（注意：在
-
-    
-
-   ```
-   <head>
-   ```
-
-    和 
-
-   ```
-   </head>
-   ```
-
-    之间
-
-   的任意位置）。它将看起来像下面这样：
+1. 首先，找到我们在之前访问 Google Fonts 中[保存的内容](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/What_should_your_web_site_be_like#Font)。在 `index.html` 的头部中任意位置添加 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/link) 元素（注意：在 `<head>` 和 `</head>` 之间的任意位置）。它将看起来像下面这样：
 
    ```html
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -645,11 +579,7 @@ p, li, h1 {
 
    注意：在 CSS 文档中所有位于 `/*` 和 `*/` 之间的内容都是 CSS 注释，它会被浏览器在渲染代码时忽略。你可以在这里写下对你现在要做的事情有帮助的笔记。
 
-4. 现在我们将要为 HTML 中 body 元素内的
-
-    ([``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h1), [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/li), 和 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/p))
-
-   元素设置字号。我们也会将标题居中显示，同时为 body 元素内的内容设置行高和间距，来让页面可读性更高。
+4. 现在我们将要为 HTML 中 body 元素内的 ([`<h1>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h1), [`<li>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/li), 和 [`<p>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/p))元素设置字号。我们也会将标题居中显示，同时为 body 元素内的内容设置行高和间距，来让页面可读性更高。
 
    ```css
    h1 {
@@ -666,13 +596,13 @@ p, li, h1 {
 
 你可以调整这些 `px` 值到任何你喜欢的值来让你的设计更符合你的心意，不过通常你的设计应该看起来像这样：
 
-![a mozilla logo and some paragraphs. a sans-serif font has been set, the font sizes, line height and letter spacing are adjusted, and the main page heading has been centered](https://mdn.mozillademos.org/files/9447/website-screenshot-font-small.png)
+![a mozilla logo and some paragraphs. a sans-serif font has been set, the font sizes, line height and letter spacing are adjusted, and the main page heading has been centered](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\website-screenshot-font-small.png)
 
-## 盒子，盒子，一切都与盒子有关[Section](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics#%E7%9B%92%E5%AD%90%EF%BC%8C%E7%9B%92%E5%AD%90%EF%BC%8C%E4%B8%80%E5%88%87%E9%83%BD%E4%B8%8E%E7%9B%92%E5%AD%90%E6%9C%89%E5%85%B3)
+### 盒子，盒子，一切都与盒子有关[Section](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics#%E7%9B%92%E5%AD%90%EF%BC%8C%E7%9B%92%E5%AD%90%EF%BC%8C%E4%B8%80%E5%88%87%E9%83%BD%E4%B8%8E%E7%9B%92%E5%AD%90%E6%9C%89%E5%85%B3)
 
 在你写 CSS 时你会发现它大部分都是关于盒子——设置它们的尺寸，颜色，位置等等。你的页面里大部分 HTML 元素都可以被看作一个一个层叠的盒子。
 
-![a big stack of boxes or crates sat on top of one another](https://mdn.mozillademos.org/files/9441/boxes.jpg)
+![a big stack of boxes or crates sat on top of one another](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\boxes.jpg)
 
 并不意外，CSS 布局主要就是基于盒模型的。每个占据你页面空间的块都有这样的属性：
 
@@ -680,7 +610,7 @@ p, li, h1 {
 - **边框**（`border`），紧接着内边距的实体线段
 - **外边距**（`margin`），围绕元素外部的空间
 
-![three boxes sat inside one another. From outside to in they are labelled margin, border and padding](https://mdn.mozillademos.org/files/9443/box-model.png)
+![three boxes sat inside one another. From outside to in they are labelled margin, border and padding](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\box-model.png)
 
 在这一部分我们用：
 
@@ -759,15 +689,14 @@ img {
 
 提示：如果你暂时不能理解 `display: block` 和块级元素与行内元素的差别也没关系；随着你对 CSS 学习的深入，你将明白这个问题。要了解更多 `display` 属性的值请查看[显示参考页面](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display) 。
 
-## 结论[Section](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics#%E7%BB%93%E8%AE%BA)
+### 结论[Section](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics#%E7%BB%93%E8%AE%BA)
 
 如果你一直跟随我们的说明，那么到最后你应该得到一个这样的页面（你也可以在[这里](http://mdn.github.io/beginner-html-site-styled/)查看我们的版本）：
 
-![a mozilla logo, centered, and a header and paragraphs. It now looks nicely styled, with a blue background for the whole page and orange background for the centered main content strip.](https://mdn.mozillademos.org/files/9455/website-screenshot-final.png)
+![a mozilla logo, centered, and a header and paragraphs. It now looks nicely styled, with a blue background for the whole page and orange background for the centered main content strip.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\website-screenshot-final.png)
 
 如果你有遇到问题，你可以将你的代码与我们GitHub上的[完整示例代码](https://github.com/mdn/beginner-html-site-styled/blob/gh-pages/styles/style.css)做对比。
 
 在这里，我们只提到了非常有限的 CSS 知识，要查看更多，请访问我们的[CSS学习页面](https://developer.mozilla.org/zh-CN/Learn/CSS)。
 
 
-  
