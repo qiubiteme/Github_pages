@@ -1179,4 +1179,116 @@ myHTML.onclick = function() {};
 - [HTTP: Let’s GET It On!](https://dev.opera.com/articles/http-lets-get-it-on/)
 - [HTTP: Response Codes](https://dev.opera.com/articles/http-response-codes/)
 
-  
+#   HTML
+
+## HTML学习路线
+
+为了创建网站，你应该了解[HTML](https://developer.mozilla.org/en-US/docs/Glossary/HTML) —— 用于定义一个网页的结构的基本技术。HTML用来详细说明你的网页内容是应该被理解为段落、列表、头部、链接、图像、多媒体播放器、表单或是其他众多可用的元素当中的一个亦或是你定义的新元素。
+
+### 学习路径[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML#%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84)
+
+理论上来说你的学习旅途应该从学HTML开始，先阅读[HTML介绍 — (Introduction to HTML)](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML)。此后你便能够继续学习更多高级的主题，例如：
+
+- [CSS](https://developer.mozilla.org/zh-CN/docs/Learn/CSS), 如何运用CSS装饰HTML(例如：更改你的文本字号和使用的字体，添加边框和阴影，将你的页面设计成多栏布局，添加动画和其他视觉效果。)
+- [JavaScript](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript),如何使用JavaScript为网页添加动态的函数功能(例如：找到你的地址并且在地图上绘制出来，当你触发按钮就让UI元素显示或消失，将用户的数据本地储存在他们的电脑里，以及更多的函数功能。)
+
+在开始这个主题的学习之前，你至少要对被动（passively）使用电脑和网络有基本的认识(例如：看着它并理解它的内容。不过既然你在上网看这篇文档，这一点应该不是问题(^_^) )。
+
+- 你应该安装好一个基础的工作环境，详细参照[安装基础的软件](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/Installing_basic_software) [— ](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)[(Installing basic software](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Installing_basic_software))。
+- 并且理解如何新建和管理文件，详细参照 [处理文件 ](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/Dealing_with_files)[— ](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)[(Dealing with files)](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files) 
+
+这两个都是 [开始Web的学习 — (Getting started with the web)](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web) 里完全新手模块中的内容。
+
+建议在尝试这个主题的学习之前先完成[开始Web的学习 — (Getting started with the web)](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web) 的学习，然而这并不是绝对必要的。[HTML基础 — (HTML basics](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/HTML_basics))里大多数的文章在 [HTML介绍 — (Introduction to HTML)](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML) 模块里也有，虽然细节更为详细。
+
+### 模块[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML#%E6%A8%A1%E5%9D%97)
+
+这个主题由包含以下模块，建议按顺序进行学习。很显然，我们建议你从第一个模块开始学习。
+
+- [HTML介绍  (Introduction to HTML)](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML)
+
+  这一模块将为你铺路，帮你熟悉一些重要的概念和语法，着眼于如何应用HTML去编辑，如何创造超链接，以及怎样使用HTML构造一个网页。
+
+- [多媒体和嵌入  (Multimedia and embedding)](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding)
+
+  这个模块带你探索如何使用HTML在你的网页里如何包含多媒体信息、如何用多种不同方法插入图片、如何嵌入视频、音频，甚至是嵌入其他完整的网页。
+
+- [HTML 表格  (HTML Tables)](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables)
+
+  在网页上表现表格数据、又要以易理解、可访问（[accessible](https://developer.mozilla.org/en-US/docs/Glossary/Accessibility)）的方式，是一项挑战。这个模块包括了基本的表格标记（markup），同时也有更多复杂的特性，例如实现标题和总结。
+
+- [HTML 表单  (HTML Forms )](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms_and_buttons)
+
+  表单是网页中十分重要的部分——它们会提供给你交互网站需要的很多功能（例如：注册，登录，发送反馈、购物等等）。这个模块将带你开始创建表单的客户端部分。
+
+### 解决常见HTML问题[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML#%E8%A7%A3%E5%86%B3%E5%B8%B8%E8%A7%81HTML%E9%97%AE%E9%A2%98)
+
+[使用HTML解决基础的问题](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Howto) 为我们提供了一系列在创建网页过程中解决基础问题的方案：处理标题，添加图片或视频，强调内容，创建一个基础表单等等。
+
+### 相关链接[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5)
+
+- [HTML(超文本标记语言) — HTML(HyperText Markup Language)](https://developer.mozilla.org/zh-CN/docs/Web/HTML) on MDN.
+
+  这是HTML 文档在 MDN 上的主入口，涵盖了详细的元素和属性参考。举例来说，如果你想知道一个元素有什么属性或者一个属性具有什么值，这是一个查询的好地方。
+
+
+
+## HTML概述
+
+就其核心而言， [HTML](https://developer.mozilla.org/en-US/docs/Glossary/HTML) 是一种相当简单的、由不同[元素](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/zh-CN/docs/Glossary/Element)组成的标记语言，它可以应用于文本片段，使文本在文档中具有不同的含义（它是一个段落吗？它是一个项目列表吗？它是一个表格吗？），将文档结构化为逻辑块（文档是否有头部？有三列内容？有一个导航菜单？），并且可以将图片，影像等内容嵌入到页面中。本模块将介绍前两个，并且介绍一些理解HTML所需的基本概念和语法。
+
+### 前提[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML#%E5%89%8D%E6%8F%90)
+
+在开始这个模块之前，你不需要预先具有任何HTML的知识，但是你需要至少熟悉一些使用电脑的基础，会被动地使用网络（也就是仅需要看着它，浏览内容）。你应该为电脑配置一个基本的工作环境，这在[安装基本软件](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/Installing_basic_software)的页面中有详细说明，并且需要懂得如何创建和管理文件，这在[处理文件](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/Dealing_with_files)页面中有详细说明 —— 它们都是我们纯新手[web开发入门](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web)模块的一部分。
+
+**注意：**如果你工作在一个无权创建自己文件的电脑/平板/其他设备上，你需要在一个在线编程工具上试验 （大多数）代码示例，如 [JSBin](http://jsbin.com/) 或者[Thimble](https://thimble.mozilla.org/)等。
+
+### 指南[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML#%E6%8C%87%E5%8D%97)
+
+这个模块包含以下文章，这些文章会帮你过一遍HTML所有的基本理论，并且提供足够的实践机会。
+
+- [HTML入门](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
+
+  涵盖了HTML绝对基础的知识来帮助你入门——我们定义元素、属性和其他重要术语，以及它们属于语言的哪个部分。我们也会展示一个典型的HTML 页面是如何被结构化的，以及一个 HTML 元素是如何被结构化的 ，并且解释另一些基础但重要的语言特性。一路下来，我们会与一些 HTML一起玩耍，来激发你的兴趣！
+
+- [Head中有什么？HTML中的元数据](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML)
+
+  当页面被加载后HTML中的head部分**是不会**被显示在web浏览器中的。它包含了许多信息，例如网页的标题[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/title)，指向[CSS](https://developer.mozilla.org/en-US/docs/Glossary/CSS)的链接（如果你想用CSS来设计HTML内容的样式），指向自定义网站图标的链接和一些元数据（关于HTML本身的数据，例如它的作者和描述这个文档的关键字）。
+
+- [HTML 文字处理基础 ](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals)
+
+  HTML的主要工作之一就是给予文本意义（也被叫做**语义**），所以浏览器就知道如何正确的显示文本了。这篇文章关注于如何用HTML来将文本块分解为结构化的标题和段落、强调和加粗单词 、创建列表和其他。
+
+- [创建超链接](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks)
+
+  超链接真的很重要 - 它们是使Web成为一个Web。本文介绍了创建链接所需的语法，并讨论了链接最佳实践。
+
+- [高级文本排版](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting)
+
+  HTML中有许多其他元素可以用于格式化文本，我们没有在[HTML 文字处理基础](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals)中提到它们。这些元素不太知名，但了解它们仍然有用。在这篇文章里，你将学习如何标记引文、描述列表、计算机代码和其他类似的文本、下标和上标、联系信息等。
+
+- [文档和网站结构](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)
+
+  除了定义页面的各个部分（例如“段落”或“图像”）外，HTML也用于定义网站的区域（例如“标题”，“导航菜单”，“主内容列“）。本文探讨如何规划基本网站结构，以及如何编写HTML以表示此结构。
+
+- [调试 HTML](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Debugging_HTML)
+
+  编写HTML是好的，但如果出现了什么问题，而且你没能找到代码中的错误在哪里的话，本文将向你介绍一些可以帮上忙的工具。
+
+### 评估[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML#%E8%AF%84%E4%BC%B0)
+
+以下评估将测试你对上述指南中HTML基础知识的理解。
+
+- [制造一份信件](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Marking_up_a_letter)
+
+  我们或早或晚都学会了如何写一封信，这也是一个不错的用来测试我们的文本格式化技能例子！所以在这个评估中，你会得到一封信来标记。
+
+- [ 结构化页面内容](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Structuring_a_page_of_content)
+
+  此评估测试你能否使用HTML构建简单的内容页面，其中包含页眉、页脚、导航菜单、主要内容和侧边栏。
+
+### 相关链接[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5)
+
+- [网络文化基础 1](https://teach.mozilla.org/activities/web-lit-basics/)
+
+  一个优秀的Mozilla基础课程，探索和测试在HTML模块介绍中讨论的许多技能。学习者熟悉阅读，写作和参与这个六部分模块的网络。通过生产和协作掌握网络的基础。
