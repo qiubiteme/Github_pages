@@ -1485,11 +1485,9 @@ My cat is very grumpy
 
 此时浏览器会误解你的标记，它会把title属性理解为三个属性——title的属性值为"The“，另外还有两个布尔属性“`Mozilla`”和“`homepage`”。看下面的例子，它明显不是我们所期望的，并且在这个编码里面它会报错或者出现异常行为。试一试把鼠标移动到连接上，看会显示什么title属性值!
 
-
+<iframe src="https://mdn.mozillademos.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/Getting_started$samples/%E7%9C%81%E7%95%A5%E5%8C%85%E5%9B%B4%E5%B1%9E%E6%80%A7%E5%80%BC%E7%9A%84%E5%BC%95%E5%8F%B7?revision=1421738" height="100" width="700" id="frame_省略包围属性值的引号" class="live-sample-frame sample-code-frame" frameborder="0" style="font-style: normal; max-width: calc((100% - 40px) - 6px); margin: 0px; padding: 20px; border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(61, 126, 154); border-image: initial; width: calc((100% - 40px) - 6px); color: rgb(51, 51, 51); font-family: Verdana, arial, x-locale-body, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.05328px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"></iframe>
 
 在 CodePen 中打开在 JSFiddle 中打开
-
-
 
 我们建议始终添加引号——这样可以避免很多问题，并且使代码更易读。
 
@@ -1517,7 +1515,7 @@ My cat is very grumpy
 
 如果你想将引号当作文本显示在html中，你就必须使用 [实体引用](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started#%E5%AE%9E%E4%BD%93%E5%BC%95%E7%94%A8%EF%BC%9A_%E5%9C%A8HTML%E4%B8%AD%E5%8C%85%E5%90%AB%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6) 。
 
-## 分析HTML文档[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started#%E5%88%86%E6%9E%90HTML%E6%96%87%E6%A1%A3)
+### **分析HTML文档[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started#%E5%88%86%E6%9E%90HTML%E6%96%87%E6%A1%A3)**
 
 学习了一些HTML元素的基础知识，这些元素单独一个是没有意义的。现在我们来学习这些特定元素是怎么被结合起来，从而形成一个完整的HTML页面的：
 
@@ -1536,7 +1534,16 @@ My cat is very grumpy
 
 分析如下:
 
-1. ```
+1. `<!DOCTYPE html>`: 声明文档类型. 很久以前，早期的HTML(大约1991年2月)，文档类型声明类似于链接，规定了HTML页面必须遵从的良好规则，能自动检测错误和其他有用的东西。使用如下：
+
+   ```
+   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   ```
+
+   然而现在没有人再这样写，需要保证每一个东西都正常工作已成为历史。你只需要知道`<!DOCTYPE html>是最短的有效的文档声明。`
+
+2. ```
    <!DOCTYPE html>
    ```
 
@@ -1553,15 +1560,81 @@ My cat is very grumpy
    <!DOCTYPE html>是最短的有效的文档声明。
    ```
 
-2. `<html></html>`: `<html>`元素。这个元素包裹了整个完整的页面，是一个根元素。
+3. ```
+   <!DOCTYPE html>
+   ```
 
-3. `<head></head>`: `<head>元素`. 这个元素是一个容器，它包含了所有你想包含在HTML页面中但不想在HTML页面中显示的内容。这些内容包括你想在搜索结果中出现的关键字和页面描述，CSS样式，字符集声明等等。以后的章节能学到更多关于<head>元素的内容。
+   : 声明文档类型. 很久以前，早期的HTML(大约1991年2月)，文档类型声明类似于链接，规定了HTML页面必须遵从的良好规则，能自动检测错误和其他有用的东西。使用如下：
 
-4. `<meta charset="utf-8">`: 这个元素设置文档使用utf-8字符集编码，utf-8字符集包含了人类大部分的文字。基本上他能识别你放上去的所有文本内容。毫无疑问要使用它，并且它能在以后避免很多其他问题。
+   ```html
+   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   ```
 
-5. `<title></title>`: 设置页面标题，出现在浏览器标签上，当你标记/收藏页面时它可用来描述页面。
+   然而现在没有人再这样写，需要保证每一个东西都正常工作已成为历史。你只需要知道
 
-6. `<body></body>`: `<body>`元素。 包含了你访问页面时所有显示在页面上的内容，文本，图片，音频，游戏等等。
+   ```
+   <!DOCTYPE html>是最短的有效的文档声明。
+   ```
+
+4. ```
+   <!DOCTYPE html>
+   ```
+
+   : 声明文档类型. 很久以前，早期的HTML(大约1991年2月)，文档类型声明类似于链接，规定了HTML页面必须遵从的良好规则，能自动检测错误和其他有用的东西。使用如下：
+
+   ```html
+   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   ```
+
+   然而现在没有人再这样写，需要保证每一个东西都正常工作已成为历史。你只需要知道
+
+   ```
+   <!DOCTYPE html>是最短的有效的文档声明。
+   ```
+
+5. ```
+   <!DOCTYPE html>
+   ```
+
+   : 声明文档类型. 很久以前，早期的HTML(大约1991年2月)，文档类型声明类似于链接，规定了HTML页面必须遵从的良好规则，能自动检测错误和其他有用的东西。使用如下：
+
+   ```html
+   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   ```
+
+   然而现在没有人再这样写，需要保证每一个东西都正常工作已成为历史。你只需要知道
+
+   ```
+   <!DOCTYPE html>是最短的有效的文档声明。
+   ```
+
+6. 
+
+   : 声明文档类型. 很久以前，早期的HTML(大约1991年2月)，文档类型声明类似于链接，规定了HTML页面必须遵从的良好规则，能自动检测错误和其他有用的东西。使用如下：
+
+   ```html
+   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   ```
+
+   然而现在没有人再这样写，需要保证每一个东西都正常工作已成为历史。你只需要知道
+
+   ```
+   <!DOCTYPE html>是最短的有效的文档声明。
+   ```
+
+7. `<html></html>`: `<html>`元素。这个元素包裹了整个完整的页面，是一个根元素。
+
+8. `<head></head>`: `<head>元素`. 这个元素是一个容器，它包含了所有你想包含在HTML页面中但不想在HTML页面中显示的内容。这些内容包括你想在搜索结果中出现的关键字和页面描述，CSS样式，字符集声明等等。以后的章节能学到更多关于<head>元素的内容。
+
+9. `<meta charset="utf-8">`: 这个元素设置文档使用utf-8字符集编码，utf-8字符集包含了人类大部分的文字。基本上他能识别你放上去的所有文本内容。毫无疑问要使用它，并且它能在以后避免很多其他问题。
+
+10. `<title></title>`: 设置页面标题，出现在浏览器标签上，当你标记/收藏页面时它可用来描述页面。
+
+11. `<body></body>`: `<body>`元素。 包含了你访问页面时所有显示在页面上的内容，文本，图片，音频，游戏等等。
 
 ### 学习实践：为HTML文档添加一些特征[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started#%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%B7%B5%EF%BC%9A%E4%B8%BAHTML%E6%96%87%E6%A1%A3%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%BA%9B%E7%89%B9%E5%BE%81)
 
@@ -1576,7 +1649,9 @@ My cat is very grumpy
 
 你可以打开浏览器看看这段代码的效果是什么样的，然后改变代码刷新浏览器看看新的结果。 最开始的代码是这样的效果：
 
-![A simple HTML page that says This is my page](https://mdn.mozillademos.org/files/12279/template-screenshot.png)所以在这段练习中, 你可以用你的电脑在本地编写运行代码，如上所述, 你也可以在下面的简单可编辑窗口编辑它 (此时这个简单的可编辑窗口仅显示<body>标签内的内容.) 我们希望您能够实践以下步骤：
+![A simple HTML page that says This is my page](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\template-screenshot.png)
+
+所以在这段练习中, 你可以用你的电脑在本地编写运行代码，如上所述, 你也可以在下面的简单可编辑窗口编辑它 (此时这个简单的可编辑窗口仅显示<body>标签内的内容.) 我们希望您能够实践以下步骤：
 
 - 就在 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body) 元素开始标签下方, 为这个文档添加一个主标题。这个主标题应该被包含在 `<h1>` 开始标签和 `</h1>`结束标签之间。
 - 编辑这个段落以包含一些你感兴趣的文本。
@@ -1586,7 +1661,7 @@ My cat is very grumpy
 
 当你出错时，你可以用 Reset 按钮修改它。当你真正完成这个任务时，点击 Show solution 按钮观看答案。
 
-
+<iframe src="https://mdn.mozillademos.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/Getting_started$samples/Playable_code3?revision=1421738" height="600" width="700" id="frame_Playable_code3" class="live-sample-frame sample-code-frame" frameborder="0" style="font-style: normal; max-width: calc((100% - 40px) - 6px); margin: 0px; padding: 20px; border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(61, 126, 154); border-image: initial; width: calc((100% - 40px) - 6px); color: rgb(51, 51, 51); font-family: Verdana, arial, x-locale-body, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.05328px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"></iframe>
 
 在 CodePen 中打开在 JSFiddle 中打开
 
@@ -1605,7 +1680,7 @@ My cat is very grumpy
 
 无论你用了多少空白(包括空白字符，包括换行), 当渲染这些代码的时候，HTML解释器会将连续出现的空白字符减少为一个单独的空格符。那么为什么我们会使用那么多的空白呢? 答案就是为了可读性 —— 如果你的代码被很好地进行格式化，那么就很容易理解你的代码是怎么回事, 反之就只有聚做一团的混乱. 在我们的HTML代码中，我们让每一个嵌套的元素以两个空格缩进。 你使用什么风格来格式化你的代码取决于你 (比如所对于每层缩进使用多少个空格),但是你应该坚持使用某种风格。
 
-## 实体引用： 在HTML中包含特殊字符[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started#%E5%AE%9E%E4%BD%93%E5%BC%95%E7%94%A8%EF%BC%9A_%E5%9C%A8HTML%E4%B8%AD%E5%8C%85%E5%90%AB%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6)
+### **实体引用： 在HTML中包含特殊字符[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started#%E5%AE%9E%E4%BD%93%E5%BC%95%E7%94%A8%EF%BC%9A_%E5%9C%A8HTML%E4%B8%AD%E5%8C%85%E5%90%AB%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6)**
 
 在HTML中，字符 `<`, `>`,`"`,`'` 和 `&` 是特殊字符. 它们是HTML语法自身的一部分, 那么你如何将这些字符包含进你的文本中呢, 比如说如果你真的想要在文本中使用符号&或者小于号, 而不想让它们被浏览器视为代码并被解释?
 
@@ -1629,15 +1704,13 @@ My cat is very grumpy
 
 在下面的实时输出中，你会看到第一段是错误的，因为浏览器会认为第二个<p>是开始一个新的段落！  第二段是正确的，因为我们用字符引用来代替了角括号（'<'和'>'符号）.
 
-
+<iframe src="https://mdn.mozillademos.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/Getting_started$samples/%E5%AE%9E%E4%BD%93%E5%BC%95%E7%94%A8%EF%BC%9A_%E5%9C%A8HTML%E4%B8%AD%E5%8C%85%E5%90%AB%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6?revision=1421738" height="200" width="700" id="frame_实体引用：_在HTML中包含特殊字符" class="live-sample-frame sample-code-frame" frameborder="0" style="font-style: normal; max-width: calc((100% - 40px) - 6px); margin: 0px; padding: 20px; border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(61, 126, 154); border-image: initial; width: calc((100% - 40px) - 6px); color: rgb(51, 51, 51); font-family: Verdana, arial, x-locale-body, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.05328px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"></iframe>
 
 在 CodePen 中打开在 JSFiddle 中打开
 
-
-
 **提示**: 维基百科上有一个包含所有可用HTML字符实体引用的列表：[XML和HTML字符实体引用列表](http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references)。
 
-## HTML注释[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started#HTML%E6%B3%A8%E9%87%8A)
+### **HTML注释[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started#HTML%E6%B3%A8%E9%87%8A)**
 
 如同大部分的编程语言一样，在HTML中有一种可用的机制来在代码中书写注释 —— 注释是被浏览器忽略的，而且是对用户不可见的，它们的目的是允许你描述你的代码是如何工作的和不同部分的代码做了什么等等。 如果你在半年后重新返回你的代码库，而且不能记起你所做的事情 —— 或者当你处理别人的代码的时候， 那么注释是很有用的.
 
@@ -1651,13 +1724,13 @@ My cat is very grumpy
 
 正如你下面所见的那样，第一段出现在了实时输出中，但是第二段却没有。
 
-
+<iframe src="https://mdn.mozillademos.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/Getting_started$samples/HTML%E6%B3%A8%E9%87%8A?revision=1421738" height="100" width="700" id="frame_HTML注释" class="live-sample-frame sample-code-frame" frameborder="0" style="font-style: normal; max-width: calc((100% - 40px) - 6px); margin: 0px; padding: 20px; border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(61, 126, 154); border-image: initial; width: calc((100% - 40px) - 6px); color: rgb(51, 51, 51); font-family: Verdana, arial, x-locale-body, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.05328px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"></iframe>
 
 在 CodePen 中打开在 JSFiddle 中打开
 
 
 
-## 总结[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started#%E6%80%BB%E7%BB%93)
+### **总结[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started#%E6%80%BB%E7%BB%93)**
 
 你已经来到了这篇文章的结尾 —— 希望你享受你的基础的HTML学习的旅程。 在这里你应该可以理解HTML语言的全貌， 它在基础的级别是如何工作，而且可以使用一些元素和属性。 在这个模块的后续文章中，我们会深入一些你已经见过的东西的细节，并且介绍一些新的HTML的特性。未完待续！
 
