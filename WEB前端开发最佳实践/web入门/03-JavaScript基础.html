@@ -8,9 +8,51 @@
 </head>
 <body>
 <h1>this is a headerline</h1>
+<img src="images/firefox-icon.jpg" alt="图片加载失败">
+<button>Change user</button>
 <script>
+    /*例子1 输出hello world*/
+    // var myHeading = document.querySelector('h1');
+    // myHeading.textContent = 'Hello world!';
+
+    /*例子2 if 判断*/
+    // var iceCream = 'chocolate';
+    // if (iceCream === 'chocolate') {
+    //     alert('Yay, I love chocolate ice cream!');
+    // } else {
+    //     alert('Awwww, but chocolate is my favorite...');
+    // }
+
+    /*例子3 图像切换*/
+    var myImage = document.querySelector('img');
+
+    myImage.onclick = function () {
+
+        var mySrc = myImage.getAttribute('src');
+        if (mySrc === 'images/firefox-icon.jpg') {
+            myImage.setAttribute('src', 'images/firefox-icon2.jpg');
+        } else {
+            myImage.setAttribute('src', 'images/firefox-icon.jpg');
+        }
+    }
+
+    /*例子4 个性化欢迎信息*/
+    var myButton = document.querySelector('button');
     var myHeading = document.querySelector('h1');
-    myHeading.textContent = 'Hello world!';
+
+    function setUserName() {
+        var myName = prompt('Please enter your name.');
+        localStorage.setItem('name', myName);
+        myHeading.textContent = 'Mozilla is cool, ' + myName;
+    }
+
+    if (!localStorage.getItem('name')) {
+        setUserName();
+    } else {
+        var storedName = localStorage.getItem('name');
+        myHeading.textContent = 'Mozilla is cool, ' + storedName;
+    }
+
 </script>
 </body>
 </html>
