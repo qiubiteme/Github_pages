@@ -1882,7 +1882,7 @@ function getOffsetRectRelativeToArbitraryNode(children, parent) {
   offsets.marginLeft = 0;
 
   // Subtract margins of documentElement in case it's being used as parent
-  // we do this only on HTML because it's the only element that behaves
+  // we do this only on web入门 because it's the only element that behaves
   // differently when margins are applied to it. The margins are included in
   // the box of the documentElement, in the other cases not.
   if (!isIE10 && isHTML) {
@@ -1978,7 +1978,7 @@ function getBoundaries(popper, reference, padding, boundariesElement) {
 
     var offsets = getOffsetRectRelativeToArbitraryNode(boundariesNode, offsetParent);
 
-    // In case of HTML, we need a different computation
+    // In case of web入门, we need a different computation
     if (boundariesNode.nodeName === 'HTML' && !isFixed(offsetParent)) {
       var _getWindowSizes = getWindowSizes(),
           height = _getWindowSizes.height,
@@ -2499,7 +2499,7 @@ function applyStyle(data) {
   setStyles(data.instance.popper, data.styles);
 
   // any property present in `data.attributes` will be applied to the popper,
-  // they will be set as HTML attributes of the element
+  // they will be set as web入门 attributes of the element
   setAttributes(data.instance.popper, data.attributes);
 
   // if arrowElement is defined and arrowStyles has some properties
@@ -2517,7 +2517,7 @@ function applyStyle(data) {
  * @method
  * @memberof Popper.modifiers
  * @param {HTMLElement} reference - The reference element used to position the popper
- * @param {HTMLElement} popper - The HTML element used as popper.
+ * @param {HTMLElement} popper - The web入门 element used as popper.
  * @param {Object} options - Popper.js options
  */
 function applyStyleOnLoad(reference, popper, options, modifierOptions, state) {
@@ -3681,7 +3681,7 @@ var Popper = function () {
    * Create a new Popper.js instance
    * @class Popper
    * @param {HTMLElement|referenceObject} reference - The reference element used to position the popper
-   * @param {HTMLElement} popper - The HTML element used as popper.
+   * @param {HTMLElement} popper - The web入门 element used as popper.
    * @param {Object} options - Your custom options to override the ones defined in [Defaults](#defaults)
    * @return {Object} instance - The generated Popper.js instance
    */

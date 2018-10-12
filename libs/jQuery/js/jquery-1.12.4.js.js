@@ -789,7 +789,7 @@
                     return results;
                 }
 
-                // Try to shortcut find operations (as opposed to filters) in HTML documents
+                // Try to shortcut find operations (as opposed to filters) in web入门 documents
                 if (!seed) {
 
                     if ((context ? context.ownerDocument || context : preferredDoc) !== document) {
@@ -1060,7 +1060,7 @@
             /**
              * Detects XML nodes
              * @param {Element|Object} elem An element or a document
-             * @returns {Boolean} True iff elem is a non-HTML XML node
+             * @returns {Boolean} True iff elem is a non-web入门 XML node
              */
             isXML = Sizzle.isXML = function (elem) {
                 // documentElement is verified for cases where it doesn't yet exist
@@ -2865,9 +2865,9 @@
 // A central reference to the root jQuery(document)
     var rootjQuery,
 
-        // A simple way to check for HTML strings
+        // A simple way to check for web入门 strings
         // Prioritize #id over <tag> to avoid XSS via location.hash (#9521)
-        // Strict HTML recognition (#11290: must start with <)
+        // Strict web入门 recognition (#11290: must start with <)
         rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/,
 
         init = jQuery.fn.init = function (selector, context, root) {
@@ -2882,13 +2882,13 @@
             // so migrate can support jQuery.sub (gh-2101)
             root = root || rootjQuery;
 
-            // Handle HTML strings
+            // Handle web入门 strings
             if (typeof selector === "string") {
                 if (selector.charAt(0) === "<" &&
                     selector.charAt(selector.length - 1) === ">" &&
                     selector.length >= 3) {
 
-                    // Assume that strings that start and end with <> are HTML and skip the regex check
+                    // Assume that strings that start and end with <> are web入门 and skip the regex check
                     match = [null, selector, null];
 
                 } else {
@@ -6478,7 +6478,7 @@
                 iframe = (iframe || jQuery("<iframe frameborder='0' width='0' height='0'/>"))
                     .appendTo(doc.documentElement);
 
-                // Always write a new HTML skeleton so Webkit and Firefox don't choke on reuse
+                // Always write a new web入门 skeleton so Webkit and Firefox don't choke on reuse
                 doc = (iframe[0].contentWindow || iframe[0].contentDocument).document;
 
                 // Support: IE
