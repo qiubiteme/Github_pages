@@ -1395,7 +1395,7 @@ My cat is very grumpy
 
 ### 空元素[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started#%E7%A9%BA%E5%85%83%E7%B4%A0)
 
-不是所有元素都拥有开始标签，内容和结束标记. 一些元素只有一个标签，通常用来在此元素所在位置插入/嵌入一些东西 。例如：元素[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)是用来在元素[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)所在位置插入一张指定的图片。例子如下：
+不是所有元素都拥有开始标签，内容和结束标记. 一些元素只有一个标签，通常用来在此元素所在位置插入/嵌入一些东西 。例如：元素[`img`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)是用来在元素[`img`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)所在位置插入一张指定的图片。例子如下：
 
 ```html
 <img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png">
@@ -1403,19 +1403,17 @@ My cat is very grumpy
 
 显示如下：
 
-
+![](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\firefox-icon.png)
 
 在 CodePen 中打开在 JSFiddle 中打开
 
-
-
 **提示**: Empty elements 有时也被叫作 *void elements*.
 
-## 属性[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started#%E5%B1%9E%E6%80%A7)
+### **属性[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Getting_started#%E5%B1%9E%E6%80%A7)**
 
 元素也可以拥有属性，如下：
 
-![&lt;p class="editor-note">My cat is very grumpy&lt;/p>](https://mdn.mozillademos.org/files/9345/grumpy-cat-attribute-small.png)
+![&lt;p class="editor-note">My cat is very grumpy&lt;/p>](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\grumpy-cat-attribute-small.png)
 
 属性包含元素的额外信息，这些信息不会出现在实际的内容中。在上述例子中，这个class属性给元素赋了一个识别的名字（id），这个名字此后可以被用来识别此元素的样式信息和其他信息。
 
@@ -1465,7 +1463,7 @@ My cat is very grumpy
 
 上面两个文本框显示如下：
 
-
+<iframe src="https://mdn.mozillademos.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/Getting_started$samples/%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7?revision=1421738" height="100" width="700" id="frame_布尔属性" class="live-sample-frame sample-code-frame" frameborder="0" style="font-style: normal; max-width: calc((100% - 40px) - 6px); margin: 0px; padding: 20px; border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(61, 126, 154); border-image: initial; width: calc((100% - 40px) - 6px); color: rgb(51, 51, 51); font-family: Verdana, arial, x-locale-body, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.05328px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"></iframe>
 
 在 CodePen 中打开在 JSFiddle 中打开
 
