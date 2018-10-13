@@ -2353,7 +2353,7 @@ HTML5用新的语义规则重新定义了`<b>`,`<i>`和`<u>`,稍微有点混乱�
 
 ![frontpage of bbc.co.uk, showing many news items, and navigation menu functionality](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\bbc-homepage.png)
 
-## 链接的解析[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E9%93%BE%E6%8E%A5%E7%9A%84%E8%A7%A3%E6%9E%90)
+### **链接的解析[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E9%93%BE%E6%8E%A5%E7%9A%84%E8%A7%A3%E6%9E%90)**
 
 通过将文本（或其他内容，见[块级链接](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E5%9D%97%E7%BA%A7%E9%93%BE%E6%8E%A5))转换为[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a)元素内的链接来创建基本链接， 给它一个`href`属性（也称为目标），它将包含您希望链接指向的网址。
 
@@ -2366,7 +2366,7 @@ HTML5用新的语义规则重新定义了`<b>`,`<i>`和`<u>`,稍微有点混乱�
 结果如下所示：
 I'm creating a link to [the Mozilla homepage](https://www.mozilla.org/en-US/).
 
-### 使用title属性添加支持信息[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E4%BD%BF%E7%94%A8title%E5%B1%9E%E6%80%A7%E6%B7%BB%E5%8A%A0%E6%94%AF%E6%8C%81%E4%BF%A1%E6%81%AF)
+### **使用title属性添加支持信息[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E4%BD%BF%E7%94%A8title%E5%B1%9E%E6%80%A7%E6%B7%BB%E5%8A%A0%E6%94%AF%E6%8C%81%E4%BF%A1%E6%81%AF)**
 
 您可能要添加到您的链接的另一个属性是标题；这旨在包含关于链接的补充有用信息，例如页面包含什么样的信息或需要注意的事情。 例如：
 
@@ -2404,7 +2404,7 @@ I'm creating a link to [the Mozilla homepage](https://www.mozilla.org/en-US/).
 
 **注意**: 你会在未来的文章中发现更多在Web中使用图像的例子。
 
-## 统一资源定位器(URL)与路径(path)快速入门[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E5%99%A8(URL)%E4%B8%8E%E8%B7%AF%E5%BE%84(path)%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8)
+### **统一资源定位器(URL)与路径(path)快速入门[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E5%99%A8(URL)%E4%B8%8E%E8%B7%AF%E5%BE%84(path)%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8)**
 
 要全面地了解链接目标，你需要了解统一资源定位器和文件路径。本小节将介绍相关的信息。
 
@@ -2412,7 +2412,7 @@ I'm creating a link to [the Mozilla homepage](https://www.mozilla.org/en-US/).
 
 URL使用路径查找文件。路径指定文件系统中您感兴趣的文件所在的位置。看一下一个简单的目录结构的例子 (see the [creating-hyperlinks](https://github.com/mdn/learning-area/tree/master/html/introduction-to-html/creating-hyperlinks) directory.)
 
-![A simple directory structure. The parent directory is called creating-hyperlinks and contains two files called index.html and contacts.html, and two directories called projects and pdfs, which contain an index.html and a project-brief.pdf file, respectively](https://mdn.mozillademos.org/files/12409/simple-directory.png)
+![A simple directory structure. The parent directory is called creating-hyperlinks and contains two files called index.html and contacts.html, and two directories called projects and pdfs, which contain an index.html and a project-brief.pdf file, respectively](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\simple-directory.png)
 
 此目录结构的根目录称为`creation-hyperlinks`。当在网站上工作时， 你会有一个包含整个网站的目录。在根目录，我们有一个`index.html`和一个`contacts.html`文件。在真实的网站上，`index.html` 将会成为我们的主页或登录页面。
 
@@ -2459,25 +2459,25 @@ URL使用路径查找文件。路径指定文件系统中您感兴趣的文件�
 <p>The <a href="#Mailing_address">company mailing address</a> can be found at the bottom of this page.</p>
 ```
 
-### 绝对链接和相对链接[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E7%BB%9D%E5%AF%B9%E9%93%BE%E6%8E%A5%E5%92%8C%E7%9B%B8%E5%AF%B9%E9%93%BE%E6%8E%A5)
+### **绝对链接和相对链接[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E7%BB%9D%E5%AF%B9%E9%93%BE%E6%8E%A5%E5%92%8C%E7%9B%B8%E5%AF%B9%E9%93%BE%E6%8E%A5)**
 
 你在网络上遇到的两个术语是绝对URL和相对URL：
 
-绝对URL： 指向由其在Web上的绝对位置定义的位置，包括 [协议](https://developer.mozilla.org/zh-CN/docs/Glossary/%E5%8D%8F%E8%AE%AE) and [域名](https://developer.mozilla.org/zh-CN/docs/Glossary/%E5%9F%9F%E5%90%8D). 像下面的例子,如果`index.html` 页面上传到`projects`这一个目录 。`project`位于web服务站点的根目录, web站点的域名为`http://www.example.com`, 这个页面可以通过`http://www.example.com/projects/index.html`访问 ( 或者仅仅通过`http://www.example.com/projects/`来访问, 因为大多数web服务通过访问`index.html`这样的页面来加载，如果没有特定的URL的话)
+**绝对URL**： 指向由其在Web上的绝对位置定义的位置，包括 [协议](https://developer.mozilla.org/zh-CN/docs/Glossary/%E5%8D%8F%E8%AE%AE) and [域名](https://developer.mozilla.org/zh-CN/docs/Glossary/%E5%9F%9F%E5%90%8D). 像下面的例子,如果`index.html` 页面上传到`projects`这一个目录 。`project`位于web服务站点的根目录, web站点的域名为`http://www.example.com`, 这个页面可以通过`http://www.example.com/projects/index.html`访问 ( 或者仅仅通过`http://www.example.com/projects/`来访问, 因为大多数web服务通过访问`index.html`这样的页面来加载，如果没有特定的URL的话)
 
-绝对URL总是指向相同的位置，不管它在哪里使用。
+**绝对URL**总是指向相同的位置，不管它在哪里使用。
 
-相对URL： 指向与您链接的文件相关的位置，更像我们在前面一节中所看到的位置。例如，如果我们想从示例文件链接`http://www.example.com/projects/index.html`转到相同目录下的一个PDF文件, URL就是文件名URL — 例如 `project-brief.pdf` —没有其他的信息要求. 如果PDF文件能够在`projects`的子目录`pdfs`中访问到, 相对路径就是`pdfs/project-brief.pdf` (对应的绝对URL就是 `http://www.example.com/projects/pdfs/project-brief.pdf`.)
+**相对URL：** 指向与您链接的文件相关的位置，更像我们在前面一节中所看到的位置。例如，如果我们想从示例文件链接`http://www.example.com/projects/index.html`转到相同目录下的一个PDF文件, URL就是文件名URL — 例如 `project-brief.pdf` —没有其他的信息要求. 如果PDF文件能够在`projects`的子目录`pdfs`中访问到, 相对路径就是`pdfs/project-brief.pdf` (对应的绝对URL就是 `http://www.example.com/projects/pdfs/project-brief.pdf`.)
 
 一个相对URL将指向不同的位置，这取决于它所在的文件所在的位置——例如，如果我们把`index.html` 文件 从 `projects` 目录移动出来并进入Web站点的根目录（最高级别，而不是任何目录中），  `pdfs/project-brief.pdf` 的相对URL将会指向`http://www.example.com/pdfs/project-brief.pdf`, 而不是`http://www.example.com/projects/pdfs/project-brief.pdf`.
 
-## 链接最佳实践[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E9%93%BE%E6%8E%A5%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5)
+### **链接最佳实践[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E9%93%BE%E6%8E%A5%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5)**
 
 在写链接时有一些最好的做法。现在让我们看看这些。
 
 
 
-### 用清晰的链接措辞[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E7%94%A8%E6%B8%85%E6%99%B0%E7%9A%84%E9%93%BE%E6%8E%A5%E6%8E%AA%E8%BE%9E)
+### **用清晰的链接措辞[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E7%94%A8%E6%B8%85%E6%99%B0%E7%9A%84%E9%93%BE%E6%8E%A5%E6%8E%AA%E8%BE%9E)**
 
 把链接放在你的页面上很容易。这还不够。我们需要让所有的读者都可以使用链接，不管他们当前的环境和哪些工具。例如：
 
@@ -2514,8 +2514,8 @@ to download Firefox</p>
 
 从上面的描述中，您可能认为始终使用绝对链接是一个好主意；毕竟，当页面像相对链接那样移动时，它们不会中断。但是，当链接到同一网站的其他位置时，你应该使用相关链接（当链接到另一个网站时，你需要使用绝对链接）：
 
-- 首先，检查代码要容易得多——相对URL通常比绝对URL短得多，这使得阅读代码更容易。
-- 其次，在可能的情况下使用相对URL更有效。当使用绝对URL时，浏览器首先通过查询域名（使用“DNS”）}查找服务器的真实位置，然后再转到该服务器并查找所请求的文件。另一方面，相对URL，浏览器只在同一服务器上查找被请求的文件。因此，如果你使用相对URL做的绝对URL，你就不断地让你的浏览器做额外的工作，这意味着它的效率会降低。
+- **首先，检查代码要容易得多——相对URL通常比绝对URL短得多，这使得阅读代码更容易。**
+- **其次，在可能的情况下使用相对URL更有效**。**当使用绝对URL时，浏览器首先通过查询域名（使用“DNS”）}查找服务器的真实位置，然后再转到该服务器并查找所请求的文件。另一方面，相对URL，浏览器只在同一服务器上查找被请求的文件。因此，如果你使用相对URL做的绝对URL，你就不断地让你的浏览器做额外的工作，这意味着它的效率会降低。**
 
 ### 链接到非html资源 ——留下清晰的指示[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E9%93%BE%E6%8E%A5%E5%88%B0%E9%9D%9Ehtml%E8%B5%84%E6%BA%90_%E2%80%94%E2%80%94%E7%95%99%E4%B8%8B%E6%B8%85%E6%99%B0%E7%9A%84%E6%8C%87%E7%A4%BA)
 
@@ -2551,7 +2551,7 @@ to download Firefox</p>
 </a>
 ```
 
-## 主动学习：创建一个导航菜单[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95)
+### 主动学习：创建一个导航菜单[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95)
 
 在这个练习中，我们希望你把一些页面和导航菜单链接起来，创建一个多页面的网站。这是创建网站的一种常见方式——每一页都使用相同的页面结构，包括相同的导航菜单，所以当链接被点击时，它给人的印象是你停留在同一个地方，不同的内容正在被提出来。
 
@@ -2571,11 +2571,13 @@ to download Firefox</p>
 
 最终的例子应该是这样的：
 
-![An example of a simple HTML navigation menu, with home, pictures, projects, and social menu items](https://mdn.mozillademos.org/files/12411/navigation-example.png)
+![An example of a simple HTML navigation menu, with home, pictures, projects, and social menu items](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\navigation-example.png)
+
+
 
 **注意**: 如果你卡住了，或者不确定你是否正确，你可以检查导航菜单上的目录，看看正确的答案。
 
-## 电子邮件链接[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E9%93%BE%E6%8E%A5)
+### **电子邮件链接[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E9%93%BE%E6%8E%A5)**
 
 当点击一个链接或按钮时，打开一个新的电子邮件发送信息而不是连接到一个资源或页面，这种情况是可能做到的。这样做是使用[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a)元素和`mailto`：URL的方案。
 其最基本和最常用的使用形式为一个`mailto`:link （链接），链接简单说明收件人的电子邮件地址。例如:
@@ -2610,7 +2612,7 @@ to download Firefox</p>
 - <mailto:nowhere@mozilla.org?cc=nobody@mozilla.org>
 - <mailto:nowhere@mozilla.org?cc=nobody@mozilla.org&subject=This%20is%20the%20subject>
 
-## 总结[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E6%80%BB%E7%BB%93)
+### 总结[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E6%80%BB%E7%BB%93)
 
 这就是链接！当您开始查看样式时，您将在稍后的课程中返回链接。接下来是HTML，我们将返回文本语义，并查看一些更高级/不寻常的功能，您会发现有用的-高级文本格式是您的下一站。
 
