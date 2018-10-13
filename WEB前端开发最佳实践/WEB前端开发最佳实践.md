@@ -2004,11 +2004,13 @@ HTML的主要工作是编辑文本结构和文本内容（也称为语义[semant
 | --------- | ------------------------------------------------------------ |
 | 目的:     | 学习如何用标记(段落、标题、列表、强调、引用)来建立基础文本页面的文本结构和文本内容。 |
 
-## 基础: 标题和段落[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#%E5%9F%BA%E7%A1%80_%E6%A0%87%E9%A2%98%E5%92%8C%E6%AE%B5%E8%90%BD)
+### **基础: 标题和段落[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#%E5%9F%BA%E7%A1%80_%E6%A0%87%E9%A2%98%E5%92%8C%E6%AE%B5%E8%90%BD)**
 
 大部分的文本结构由标题和段落组成。 不管是小说、报刊、教科书还是杂志等。
 
-![An example of a newspaper front cover, showing use of a top level heading, subheadings and paragraphs.](https://mdn.mozillademos.org/files/12371/newspaper_small.jpg)
+![An example of a newspaper front cover, showing use of a top level heading, subheadings and paragraphs.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\newspaper_small.jpg)
+
+
 
 内容结构化会使读者的阅读体验更轻松，更愉快。
 
@@ -2024,7 +2026,7 @@ HTML的主要工作是编辑文本结构和文本内容（也称为语义[semant
 <h1>I am the title of the story.</h1>
 ```
 
-这里有六个标题元素标签— [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h1), [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h2), [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h3), [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h4), [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h5), 和 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h6). 每个元素代表文档中不同级别的内容; <h1>表示主标题（the main heading），<h2>表示二级子标题（subheadings），<h3>表示三级子标题（sub-subheadings），等等。
+这里有六个标题元素标签— [`<h1>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h1), [`<h2>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h2), [`<h3>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h3), [`<h4>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h4), [`<h5>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h5), 和 [`<h6>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h6). 每个元素代表文档中不同级别的内容; <h1>表示主标题（the main heading），<h2>表示二级子标题（subheadings），<h3>表示三级子标题（sub-subheadings），等等。
 
 ### 编辑结构层次[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#%E7%BC%96%E8%BE%91%E7%BB%93%E6%9E%84%E5%B1%82%E6%AC%A1)
 
@@ -2050,7 +2052,7 @@ HTML的主要工作是编辑文本结构和文本内容（也称为语义[semant
 
 所涉及的元素具体代表什么，完全取决于作者编辑的内容，只要层次结构是合理的。在创建此类结构时，您只需要记住一些最佳实践：
 
-- 优选地，您应该只对每个页面使用一次<h1> — 这是顶级标题，所有其他标题位于层次结构中的下方。
+- **优选地，您应该只对每个页面使用一次&lt;h1> — 这是顶级标题，所有其他标题位于层次结构中的下方。**
 - 请确保在层次结构中以正确的顺序使用标题。不要使用<h3>来表示副标题，后面跟<h2>来表示副副标题 - 这是没有意义的，会导致奇怪的结果。
 - 在可用的六个标题级别中，您应该旨在每页使用不超过三个，除非您认为有必要使用更多。具有许多级别的文档（即，较深的标题层次结构）变得难以操作并且难以导航。在这种情况下，如果可能，建议将内容分散在多个页面上。
 
@@ -2060,7 +2062,9 @@ HTML的主要工作是编辑文本结构和文本内容（也称为语义[semant
 
 然而，当您在浏览器中打开文档时，您会看到文本显示为一整块！
 
-![A webpage that shows a wall of unformatted text, because there are no elements on the page to structure it.](https://mdn.mozillademos.org/files/12972/text-no-formatting.png)
+![A webpage that shows a wall of unformatted text, because there are no elements on the page to structure it.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\text-no-formatting.png)
+
+
 
 这是因为没有元素给内容结构，所以浏览器不知道什么是标题，什么是段落。此外：
 
@@ -2077,7 +2081,7 @@ HTML的主要工作是编辑文本结构和文本内容（也称为语义[semant
 
 如果您犯了错误，您可以使用*重置*按钮进行重置。如果卡住，请按*显示解决方案*按钮以查看答案。
 
-
+<iframe src="https://mdn.mozillademos.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/HTML_text_fundamentals$samples/Playable_code?revision=1409107" height="500" width="700" id="frame_Playable_code" class="live-sample-frame sample-code-frame" frameborder="0" style="font-style: normal; max-width: calc((100% - 40px) - 6px); margin: 0px; padding: 20px; border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(61, 126, 154); border-image: initial; width: calc((100% - 40px) - 6px); color: rgb(51, 51, 51); font-family: Verdana, arial, x-locale-body, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.05328px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"></iframe>
 
 在 CodePen 中打开在 JSFiddle 中打开
 
@@ -2103,7 +2107,7 @@ HTML的主要工作是编辑文本结构和文本内容（也称为语义[semant
 
 这是一个 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/span) 元素，它没有语义。当您想要对它用CSS（或者JS）时，您可以用它包裹内容，且不需要附加任何额外的意义（在未来的课程中你会发现更多这类元素）。我们已经对它使用了CSS来让它看起来像一个顶级标题。然而，由于它没有语义值，所以它不会有任何上文提到的帮助。最好的方法是使用相关的HTML元素来标记这个项目。
 
-## 列表 Lists[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#%E5%88%97%E8%A1%A8_Lists)
+### **列表 Lists[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#%E5%88%97%E8%A1%A8_Lists)**
 
 现在，让我们注意一下列表。列表在生活中随处可见——从你的购物清单到你的回家路线方案列表，再到你遵从的教程说明列表。在网络上，列表也到处存在，我们需要学习三种不同类型的列表。
 
@@ -2118,7 +2122,7 @@ HTML的主要工作是编辑文本结构和文本内容（也称为语义[semant
 鹰嘴豆泥
 ```
 
-每份无序的清单从 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/ul) 元素开始——这元素包裹了清单上所有被列出的项目：
+每份无序的清单从 [`<ul>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/ul) 元素开始——这元素包裹了清单上所有被列出的项目：
 
 ```html
 <ul>
@@ -2140,17 +2144,15 @@ HTML的主要工作是编辑文本结构和文本内容（也称为语义[semant
 </ul>
 ```
 
-#### 实践操作: 标记无序列表
+**实践操作: 标记无序列表**
 
 尝试编辑下面的样本来创建您个人的HTML无序列表。
 
-
+<iframe src="https://mdn.mozillademos.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/HTML_text_fundamentals$samples/Playable_code_2?revision=1409107" height="400" width="700" id="frame_Playable_code_2" class="live-sample-frame sample-code-frame" frameborder="0" style="font-style: normal; max-width: calc((100% - 40px) - 6px); margin: 0px; padding: 20px; border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(61, 126, 154); border-image: initial; width: calc((100% - 40px) - 6px); color: rgb(51, 51, 51); font-family: Verdana, arial, x-locale-body, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.05328px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"></iframe>
 
 在 CodePen 中打开在 JSFiddle 中打开
 
-
-
-### 有序 Ordered[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#%E6%9C%89%E5%BA%8F_Ordered)
+### **有序 Ordered[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#%E6%9C%89%E5%BA%8F_Ordered)**
 
 有序的列表是根据项目的顺序列出来的——让我们以一组方向为例：
 
@@ -2174,11 +2176,11 @@ HTML的主要工作是编辑文本结构和文本内容（也称为语义[semant
 </ol>
 ```
 
-#### 实践操作: 标记有序列表
+**实践操作: 标记有序列表**
 
 尝试编辑下面的样本来创建您个人的HTML有序列表：
 
-
+<iframe src="https://mdn.mozillademos.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/HTML_text_fundamentals$samples/Playable_code_3?revision=1409107" height="500" width="700" id="frame_Playable_code_3" class="live-sample-frame sample-code-frame" frameborder="0" style="font-style: normal; max-width: calc((100% - 40px) - 6px); margin: 0px; padding: 20px; border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(61, 126, 154); border-image: initial; width: calc((100% - 40px) - 6px); color: rgb(51, 51, 51); font-family: Verdana, arial, x-locale-body, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.05328px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"></iframe>
 
 在 CodePen 中打开在 JSFiddle 中打开
 
@@ -2188,7 +2190,7 @@ HTML的主要工作是编辑文本结构和文本内容（也称为语义[semant
 
 到了这里，你拥有了所有你需要的信息来标记我们的食谱样例。你可以选择从[text-start.html](https://github.com/mdn/learning-area/blob/master/html/introduction-to-html/html-text-formatting/text-start.html)复制一份文件并保存在本地，打开它进行编辑，或者在下面的例子中进行编辑。因为在本地你可以保存你的项目，所以在本地做这个工作可能更好。而如果你在下面可编辑的样本中作业，下一次你打开这个网站时你可能会丢失你的数据。各有利弊吧。
 
-
+<iframe src="https://mdn.mozillademos.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/HTML_text_fundamentals$samples/Playable_code_4?revision=1409107" height="500" width="700" id="frame_Playable_code_4" class="live-sample-frame sample-code-frame" frameborder="0" style="font-style: normal; max-width: calc((100% - 40px) - 6px); margin: 0px; padding: 20px; border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(61, 126, 154); border-image: initial; width: calc((100% - 40px) - 6px); color: rgb(51, 51, 51); font-family: Verdana, arial, x-locale-body, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.05328px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"></iframe>
 
 在 CodePen 中打开在 JSFiddle 中打开
 
