@@ -3117,23 +3117,23 @@ para.onclick = function() {
 
 花一些时间来查看代码并理解它 - 代码中的注释也应该帮助您理解它。 我们不要求你在这篇文章中做很多其他事情，因为理解文档布局的关键是编写一个完整的HTML结构，然后用CSS布局。等你学习到 CSS 部分的时候才能完全理解上面代码。
 
-## HTML布局元素细节[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84#HTML%E5%B8%83%E5%B1%80%E5%85%83%E7%B4%A0%E7%BB%86%E8%8A%82)
+### **HTML布局元素细节[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84#HTML%E5%B8%83%E5%B1%80%E5%85%83%E7%B4%A0%E7%BB%86%E8%8A%82)**
 
 从总体详细的理解HTML的元素是不错的——随着你web开发经验的逐渐积累，你将会逐渐理解HTML的元素。你可以通过查阅[HTML元素参考](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element)找到更多的细节。现在，你需要理解这些主要的元素定义：
 
-- [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/main) 展现了页面内容的独特性。只可以在每一个页面上使用一次<main>，直接把它放到[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body)中。在理想情况下，不应该把它嵌套进其他的元素中。
-- [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article) 闭合一块与自身相关的内容，这块内容能够解释它自身而不是页面上其他的内容（例如一篇单独的博客）。
-- [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/section) 近似于<article>，但是它更多的是伴随着由一个单独功能构成的页面（例如一个小型的地图，或者是一组文章的标题和摘要）。它被认为最好的实际应用是用[标题](https://developer.mozilla.org/en-US/Learn/HTML/Howto/Set_up_a_proper_title_hierarchy)作为每一部分（section）的开头；也要注意的是你可以把不同的<article>分到不同的<section>中，或者把不同的<section>分到不同的<article>中，这要取决于内容。
-- [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/aside) 包含的内容并不与主要内容有直接的联系，但是它可以提供额外的不直接有联系的信息（术语表条目，作者简介，相关链接等等）。
-- [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/header) 展现了一系列的介绍性内容。如果它是[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body) 的子元素,它就定义了网站的全局页眉。但是如果它是 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article) 或[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/section) 的子元素，它就定义了这些部分的特定的页眉(不要把这些与[titles and headings](https://developer.mozilla.org/en-US/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_a_title)混淆)。
-- [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/nav) 包含了页面主要的导航功能。二级链接等，不会进入导航功能部分。
-- [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/footer) 包含了页面的页脚部分。
+- [`main`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/main) 展现了页面内容的独特性。只可以在每一个页面上使用一次<main>，直接把它放到[`body`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body)中。在理想情况下，不应该把它嵌套进其他的元素中。
+- [`article`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article) 闭合一块与自身相关的内容，这块内容能够解释它自身而不是页面上其他的内容（例如一篇单独的博客）。
+- [`section`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/section) 近似于&lt;article>，但是它更多的是伴随着由一个单独功能构成的页面（例如一个小型的地图，或者是一组文章的标题和摘要）。它被认为最好的实际应用是用[标题](https://developer.mozilla.org/en-US/Learn/HTML/Howto/Set_up_a_proper_title_hierarchy)作为每一部分（section）的开头；也要注意的是你可以把不同的<article>分到不同的<section>中，或者把不同的<section>分到不同的<article>中，这要取决于内容。
+- [`aside`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/aside) 包含的内容并不与主要内容有直接的联系，但是它可以提供额外的不直接有联系的信息（术语表条目，作者简介，相关链接等等）。
+- [`header`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/header) 展现了一系列的介绍性内容。如果它是[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body) 的子元素,它就定义了网站的全局页眉。但是如果它是 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article) 或[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/section) 的子元素，它就定义了这些部分的特定的页眉(不要把这些与[titles and headings](https://developer.mozilla.org/en-US/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_a_title)混淆)。
+- [`nav`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/nav) 包含了页面主要的导航功能。二级链接等，不会进入导航功能部分。
+- [`footer`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/footer) 包含了页面的页脚部分。
 
 ### 没有特定语义的装饰元素[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84#%E6%B2%A1%E6%9C%89%E7%89%B9%E5%AE%9A%E8%AF%AD%E4%B9%89%E7%9A%84%E8%A3%85%E9%A5%B0%E5%85%83%E7%B4%A0)
 
-有时候，你会遇到一种情况——你找不到理想的语义元素来包含项目或内容。有时候你可能只想仅仅用[CSS](https://developer.mozilla.org/en-US/docs/Glossary/CSS)或[JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript)将一组元素作为一个单独的实体来修饰。为了应对这种情况，HTML提供了[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/div)和[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/span)元素。你应该最好使用`class`属性来提供一些标签，这样他们就能容易的被找到。
+有时候，你会遇到一种情况——你找不到理想的语义元素来包含项目或内容。有时候你可能只想仅仅用[CSS](https://developer.mozilla.org/en-US/docs/Glossary/CSS)或[JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript)将一组元素作为一个单独的实体来修饰。为了应对这种情况，HTML提供了[`div`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/div)和[`span`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/span)元素。你应该最好使用`class`属性来提供一些标签，这样他们就能容易的被找到。
 
-[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/span) 是一个行内无语义元素，你应该仅仅当无法找到更好的语义元素包含内容时使用，或者不想增加特定的含义。例如：
+[`span`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/span) 是一个行内无语义元素，你应该仅仅当无法找到更好的语义元素包含内容时使用，或者不想增加特定的含义。例如：
 
 ```html
 <p>The King walked drunkenly back to his room at 01:00, the beer doing nothing to aid
@@ -3167,7 +3167,7 @@ play, the lights should be down low]</span>.</p>
 
 ### 换行与水平分割线[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84#%E6%8D%A2%E8%A1%8C%E4%B8%8E%E6%B0%B4%E5%B9%B3%E5%88%86%E5%89%B2%E7%BA%BF)
 
-[` `](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/br) 和[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/hr)将会是你偶尔使用并且想要了解的两个元素:
+[`br `](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/br) 和[`hr`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/hr)将会是你偶尔使用并且想要了解的两个元素:
 
 `<br>`在一个段落中创建一个换行；在你想要生成一系列的短行的地方，`<br>`是唯一能够生成这种结构的元素。例如一个邮寄地址或一首诗。比如：
 
@@ -3201,15 +3201,23 @@ Ron was backed into a corner by the marauding netherbeasts. Scared, but determin
 
 Meanwhile, Harry was sitting at home, staring at his royalty statement and pondering when the next spin off series would come out, when an enchanted distress letter flew through his window and landed in his lap. He read it hasily and sighed; "better get back to work then", he mused.
 
-## 设计一个简单的网站[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84#%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%BD%91%E7%AB%99)
+### **设计一个简单的网站[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84#%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%BD%91%E7%AB%99)**
 
 一旦你设计好了一个简单网站的所有内容，按照正常的逻辑思维，我们应该尝试制定出你想要放在整个网站上的内容，哪些页面是你需要的，这些页面应该如何排列，以及如何互相链接，带给用户最好的使用体验。这就是所谓的 [Information architecture](https://developer.mozilla.org/en-US/docs/Glossary/Information_architecture).。在一个结构庞大、复杂的网站里，大多数设计都可以参照上述的 information architecture（信息架构），不过对于一个只有几个页面的简单网站，设计过程可以更简单，更有趣！
 
-1. 记住, 你的大多数（不是全部）页面会使用一些相同的元素 — 例如导航菜单，以及页脚。如果你的网站是一个商业网站，那么你就可以在每个页面都使用相同的页脚，页脚内容可以包括你的联系方式，这或许是一个不错的主意。所以说，如果在你的设计中，每个页面都有一些内容是重复的，你可以先把这些重复的内容记录下来。![the common features of the travel site to go on every page: title and logo, contact, copyright, terms and conditions, language chooser, accessibility policy](https://mdn.mozillademos.org/files/12423/common-features.png)
-2. 接下来，你可以通过画一个草图的方式来说明你希望的每个页面的结构的样子，（或许你画出来的草图和我们上文中提到的示例页面比较像），在空白段落上做上标记，来说明之后要填充在这里的内容。![A simple diagram of a sample site structure, with a header, main content area, two optional sidebars, and footer](https://mdn.mozillademos.org/files/12429/site-structure.png)
-3. 现在，所有的网站设计人员可以一起讨论，还希望网站上显示哪些内容 （不包括每个页面的重复页面）— 以列表的形式写下来。![A long list of all the features that we could put on our travel site, from searching, to special offers and country-specific info](https://mdn.mozillademos.org/files/12425/feature-list.png)
-4. 接着，尝试把这些内容进行分组，这样可以让你了解哪些内容可以放在一个相同的页面上。这种做法和 [Card sorting](https://developer.mozilla.org/en-US/docs/Glossary/Card_sorting) 非常相似。![The items that should appear on a holiday site sorted into 5 categories: Search, Specials, Country-specific info, Search results, and Buy things](https://mdn.mozillademos.org/files/12421/card-sorting.png)
-5. 现在，尝试着再画一个网站的草图 — 每个气泡代表网站的一个页面，在气泡与气泡之间用连线的方式，来说明它们之间的联系。主页面可能位于中心位置，并且链接到其他的大多数页面；对于一个小型网站，大多数页面都可以从主页的导航栏中链接跳转，虽然也存在例外。你可能也希望记录下内容将如何显示的笔记。![A map of the site showing the homepage, country page, search results, specials page, checkout, and buy page](https://mdn.mozillademos.org/files/12427/site-map.png)
+1. 记住, 你的大多数（不是全部）页面会使用一些相同的元素 — 例如导航菜单，以及页脚。如果你的网站是一个商业网站，那么你就可以在每个页面都使用相同的页脚，页脚内容可以包括你的联系方式，这或许是一个不错的主意。所以说，如果在你的设计中，每个页面都有一些内容是重复的，你可以先把这些重复的内容记录下来。
+
+   ![the common features of the travel site to go on every page: title and logo, contact, copyright, terms and conditions, language chooser, accessibility policy](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\common-features.png)
+
+2. 接下来，你可以通过画一个草图的方式来说明你希望的每个页面的结构的样子，（或许你画出来的草图和我们上文中提到的示例页面比较像），在空白段落上做上标记，来说明之后要填充在这里的内容。![A simple diagram of a sample site structure, with a header, main content area, two optional sidebars, and footer](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\site-structure.png)
+
+3. 现在，所有的网站设计人员可以一起讨论，还希望网站上显示哪些内容 （不包括每个页面的重复页面）— 以列表的形式写下来。
+
+   ![A long list of all the features that we could put on our travel site, from searching, to special offers and country-specific info](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\feature-list.png)
+
+4. 接着，尝试把这些内容进行分组，这样可以让你了解哪些内容可以放在一个相同的页面上。这种做法和 [Card sorting](https://developer.mozilla.org/en-US/docs/Glossary/Card_sorting) 非常相似。![The items that should appear on a holiday site sorted into 5 categories: Search, Specials, Country-specific info, Search results, and Buy things](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\card-sorting.png)
+
+5. 现在，尝试着再画一个网站的草图 — 每个气泡代表网站的一个页面，在气泡与气泡之间用连线的方式，来说明它们之间的联系。主页面可能位于中心位置，并且链接到其他的大多数页面；对于一个小型网站，大多数页面都可以从主页的导航栏中链接跳转，虽然也存在例外。你可能也希望记录下内容将如何显示的笔记。![A map of the site showing the homepage, country page, search results, specials page, checkout, and buy page](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\site-map.png)
 
 ### 主动学习：创建你自己的站点地图[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84#%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%88%9B%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE)
 
@@ -3217,11 +3225,11 @@ Meanwhile, Harry was sitting at home, staring at his royalty statement and ponde
 
 **注意**: 将你的工作成果保存在任意的地方，之后你可能还会需要它。
 
-## 总结[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84#%E6%80%BB%E7%BB%93)
+### 总结[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84#%E6%80%BB%E7%BB%93)
 
 通过本文，你应该对于如何构建一个网页/网站有了更好的理解。在本单元的最后一篇文章中，我们将学习如何调试 HTML。
 
-## 相关链接[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5)
+### 相关链接[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5)
 
 - [Using HTML sections and outlines](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines): 进一步的指南: HTML5 的元素语义和大纲算法.
 
