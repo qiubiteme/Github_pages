@@ -3430,16 +3430,16 @@ HTML本身不容易因语法错误出错，因为浏览器是以宽松模式来�
 - 用适当的meta标签说明信件的作者。
 - 用适当的标签引入我们提供的CSS代码。
 
-## 提示和技巧[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Marking_up_a_letter#%E6%8F%90%E7%A4%BA%E5%92%8C%E6%8A%80%E5%B7%A7)
+### 提示和技巧[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Marking_up_a_letter#%E6%8F%90%E7%A4%BA%E5%92%8C%E6%8A%80%E5%B7%A7)
 
 - 使用[W3C HTML验证器](https://validator.w3.org/)来验证HTML，如果验证通过，你会得到奖励积分。
 - 完成这个评估不需要任何CSS知识，你只需要把已提供的CSS放到HTML元素里就好。
 
-## 范例[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Marking_up_a_letter#%E8%8C%83%E4%BE%8B)
+### 范例[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Marking_up_a_letter#%E8%8C%83%E4%BE%8B)
 
 下面的截图展示了这封信被标记完成之后可能会是什么样子。
 
-![img](https://mdn.mozillademos.org/files/12291/letter-screengrab.png)
+![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\letter-screengrab.png)
 
 ## 评估[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Marking_up_a_letter#%E8%AF%84%E4%BC%B0)
 
