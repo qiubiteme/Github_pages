@@ -3779,5 +3779,846 @@ p {
 
 目前到此为止，我们详细介绍了图片和说明文字，在下篇文章中，我们将进一步看看如何使用 HTML 在网页上嵌入音频和视频。
 
+## 视频和音频内容
+
+
+​    现在我们可以轻松的为一张 web 网页添加简单的图像，下一步是开始为 HTML 文档添加音频和视频的播放器。在这篇文章当中，我们会学习到 [`video`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video) 和 [`audio`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/audio) 两个标签；然后我们还将会看看如何为你的视频添加字幕。
+
+| 前提: | 基础计算机能力，[基础的软件安装](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/Installing_basic_software)，基础的[文件处理](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/Dealing_with_files)知识，基础的 HTML 知识 (包括 [Getting started with HTML](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/Getting_started) ) 以及 [Images in HTML](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML). |
+| ----- | ------------------------------------------------------------ |
+| 目标: | 学习如何在一张 web 页面中嵌入音频和视频，以及如何为视频添加字幕。 |
+
+### web 中的音频和视频[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content#web_%E4%B8%AD%E7%9A%84%E9%9F%B3%E9%A2%91%E5%92%8C%E8%A7%86%E9%A2%91)
+
+web 开发者们一直以来想在 Web 中使用音频和视频，自21世纪初以来，我们的带宽开始能够支持任意类型的视频（视频文件比文本和图片要大的多）。在早些时候，传统的 web 技术（如 HTML ）不能够在 Web 中嵌入音频和视频，所以一些像 [Flash](https://en.wikipedia.org/wiki/Adobe_Flash) (后来有 [Silverlight](https://en.wikipedia.org/wiki/Microsoft_Silverlight) ) 的专利技术在处理这些内容上变得很受欢迎。这些技术能够正常的工作，但是却有着一系列的问题，包括无法很好的支持 HTML/CSS 特性、安全问题，以及可行性问题。
+
+传统的解决方案能够解决许多这样的问题，前提是它能够正确的工作。幸运的是，几年之后 [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5) 标准提出，其中有许多的新特性，包括 [`video`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video) 和 [`audio`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/audio) 标签，以及一些 [JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript) 和 [APIs](https://developer.mozilla.org/en-US/docs/Glossary/API) 用于对其进行控制。在这里，我们不讨论有关 JavaScript 的问题，仅仅讲解有关 HTML 的基础。
+
+我们不会教你如何制作音频和视频，因为那需要一种完全不同的技术。我们已经为你提供了一些视频和音频的文件（ [sample audio and video files and example code](https://github.com/mdn/learning-area/tree/master/html/multimedia-and-embedding/video-and-audio-content) ）用于你进行试验，以防止你没有可进行试验的样本。
+
+**Note**: 在你开始之前，你应当了解一些 [OVPs](https://developer.mozilla.org/zh-CN/docs/Glossary/OVP) (在线视频提供商) 例如 [YouTube](https://www.youtube.com/) 、[Dailymotion](http://www.dailymotion.com/) 、 [Vimeo](https://vimeo.com/), 以及在线音频提供商例如 [Soundcloud](https://soundcloud.com/)。这些公司提供方便、简单的方式来支持视频，所以你不必担心庞大的带宽消耗。OVPS 甚至提供现成的代码用于为你的 web 网页嵌入视频/音频。如果你使用那种服务，你便可以避免在这篇文章中我们将讨论的一些难题。在下一篇文章中，我们将会讨论这种服务。 
+
+### &lt;video> 标签[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content#%3Cvideo%3E_%E6%A0%87%E7%AD%BE)
+
+&lt;video> 允许你简单的嵌入一段视频。一个简单的例子如下：
+
+```html
+<video src="rabbit320.webm" controls>
+  <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.webm">link to the video</a> instead.</p> 
+</video>
+```
+
+当中的一些属性如下:
+
+- `src`
+
+  同 [`img`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 标签使用方式相同，src 属性指向你想要嵌入网页当中的视频资源，他们的使用方式完全相同。
+
+- `controls`
+
+  用户必须能够控制视频和音频的回放功能。你可以使用浏览器提供的控制接口，同时你也可以在 JavaScript （[JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement)）当中使用这些控制接口。至少，这些媒体应该包括开始和停止，以及调整音量的功能。
+
+- `<video>` 标签内的段落
+
+  这个叫做**后备内容** — 当浏览器不支持 &lt;video> 标签的时候，它将会显示出来，它使我们能够对旧的浏览器做一些兼容处理。你可以添加任何后备内容，在这个例子中我们提供了一个指向这个视频文件的链接，从而使用户可以至少访问到这个文件，而不会局限于浏览器的支持。
+
+已嵌入视频文件的网页样式如下：
+
+![A simple video player showing a video of a small white rabbit](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\simple-video.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+
+你可以点击[这里](http://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/simple-video.html)查看网页，或者点击[这里](https://github.com/mdn/learning-area/blob/master/html/multimedia-and-embedding/video-and-audio-content/simple-video.html)查看源代码。
+
+### 多格式支持[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content#%E5%A4%9A%E6%A0%BC%E5%BC%8F%E6%94%AF%E6%8C%81)
+
+以上的例子中有一个问题，你可能已经注意到了，如果你尝试使用像 Safari 或者 Internet Explorer 这些浏览器来访问上面的链接。视频并不会播放，这是因为不同的浏览器对视频格式的支持不同。
+
+我们先来快速的了解一下术语。像 MP3、MP4、WebM这些术语叫做**容器格式**。他们是用不同的方式来播放音频或者视频的 — 也就是说这些容器是用不同的音频轨道、视频轨道、元数据来呈现媒体文件的。
+
+视频和音频都有不同的格式，如下:
+
+- WebM 容器通常包括了 Ogg Vorbis 音频和 VP8/VP9 视频。主要在 FireFox 和 Chrome 当中支持。
+- MP4 容器通常包括 AAC 以及 MP3 音频和 H.264 视频。主要在 Internet Explorer 和 Safari 当中支持。
+- 老式的 Ogg 容器往往支持 Ogg Vorbis  音频和 Ogg Theora 视频。主要在 Firefox 和 Chrome 当中支持，不过这个容器已经被更强大的 WebM 容器所取代。
+
+音频播放器将会直接播放音频文件,，例如 MP3 和 Ogg 文件。这些不需要容器。
+
+**Note**: 这并没有那么简单，你可以从这里看到 [audio-video codec compatibility table](https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats#Browser_compatibility).。此外，许多移动平台的浏览器能够播放一些不支持的格式，但是它们用的却是底层系统的媒体播放器。但这也仅是现在支持。
+
+以上的格式主要用于将音频和视频压缩成可管理的文件（原始的音频和视频文件非常大）。浏览器包含了不同的 **Codecs**,，如 Vorbis 和 H.264,，它们用来将已压缩的音频和视频转化成二进制数字。正如刚才所说，浏览器并不全支持相同的 codecs，所以你得使用几个不同格式的文件来兼容不同的浏览器。如果你使用的格式都得不到浏览器的支持，那么媒体文件将不会播放。
+
+**Note:** 你也许会疑惑为什么会有这样的情况存在。**MP3** (音频格式) 和 **MP4/H.264** (视频格式) 是被广泛支持的两种格式，并且质量良好。然而，他们却有专利的阻碍 — MP3 的专利会持续到2017年（就在我翻译这篇文章的当天，MP3专利解除了），而 H.264 会持续到2027年早期。意思也就是说浏览器若想要支持这些格式，就得支付高额的费用。此外，许多人反对软件技术垄断，支持开源的格式。这就是为什么我们需要准备不同的格式来兼容不同的浏览器。
+
+我们该怎么做呢？请看如下例子（你可以点击这里[查看](http://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/multiple-video-formats.html)网页，或者点击这里[查看](https://github.com/mdn/learning-area/blob/gh-pages/html/multimedia-and-embedding/video-and-audio-content/multiple-video-formats.html)源代码）：
+
+```html
+<video controls>
+  <source src="rabbit320.mp4" type="video/mp4">
+  <source src="rabbit320.webm" type="video/webm">
+  <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p>
+</video>
+```
+
+现在我们将 src 属性从 &lt;video> 标签中移除，转而将它放在几个单独的标签 [`source`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/source) 当中。在这个例子当中，浏览器将会检查 &lt;source> 标签，并且播放第一个与其自身 codec 相匹配的媒体。你的视频应当包括 WebM 和 MP4 两种格式，这两种在目前已经足够支持大多数平台和浏览器。
+
+每个 `<source>` 标签页含有一个 type 属性，这个属性是可选的，但是建议你添加上这个属性 — 它包含了视频文件的 [MIME types](https://developer.mozilla.org/en-US/docs/Glossary/MIME_type) ，同时浏览器也会通过检查这个属性来迅速的跳过那些不支持的格式。如果你没有添加 type 属性，浏览器会尝试加载每一个文件，直到找到一个能正确播放的格式，这样会消耗掉大量的时间和资源。
+
+**Note**: 你可以在这里（[article on supported media formats](https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats)）查看有关 [MIME types](https://developer.mozilla.org/en-US/docs/Glossary/MIME_type) 的支持。
+
+### 其他 &lt;video> 特性[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content#%E5%85%B6%E4%BB%96_%3Cvideo%3E_%E7%89%B9%E6%80%A7)
+
+这里有许多你可以用在 HTML5 &lt;video> 上的特性，请看我们的第三个例子：
+
+```html
+<video controls width="400" height="400"
+       autoplay loop muted
+       poster="poster.png">
+  <source src="rabbit320.mp4" type="video/mp4">
+  <source src="rabbit320.webm" type="video/webm">
+  <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p>
+</video>
+```
+
+这串代码将会给我们呈现出如下页面：
+
+![A video player showing a poster image before it plays. The poster image says HTML5 video example, OMG hell yeah!](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\extra-video-features.png)新的特性：
+
+- `width` 和 `height`
+
+  你可以用属性控制视频的尺寸，也可以用 [CSS](https://developer.mozilla.org/en-US/docs/Glossary/CSS) 来控制视频尺寸。 无论使用哪种方式，视频都会保持它原始的长宽比 — 也叫做**纵横比**。如果你设置的尺寸没有保持视频原始长宽比，那么视频边框将会拉伸，而未被视频内容填充的部分，将会显示默认的背景颜色。
+
+- `autoplay`
+
+  这个属性会使音频和视频内容立即播放，即使页面的其他部分还没有加载完全。建议不要应用这个属性在你的网站上，因为用户们会比较反感自动播放的媒体文件。
+
+- `loop`
+
+  这个属性可以让音频或者视频文件循环播放。同样不建议使用，除非有必要。
+
+- `muted`
+
+  这个属性会导致媒体播放时，默认关闭声音。
+
+- `poster`
+
+  这个属性指向了一个图像的URL，这个图像会在视频播放前显示。通常用于粗略的预览或者广告。
+
+- `preload`
+
+  这个属性被用来缓冲较大的文件，有3个值可选：`"none"` ：不缓冲`"auto"` ：页面加载后缓存媒体文件`"metadata"` ：仅缓冲文件的元数据
+
+你可以点击[这里](https://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/extra-video-features.html)查看以上的例子，也可以点击[这里](https://github.com/mdn/learning-area/blob/gh-pages/html/multimedia-and-embedding/video-and-audio-content/extra-video-features.html)查看源代码。注意我们并没有使用 autoplay 属性在这个版本的例子中 — 如果当页面一加载就开始播放视频的话，就不会看到 poster 属性的效果了。
+
+### &lt;audio> 标签[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content#%3Caudio%3E_%E6%A0%87%E7%AD%BE)
+
+<audio> 标签与 <video> 标签的使用方式几乎完全相同，有一些细微的差别比如下面的边框不同，一个典型的例子如下：
+
+```html
+<audio controls>
+  <source src="viper.mp3" type="audio/mp3">
+  <source src="viper.ogg" type="audio/ogg">
+  <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+</audio>
+```
+
+这串代码将会产生如下的效果：
+
+![A simple audio player with a play button, timer, volume control, and progress bar](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\audio-player.png)
+
+**Note**: 你可以点击这里[查看](http://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/multiple-audio-formats.html)以上例子，或者点击[这里](https://github.com/mdn/learning-area/blob/gh-pages/html/multimedia-and-embedding/video-and-audio-content/multiple-audio-formats.html)查看源代码。
+
+音频播放器所占用的空间比视频播放器要小，由于它没有视觉部件 — 你只需要显示出能控制音频播放的控件。一些与 HTML5 <video> 的差异如下：
+
+- [`audio`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/audio) 标签不支持 width/height 属性 — 由于其并没有视觉部件，也就没有可以设置 width/height 的内容。
+- 同时也不支持 poster 属性 — 同样，没有视觉部件。
+
+除此之外，&lt;audio> 标签支持所有 &lt;video> 标签拥有的特性 — 你可以回顾上面的章节来了解更多的有关信息。
+
+### **显示音轨文本[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content#%E6%98%BE%E7%A4%BA%E9%9F%B3%E8%BD%A8%E6%96%87%E6%9C%AC)**
+
+现在，我们将讨论一个略微先进的概念，这个概念将会十分的有用。许多人不想（或者不能）听到 Web 上的音频/视频内容，至少在某些情况下是这样的，比如：
+
+- 许多人患有听觉障碍（通常来说是很难听清声音的人，或者聋人），所以他们不能听见音频中的声音。
+- 另外的情况可能是由于人们并不能听音频，可能是因为他们在一个非常嘈杂的环境当中（比如在一个拥挤的酒吧内恰好赶上了球赛 ），也可能是由于他们并不想打扰到其他人（比如在一个十分安静的地方，例如图书馆）。
+- 有一些人他们不说音频当中的语言，所以他们听不懂，因此他们想要一个副本或者是翻译来帮助他们理解媒体内容。
+
+给那些听不懂音频语言的人们提供一个音频内容的副本岂不是一件很棒的事情吗？所以，感谢 HTML5 &lt;video> 使之成为可能，有了 [WebVTT](https://developer.mozilla.org/en-US/docs/Web/API/Web_Video_Text_Tracks_Format) 格式，你可以使用 [`track`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/track) 标签。
+
+**Note**: “副本”的意思是指，用文本记录下音频的内容。
+
+WebVTT 是一个格式，用来编写文本文件，这个文本文件包含了众多的字符串，这些字符串会带有一些元数据，它们可以用来描述这个字符串将会在视频中显示的时间，甚至可以用来描述这些字符串的样式以及定位信息。这些字符串叫做 **cues** ，你可以根据不同的需求来显示不同的样式，最常见的如下：
+
+- subtitle
+
+  通过添加翻译字幕，来帮助那些听不懂外国语言的人们理解音频当中的内容。
+
+- captions
+
+  同步翻译对白，或是描述一些有重要信息的声音，来帮助那些不能听音频的人们理解音频中的内容。
+
+- timed descriptions
+
+  将文字转换为音频，用于服务那些有视觉障碍的人。
+
+一个典型的 WebVTT 文件如下：
+
+```html
+WEBVTT
+
+1
+00:00:22.230 --> 00:00:24.606
+This is the first subtitle.
+
+2
+00:00:30.739 --> 00:00:34.074
+This is the second.
+
+  ...
+```
+
+让其与 HTML 媒体一起显示，你需要做如下工作：
+
+1. 以 .vtt 后缀名保存文件。
+2. 用 [`track`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/track) 标签链接 .vtt 文件， `<track>` 标签需放在 `<audio>` 或 `<video> 标签当中`，同时需要放在所有 &lt;source> 标签之后。使用 `kind` 属性来指明是哪一种类型，如 subtitles 、 captions 、 descriptions。然后，使用 `srclang` 来告诉浏览器你是用什么语言来编写的 subtitles。
+
+如下:
+
+```html
+<video controls>
+    <source src="example.mp4" type="video/mp4">
+    <source src="example.webm" type="video/webm">
+    <track kind="subtitles" src="subtitles_en.vtt" srclang="en">
+</video>
+```
+
+上面这串代码会显示一段带有字幕的视频，如下：
+
+![Video player with stand controls such as play, stop, volume, and captions on and off. The video playing shows a scene of a man holding a spear-like weapon, and a caption reads "Esta hoja tiene pasado oscuro."](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\video-player-with-captions.png)
+
+如果你想了解更多细节，你可以阅读 [Adding captions and subtitles to HTML5 video](https://developer.mozilla.org/en-US/Apps/Build/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video)。在 Github 上你可以找到与本文相关的样例，他们由 Ian Devlin 编写，点击[这里](http://iandevlin.github.io/mdn/video-player-with-captions/)可以查看该样例，或者点击[这里](https://github.com/iandevlin/iandevlin.github.io/tree/master/mdn/video-player-with-captions)查看源代码。这个样例使用了 JavaScript 代码，它使得用户可以选择不同的字幕。注意，若想要显示字幕，你需要点击 "CC" 按钮，并且选择一种语言 — English, Deutsch, 或 Español。
+
+**Note**: 文本轨道会使你的网站更容易被搜索引擎抓取到 （[SEO](https://developer.mozilla.org/en-US/docs/Glossary/SEO)）， 由于搜索引擎的文本抓取能力非常强大，使用文本轨道甚至可以让搜索引擎通过视频的内容直接链接。
+
+### 实践学习：在你的网站上嵌入你自己的视频或音频。[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content#%E5%AE%9E%E8%B7%B5%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%9C%A8%E4%BD%A0%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%8A%E5%B5%8C%E5%85%A5%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E8%A7%86%E9%A2%91%E6%88%96%E9%9F%B3%E9%A2%91%E3%80%82)
+
+在这个实践学习当中，我们希望你能够走出去，并且记录一些你自己的视频或者音频 — 如今，大多数手机都能够非常方便的记录视频或者音频，并且你可以将他们上传到你的电脑上面，你可以使用这些功能来记录你的视频或音频。在这时候，你可能需要做一些格式转换，如果是视频的话，你需要将它们转化为 WebM 或者 MP4 ，如果是音频的话，你需要将它们转化为 MP3 或者 Ogg 。 不过你并不需要担心，有许多的程序都能够帮你解决这些问题，例如 [Miro Video Converter](http://www.mirovideoconverter.com/) 和 [Audacity](https://sourceforge.net/projects/audacity/).。我们非常希望你能够亲自动手实现它。
+
+如果你无法取得任意的音频或者视频，你可以使用我们已经为你提供的样本（[sample audio and video files](https://github.com/mdn/learning-area/tree/master/html/multimedia-and-embedding/video-and-audio-content)）。同时你也可以使用我们的代码来作为参考。
+
+我们希望你能够：
+
+1. 将你的音频或者视频文件保存在你电脑上的一个新目录中。
+2. 创建一个新的 HTML 文件在相同的路径下，命名为 index.html。
+3. 在页面上添加 &lt;audio> 和 &lt;video> 标签；并使用浏览器默认的控件来显示它们。
+4. 在当中添加 &lt;source> 标签，并添加 type 属性，以便于浏览器能够找到其能够支持的格式并加载它。
+5. 在 &lt;video> 标签中添加 poster 属性，这会显示在视频播放之前。
+
+另外，你可以尝试研究一下文本音轨，试着为你的视频添加一些字幕。
+
+### 总结[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content#%E6%80%BB%E7%BB%93)
+
+我们祝愿你可以沉浸在 Web 网站的音频和视频当中，下一篇文章，我们将会学习到另外一种在 web 页面中嵌入内容的方法，比如使用 [`iframe`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe) 或者 [`object`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/object)。
+
+### 相关资料[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content#%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99)
+
+- [`audio`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/audio)
+- [`video`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video)
+- [`source`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/source)
+- [`track`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/track)
+- [Adding captions and subtitles to HTML5 video](https://developer.mozilla.org/en-US/Apps/Build/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video)
+- [Audio and Video delivery](https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Audio_and_video_delivery):：这里面包含了许多使用 HTML 和 JavaScript 在页面中添加音频或视频的资料。
+- [Audio and Video manipulation](https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Audio_and_video_manipulation): 这里面包含了许多使用 JavaScript 来控制音频或视频的资料。
+- Automated options to [translate multimedia](http://www.inwhatlanguage.com/blog/translate-video-audio/).
+
+## 从对象到iframe - 其他嵌入技术
+
+到目前为止，您应该掌握了将图像、视频和音频嵌入到网页上的诀窍了。此刻，让我们继续深入学习，来看一些能让您在网页中嵌入各种内容类型的元素： [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe), [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/embed) 和[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/object) 元素。`<iframe>`用于嵌入其他网页，另外两个元素则允许您嵌入PDF，SVG，甚至Flash — 一种正在被淘汰的技术，但您仍然会时不时的看到它。
+
+| 先决条件: | 基本的计算机素养，[安装的基本软件](https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/Installing_basic_software)，[使用文件](https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/Dealing_with_files)的基本知识，熟悉HTML基础知识（参考HTML [入门](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started)）以及本模块中以前的文章。 |
+| --------- | ------------------------------------------------------------ |
+| 目的:     | 要了解如何使用`<object>、`[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)以及[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)在网页中嵌入部件，例如Flash电影或其他网页。 |
+
+## 嵌入的简史[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%E5%B5%8C%E5%85%A5%E7%9A%84%E7%AE%80%E5%8F%B2)
+
+很久以前，很流行在网络上使用**框架**创建网站 — 网站的一小部分存储于单独的HTML页面中。这些被嵌入在一个称为**框架集**的主文档中，它允许您指定每个框架能够填充在屏幕上的区域，而不像调整表格的列和行的大小。这些做法在90年代中期至90年代后期被认为是比较酷的，有证据表明，将网页分解成较小的块，这样有利于下载速度 —值得注意的是当时网络连接速度十分缓慢。然而，这些技术有很多问题，随着网络速度越来越快，这些技术带来的问题远超过它们带来的积极因素，所以你再也看不到它们被使用了。
+
+一小段时间之后（20世纪90年代末，21世纪初），插件技术变得非常受欢迎，例如[Java Applet](https://developer.mozilla.org/en-US/docs/Glossary/Java)和[Flash](https://developer.mozilla.org/en-US/docs/Glossary/Adobe_Flash) — 这些技术允许网络开发者将丰富的内容嵌入到网页中，例如视频和动画等，这些内容不能通过HTML单独实现。嵌入这些技术是通过诸如[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object)和较少使用[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)的元素来实现的，当时它们非常有用。由于许多问题，包括可访问性、安全性、文件大小等，它们已经过时了; 如今，大多数移动设备不再支持这些插件，桌面端也逐渐不再支持。
+
+最后，[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)元素出现了（连同其他嵌入内容的方式，如[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)，[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)等），它提供了一种将整个web页嵌入到另一个网页的方法，看起来就像那个web页是另一个网页的一个[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)或其他元素一样。[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe)现在经常被使用。
+
+了解完历史之后，让我们继续往下看以了解如何使用它们。
+
+## 自主学习：嵌入类型的使用[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%E8%87%AA%E4%B8%BB%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%B5%8C%E5%85%A5%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%BD%BF%E7%94%A8)
+
+在这篇文章中，我们将直接进入自主学习部分，让你立即体会到嵌入技术的实用性。大家都非常熟悉[Youtube](https://www.youtube.com/)，但很多人不了解它所提供的一些分享功能。让我们来看看Youtube如何让我们通过[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)在页面中嵌入喜欢的视频。
+
+1. 首先，去Youtube找一个喜欢的视频。
+2. 在视频下方，您会看到一个*共享*按钮 - 点击查看共享选项。
+3. 选择“ *嵌入”*选项卡，您将得到一些`<iframe>`代码 - 复制一下。
+4. 粘贴到下面的*输入*框里，看看*输出*结果是什么。
+
+此外，您还可以试试在示例中嵌入[Google地图](https://www.google.com/maps/)：
+
+1. 去Google地图找一个喜欢的地图。
+2. 点击UI左上角的“汉堡菜单”（三条水平线）。
+3. 选择*共享或嵌入地图*选项。
+4. 选择嵌入地图选项，这将给你一些`<iframe>`代码 - 复制一下。
+5. 粘贴到下面的*输入*框，看看*输出*结果是什么。
+
+如果你犯了某些错误，你可以点击*Reset按钮以重置编辑器。*如果你确实被卡住了， 按下Show *solution按钮以借鉴答案。*
+
+
+
+在 CodePen 中打开在 JSFiddle 中打开
+
+
+
+## Iframe详解[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#Iframe%E8%AF%A6%E8%A7%A3)
+
+是不是很简单又有趣呢？[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)元素旨在允许您将其他Web文档嵌入到当前文档中。这很适合将第三方内容纳入您的网站，您可能无法直接控制，也不希望实现自己的版本 - 例如来自在线视频提供商的视频，[Disqus](https://disqus.com/)等评论系统，在线地图提供商，广告横幅等。您通过本课程使用的实时可编辑示例就是使用`<iframe>` 实现的。
+
+我们会在后面提到，关于`<iframe>`有一些严重的[安全隐患](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3)需要考虑，但这并不意味着你不应该在你的网站上使用它们 — 它只需要一些知识和仔细地思考。让我们更详细地探索这些代码。假设您想在其中一个网页上加入MDN词汇表，您可以尝试以下方式：
+
+```html
+<iframe src="https://developer.mozilla.org/en-US/docs/Glossary"
+        width="100%" height="500" frameborder="0"
+        allowfullscreen sandbox>
+  <p> <a href="https://developer.mozilla.org/en-US/docs/Glossary">
+    Fallback link for browsers that don't support iframes
+  </a> </p>
+</iframe>
+```
+
+此示例包括使用以下所需的`<iframe>`基本要素：
+
+- `allowfullscreen`
+
+  如果设置，`<iframe>`则可以通过[全屏API](https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/User_notifications/Full_screen_api)设置为全屏模式（稍微超出本文的范围）。
+
+- `frameborder`
+
+  如果设置为1，则会告诉浏览器在此框架和其他框架之间绘制边框，这是默认行为。0删除边框。不推荐这样设置，因为在[CSS中](https://developer.mozilla.org/en-US/docs/Glossary/CSS)可以更好地实现相同的效果。[`border`](https://developer.mozilla.org/en-US/docs/Web/CSS/border)`: none;`
+
+- `src`
+
+  该属性与[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)/`<img>`一样包含指向要嵌入文档的URL路径。
+
+- `width` 和 `height`
+
+  这些属性指定您想要的iframe的宽度和高度。
+
+- 备选内容
+
+  与[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)等其他类似元素相同，您可以在`<iframe></iframe>`标签之间包含备选内容，如果浏览器不支持`<iframe>`，将会显示备选内容，这种情况下，我们已经添加了一个到该页面的链接。现在您几乎不可能遇到任何不支持`<iframe>`的浏览器。
+
+- `sandbox`
+
+  该属性需要在已经支持其他`<iframe>`功能（例如IE 10及更高版本）但稍微更现代的浏览器上才能工作，该属性可以提高安全性设置; 我们将在下一节中更加详细地谈到。
+
+**注意**：为了提高速度，在主内容完成加载后，使用JavaScript设置iframe的`src`属性是个好主意。这使您的页面可以更快地被使用，并减少您的官方页面加载时间（重要的[SEO](https://developer.mozilla.org/en-US/docs/Glossary/SEO)指标）。
+
+### 安全隐患[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3)
+
+以上我们提到了安全问题 - 现在我们来详细介绍一下这一点。我们并不期望您第一次就能完全理解所有内容; 我们只想让您意识到这一问题，在您更有经验并开始考虑在您的实验和工作中使用`<iframe>`时为你提供参考。此外，没有必要害怕和不使用`<iframe>`—你只需要谨慎一点。继续看下去吧...
+
+浏览器制造商和Web开发人员了解到网络上的坏人（通常被称为**黑客**，或更准确地说是**破解者**），如果他们试图恶意修改您的网页或欺骗人们进行不想做的事情时常通过iframe作为共同目标来攻击（官方术语：**攻击向量**），例如显示用户名和密码等敏感信息。因此，规范工程师和浏览器开发人员已经开发了各种安全机制，使`<iframe>`更加安全，这有些最佳方案值得我们考虑 - 我们将在下面介绍其中的一些。
+
+[单击劫持](https://en.wikipedia.org/wiki/Clickjacking)是一种常见的iframe攻击，黑客将隐藏的iframe嵌入到您的文档中（或将您的文档嵌入到他们自己的恶意网站），并使用它来捕获用户的交互。这是误导用户或窃取敏感数据的常见方式。
+
+一个快速的例子 — 尝试在浏览器中加载上面的例子 - 你也可以[在Github上找到它](http://mdn.github.io/learning-area/html/multimedia-and-embedding/other-embedding-technologies/iframe-detail.html)（[参见源代码](https://github.com/mdn/learning-area/blob/gh-pages/html/multimedia-and-embedding/other-embedding-technologies/iframe-detail.html)）。你将不会看到任何内容，但如果你点击[浏览器开发者工具](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)中的*控制台*，你会看到一条消息，告诉你为什么没有显示内容。在Firefox中，您会*被告知：“X-Frame-Options拒绝加载https://developer.mozilla.org/en-US/docs/Glossary”*。这是因为构建MDN的开发人员已经在网站页面的服务器上设置了一个不允许被嵌入到`<iframe>`的设置（请参阅[配置CSP指令](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies#%E9%85%8D%E7%BD%AECSP%E6%8C%87%E4%BB%A4)）这是有必要的 — 整个MDN页面被嵌入在其他页面中没有多大意义，除非您想要将其嵌入到您的网站上并将其声称为自己的内容，或尝试通过单击劫持来窃取数据，这都是非常糟糕的事情。此外，如果每个人都这样做，所有额外的带宽将花费Mozilla很多资金。
+
+#### 只有在必要时嵌入
+
+有时嵌入第三方内容（例如YouTube视频和地图）是有意义的，但如果您只在完全需要时嵌入第三方内容，您可以省去很多麻烦。网络安全的一个很好的经验法则是*“你怎么谨慎都不为过，如果你决定要做这件事，多检查一遍；如果是别人做的，在被证明是安全的之前，都假设这是危险的。”*
+
+除了安全问题，你还应该意识到知识产权问题。无论在线内容还是离线内容，绝大部分内容都是有版权的，甚至是一些你没想到有版权的内容（例如，[Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page)上的大多数图片）。不要在网页上展示一些不属于你的内容，除非你是所有者或所有者给了你明确的、书面的许可。对于侵犯版权的惩罚是严厉的。再说一次，你再小心也不为过。
+
+如果内容获得许可，你必须遵守许可条款。例如，MDN上的内容是[在CC-BY-SA下许可的](https://developer.mozilla.org/zh-CN/docs/MDN/About#%E7%89%88%E6%9D%83%E5%92%8C%E8%AE%B8%E5%8F%AF)，这意味着，如果你要引用我们的内容，就必须[用适当的方式注明来源](https://wiki.creativecommons.org/wiki/Best_practices_for_attribution)，即使你对内容做了实质性的修改。
+
+#### 使用 HTTPS
+
+[HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/HTTPS)是[HTTP](https://developer.mozilla.org/en-US/docs/Glossary/HTTP)的加密版本。您应该尽可能使用HTTPS为您的网站提供服务：
+
+1. HTTPS减少了远程内容在传输过程中被篡改的机会，
+2. HTTPS防止嵌入式内容访问您的父文档中的内容，反之亦然。
+
+使用HTTPS需要一个安全证书，这可能是昂贵的（尽管[Let's Encrypt](https://letsencrypt.org/)让这件事变得更容易），如果你没有，可以使用HTTP来为你的父文档提供服务。但是，由于HTTPS的第二个好处，*无论成本如何，您绝对不能使用HTTP嵌入第三方内容*（在最好的情况下，您的用户的Web浏览器会给他们一个可怕的警告）。所有有声望的公司，例如Google Maps或Youtube，当您嵌入内容时，`<iframe>`将通过HTTPS提供 - 查看`<iframe>` `src`属性内的URL。
+
+**注意**：[Github页面](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Using_Github_pages)允许默认情况下通过HTTPS提供内容，因此对托管内容很有用。如果您正在使用不同的托管，并且不确定，请向您的托管服务商询问。
+
+#### 始终使用`sandbox`属性
+
+你想给攻击者尽可能少的机会在你的网站上做坏事，那么你应该只给嵌入式内容*工作所需的权限。*当然，这也适用于你自己的内容。一个代码可以适当使用或用于测试的容器，但不能对其他代码库（意外或恶意）造成任何损害称为[沙盒](https://en.wikipedia.org/wiki/Sandbox_(computer_security))。
+
+未沙盒化(Unsandboxed)内容可以做得太多（执行JavaScript，提交表单，弹出窗口等）默认情况下，您应该使用没有参数的`sandbox`属性来强制执行所有可用的限制，如我们前面的示例所示。
+
+如果绝对需要，您可以逐个添加权限（`sandbox=""`属性值内） - 请参阅`sandbox`所有可用选项的参考条目。其中重要的一点是，你*永远不*应该同时添加`allow-scripts`和`allow-same-origin`到你的`sandbox`属性中-在这种情况下，嵌入的内容可以绕过，从执行脚本停止网站同源安全策略，并使用JavaScript来关闭完全沙盒。
+
+**注意**：如果攻击者可以直接（外部`iframe`）愚弄人们访问恶意内容，Sandboxing不提供任何保护。如果某些内容有可能是恶意的（例如，用户生成的内容），请将其从不同的[域服务](https://developer.mozilla.org/en-US/docs/Glossary/domain)到您的主要网站。
+
+#### 配置CSP指令
+
+[CSP](https://developer.mozilla.org/en-US/docs/Glossary/CSP)代表**内容安全策略**，它提供[一组HTTP标头](https://developer.mozilla.org/en-US/docs/Web/Security/CSP/CSP_policy_directives)（由web服务器发送时与元数据一起发送的元数据），旨在提高HTML文档的安全性。在`<iframe>`s安全性方面，您可以*将服务器配置为发送适当的X-Frame-Options  标题。*这样做可以防止其他网站在其网页中嵌入您的内容（这将导致[点击](https://en.wikipedia.org/wiki/clickjacking)和一系列其他攻击），正如我们之前看到的那样，MDN开发人员已经做了这些工作。
+
+**注意**：您可以阅读Frederik Braun的帖子[在X-Frame-Options安全性头上](https://blog.mozilla.org/security/2013/12/12/on-the-x-frame-options-security-header/)来获取有关此主题的更多背景信息。显然，在这篇文章中已经解释得很清楚了。
+
+## <embed>和<object>元素[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%3Cembed%3E%E5%92%8C%3Cobject%3E%E5%85%83%E7%B4%A0)
+
+[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)和`<object>`元素的功能不同于`<iframe>`—— 这些元素是用来嵌入多种类型的外部内容的通用嵌入工具，其中包括像Java小程序和Flash，PDF（可在浏览器中显示为一个PDF插件）这样的插件技术，甚至像视频，SVG和图像的内容！
+
+**注意**：**插件**是一种对浏览器原生无法读取的内容提供访问权限的软件。
+
+然而，您不太可能使用这些元素 - Applet几年来一直没有被使用；由于许多原因，Flash不再受欢迎（见下面的[插件案例](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies#The_case_against_plugins)）；PDF更倾向于被链接而不是被嵌入；其他内容，如图像和视频都有更优秀、更容易元素来处理。插件和这些嵌入方法真的是一种传统技术，我们提及它们主要是为了以防您在某些情况下遇到问题，比如内部网或企业项目等。
+
+如果您发现自己需要嵌入插件内容，那么您至少需要一些这样的信息：
+
+|                                                              | [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/embed) | [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/object) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 嵌入内容的[网址](https://developer.mozilla.org/en-US/docs/Glossary/URL) | `src`                                                        | `data`                                                       |
+| 嵌入内容的*准确*[媒体类型](https://developer.mozilla.org/en-US/docs/Glossary/MIME_type) | `type`                                                       | `type`                                                       |
+| 由插件控制的框的高度和宽度（以CSS像素为单位）                | `height` `width`                                             | `height` `width`                                             |
+| 名称和值，将插件作为参数提供                                 | 具有这些名称和值的ad hoc属性                                 | 单标签[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param)元素，包含在内`<object>` |
+| 独立的HTML内容作为不可用资源的回退                           | 不支持（`<noembed>`已过时）                                  | 包含在元素`<object>`之后`<param>`                            |
+
+**注意**：`<object>`需要`data`属性，`type`属性或两者。如果您同时使用这两个，您也可以使用该`typemustmatch`属性（仅在Firefox中实现，在本文中）。`typemustmatch`保持嵌入文件不运行，除非`type`属性提供正确的媒体类型。`typemustmatch`因此，当您嵌入来自不同[来源的](https://developer.mozilla.org/en-US/docs/Glossary/origin)内容（可以防止攻击者通过插件运行任意脚本）时，可以赋予重要的安全优势。
+
+下面是一个使用该[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)元素嵌入Flash影片的示例（请参阅此处的[Github](http://mdn.github.io/learning-area/html/multimedia-and-embedding/other-embedding-technologies/embed-flash.html)，并[检查源代码](https://github.com/mdn/learning-area/blob/gh-pages/html/multimedia-and-embedding/other-embedding-technologies/embed-flash.html)）：
+
+```html
+<embed src="whoosh.swf" quality="medium"
+       bgcolor="#ffffff" width="550" height="400"
+       name="whoosh" align="middle" allowScriptAccess="sameDomain"
+       allowFullScreen="false" type="application/x-shockwave-flash"
+       pluginspage="http://www.macromedia.com/go/getflashplayer">
+```
+
+很可怕，不是吗 。Adobe Flash工具生成的HTML往往更糟糕，使用嵌入`<object>`元素的`<embed>`元素来覆盖所有的基础（查看一个例子）。甚至有一段时间，Flash被成功地用作HTML5视频的备用内容，但是这种情况越来越被认为是不必要的。
+
+现在来看一个`<object>`将PDF嵌入一个页面的例子（参见[实例](http://mdn.github.io/learning-area/html/multimedia-and-embedding/other-embedding-technologies/object-pdf.html)和[源代码](https://github.com/mdn/learning-area/blob/gh-pages/html/multimedia-and-embedding/other-embedding-technologies/object-pdf.html)）：
+
+```html
+<object data="mypdf.pdf" type="application/pdf"
+        width="800" height="1200" typemustmatch>
+  <p>You don't have a PDF plugin, but you can <a href="myfile.pdf">download the PDF file.</a></p>
+</object>
+```
+
+PDF是纸与数据之间重要的阶梯，但它们[在可访问性上有些问题](http://webaim.org/techniques/acrobat/acrobat)[，](http://webaim.org/techniques/acrobat/acrobat)并且可能难以在小屏幕上阅读。它们在一些圈子中仍然受欢迎，我们最好是用链接指向它们，而不是将其嵌入到网页中，以便它们可以在单独的页面上被下载或被阅读。
+
+### 针对插件的情况[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%E9%92%88%E5%AF%B9%E6%8F%92%E4%BB%B6%E7%9A%84%E6%83%85%E5%86%B5)
+
+以前，插件在网络上是不可或缺的。还记得你必须安装Adobe Flash Player才能在线观看电影的日子吗？并且你还会不断地收到关于更新Flash Player和Java运行环境的烦人警报。Web技术已经变得更加强大，那些日子已经结束了。对于大多数应用程序，现在是停止依赖插件传播内容，开始利用Web技术的时候了。
+
+- **扩大你对大家的影响力。**每个人都有一个浏览器，但插件越来越少，特别是在移动用户中。由于Web在很大程度上不需要依赖插件而运行，所以人们宁愿只是去竞争对手的网站而不是安装插件。
+- **从Flash和其他插件附带的额外的可访问性问题中摆脱。**
+- **避免额外的安全隐患。**即使经过无数次补丁[，](http://www.cvedetails.com/product/6761/Adobe-Flash-Player.html?vendor_id=53) Adobe Flash也是[非常不安全的](http://www.cvedetails.com/product/6761/Adobe-Flash-Player.html?vendor_id=53)。2015年，Facebook的首席安全官Alex Stamos甚至[要求Adobe停止Flash。](http://www.theverge.com/2015/7/13/8948459/adobe-flash-insecure-says-facebook-cso)
+
+那你该怎么办？如果您需要交互性，HTML和[JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript)可以轻松地为您完成工作，而不需要Java小程序或过时的ActiveX / BHO技术。您可以使用[HTML5视频](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Add_audio_or_video_content_to_a_webpage)来满足媒体需求，矢量图形[SVG](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Add_vector_image_to_a_webpage)，以及复杂图像和动画[画布](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial)。[彼得·埃尔斯特（Peter Elst）几年前已经提到](https://plus.google.com/+PeterElst/posts/P5t4pFhptvp)，对于工作Adobe Flash极少是正确的工具，除了专门的游戏和商业应用。对于ActiveX，即使微软的[Edge](https://developer.mozilla.org/en-US/docs/Glossary/Microsoft_Edge)浏览器也不再支持。
+
+## 概要[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%E6%A6%82%E8%A6%81)
+
+在Web文档中嵌入其他内容这一主题可以很快变得非常复杂，因此在本文中，我们尝试以一种简单而熟悉的方式来介绍它，这种介绍方式将立即显示出相关性，同时仍暗示了一些涉及更高级功能的技术。刚开始，除了嵌入第三方内容（如地图和视频），您不太可能在网页上使用到嵌入技术。当你变得更有经验时，你可能会开始为他们找到更多的用途。
+
+除了我们在这里讨论的那些外，还有许多涉及嵌入外部内容的技术。我们看到了一些在前面的文章中出现的，如[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)，[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)和[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)，但还有其它的有待关注，如  [``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)用于JavaScript生成的2D和3D图形，`<svg>`用于嵌入矢量图形。我们将在此学习模块的下一篇文章中学习[SVG](https://developer.mozilla.org/en-US/docs/Web/SVG)。
+
+# 在网页中添加矢量图形
+
+
+  矢量图形在很多情况下非常有用 — 它们拥有较小的文件尺寸，却高度可缩放，所以它们不会在镜头拉近或者放大图像时像素化。在这篇文章中，我们将为您呈现如何在网页中添加矢量图形。
+
+| 前提： | 你需要了解 [HTML的基本知识](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML) 并且知道如何 [在你的文档中插入图片](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML). |
+| ------ | ------------------------------------------------------------ |
+| 目标： | 了解如何嵌入 SVG (矢量) 图形到网页中。                       |
+
+**提示：** 本文的目的并不是教你 SVG；仅仅是告诉你它是什么，以及如何在网页中添加它。
+
+## 什么是矢量图形？[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E4%BB%80%E4%B9%88%E6%98%AF%E7%9F%A2%E9%87%8F%E5%9B%BE%E5%BD%A2%EF%BC%9F)
+
+在网上，你会和两种类型的图片打交道 — 位图和矢量图:
+
+- 位图使用像素网格来定义 — 一个位图文件精确得包含了每个像素的位置和它的色彩信息。流行的位图格式包括 Bitmap (`.bmp`), PNG (`.png`), JPEG (`.jpg`), and GIF (`.gif`.)
+- 矢量图使用算法来定义 — 一个矢量图文件包含了图形和路径的定义，电脑可以根据这些定义计算出当它们在屏幕上渲染时应该呈现的样子。 [SVG](https://developer.mozilla.org/en-US/docs/Glossary/SVG) 格式可以让我们创造用于 Web 的精彩的矢量图形。
+
+为了让你清楚的认识到两者的区别，我们来一个例子。你可以在我们的 Github 仓库中在线查看这个例子：[vector-versus-raster.html](http://mdn.github.io/learning-area/html/multimedia-and-embedding/adding-vector-graphics-to-the-web/vector-versus-raster.html) — 它并排展示了两个看起来一致的图像，一个红色的五角星以及黑色的阴影。不同的是，左边的是 PNG，而右边的是 SVG 图像。
+
+当你放大网页的时候，区别就会变得明显起来 — 随着你的放大，PNG 图片变得像素化了，因为它存储是每个像素的颜色和位置信息 — 当它被放大时，每个像素就被放大以填满屏幕上更多的像素，所以图像就会开始变得马赛克感觉。矢量图像看起来仍然效果很好且清晰，因为无论它的尺寸如何，都使用算法来计算出图像的形状，仅仅是根据放大的倍数来调整算法中的值。
+
+![Two star images, one raster and one vector. At their default size they look identical](https://mdn.mozillademos.org/files/12866/raster-vector-default-size.png)
+
+![Two star images zoomed in. The raster one on the left starts to look pixellated, whereas the vector one still looks crisp.](https://mdn.mozillademos.org/files/12868/raster-vector-zoomed.png)
+
+**注意**: 上面的图片实际上都是 PNG 图片 —— 每个例子中左边的图片代表光栅图片，右边的星星代表矢量图。还有，访问 [vector-versus-raster.html](http://mdn.github.io/learning-area/html/multimedia-and-embedding/adding-vector-graphics-to-the-web/vector-versus-raster.html) 示例来查看真正的例子！
+
+此外，矢量图形相较于同样的位图，通常拥有更小的体积，因为它们仅需储存少量的算法，而不是逐个储存每个像素的信息。
+
+## SVG是什么？[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#SVG%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F)
+
+[SVG](https://developer.mozilla.org/zh-CN/docs/Web/SVG) 是用于描述矢量图像的[XML](https://developer.mozilla.org/en-US/docs/Glossary/XML)语言。 它基本上是像HTML一样的标记，除了你有许多不同的元素来定义你想要出现在图像中的形状，以及你想要应用于这些形状的效果。 SVG用于标记图形，而不是内容。 非常简单，你有一些元素来创建简单图形，如[``](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/circle) 和[``](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/rect)。更高级的SVG功能包括 [``](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/feColorMatrix)（使用变换矩阵转换颜色）[``](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/animate) （矢量图形的动画部分）和 [``](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/mask)（在图像顶部应用蒙版）
+
+作为一个简单的例子，以下代码创建一个圆和一个矩形：
+
+```html
+<svg version="1.1"
+     baseProfile="full"
+     width="300" height="200"
+     xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="black" />
+  <circle cx="150" cy="100" r="90" fill="blue" />
+</svg>
+```
+
+这将创建以下输出：
+
+
+
+从上面的例子可以看出，SVG很容易手工编码。 是的，您可以在文本编辑器中手动编写简单的SVG，但是对于复杂的图像，这很快就开始变得非常困难。 为了创建SVG图像，大多数人使用矢量图形编辑器，如 [Inkscape](https://inkscape.org/en/) 或 [Illustrator](https://en.wikipedia.org/wiki/Adobe_Illustrator)。 这些软件包允许您使用各种图形工具创建各种插图，并创建照片的近似值（例如Inkscape的跟踪位图功能）。
+
+SVG除了迄今为止所描述的以外还有其他优点：
+
+- 矢量图像中的文本仍然可访问（这也有利于 [SEO](https://developer.mozilla.org/en-US/docs/Glossary/SEO))）。
+- SVG 可以很好地适应样式/脚本，因为图像的每个组件都是可以通过CSS或通过JavaScript编写的样式的元素。
+
+那么为什么会有人想使用光栅图形而不是SVG？ 其实 SVG 确实有一些缺点：
+
+- SVG非常容易变得复杂，这意味着文件大小会增加; 复杂的SVG也会在浏览器中占用很长的处理时间。
+- SVG可能比栅格图像更难创建，具体取决于您尝试创建哪种图像。
+- 旧版浏览器不支持SVG，因此如果您需要在网站上支持旧版本的 IE，则可能不适合（SVG从IE9开始得到支持）。
+
+由于上述原因，光栅图形更适合照片那样复杂精密的图像。
+
+**注意：**在Inkscape中，将文件保存为纯SVG以节省空间。 另请参阅[如何为Web准备SVG](http://tavmjong.free.fr/INKSCAPE/MANUAL/html/Web-Inkscape.html)。
+
+## 将SVG添加到页面[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E5%B0%86SVG%E6%B7%BB%E5%8A%A0%E5%88%B0%E9%A1%B5%E9%9D%A2)
+
+在本节中，我们将介绍将SVG矢量图形添加到网页的不同方式。
+
+### 快捷方式：[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%EF%BC%9A%3Cimg%3E)
+
+要通过 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)元素嵌入SVG，你只需要按照预期的方式在 src 属性中引用它。你将需要一个`height`或`width`属性（或者如果您的SVG没有固有的宽高比）。如果还没有这样做，请阅读[HTML中的图片](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML) 。
+
+```html
+<img 
+    src="equilateral.svg" 
+    alt="triangle with all three sides equal"
+    height="87px"
+    width="100px" />
+```
+
+#### 优点
+
+- 快速，熟悉的图像语法与`alt`属性中提供的内置文本等效。
+- 可以通过在[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a)元素嵌套`<img>`，使图像轻松地成为超链接。
+
+#### 缺点
+
+- 无法使用JavaScript操作图像。
+- 如果要使用CSS控制SVG内容，则必须在SVG代码中包含内联CSS样式。 （从SVG文件调用的外部样式表不起作用）
+- 不能用CSS伪类来重设图像样式（如`:focus`）。
+
+### 疑难解答和跨浏览器支持[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94%E5%92%8C%E8%B7%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%94%AF%E6%8C%81)
+
+对于不支持SVG（IE 8及更低版本，Android 2.3及更低版本）的浏览器，您可以从`src`属性引用PNG或JPG，并使用`srcset`属性 只有最近的浏览器才能识别）来引用SVG。 在这种情况下，仅支持浏览器将加载SVG - 较旧的浏览器将加载PNG：
+
+```html
+<img src="equilateral.png" alt="triangle with equal sides" srcset="equilateral.svg">
+```
+
+您还可以使用SVG作为CSS背景图像，如下所示。 在下面的代码中，旧版浏览器会坚持他们理解的PNG，而较新的浏览器将加载SVG：
+
+```
+background: url("fallback.png") no-repeat center;
+background-image: url("image.svg");
+background-size: contain;
+```
+
+像上面描述的`<img>`方法一样，使用 CSS 背景图像插入SVG 意味着它不能被 JavaScript 操作，并且也受到相同的 CSS 限制。
+
+如果 SVG 根本没有显示，可能是因为你的服务器设置不正确。 如果是这个问题，[这篇文章](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial/Getting_Started#A_Word_on_Webservers)将告诉你正确方向。
+
+### 如何在HTML中引入SVG代码[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E5%A6%82%E4%BD%95%E5%9C%A8HTML%E4%B8%AD%E5%BC%95%E5%85%A5SVG%E4%BB%A3%E7%A0%81)
+
+
+你还可以在文本编辑器中打开SVG文件，复制SVG代码，并将其粘贴到HTML文档中 - 这有时称为将**SVG内联**或**内联SVG**。确保您的SVG代码在`<svg></svg>`标签中（不要在外面添加任何内容）。这是一个非常简单的示例，您可以粘贴到文档中：
+
+```html
+<svg width="300" height="200">
+    <rect width="100%" height="100%" fill="green" />
+</svg>
+```
+
+#### 优点
+
+- 将 SVG 内联减少 HTTP 请求，可以减少加载时间。
+- 您可以为 SVG 元素分配`class`和`id`，并使用 CSS 修改样式，无论是在SVG中，还是 HTML 文档中的 CSS 样式规则。 实际上，您可以使用任何 [SVG外观属性](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute#Presentation_attributes) 作为CSS属性。
+- 内联SVG是唯一可以让您在SVG图像上使用CSS交互（如`:focus`）和CSS动画的方法（即使在常规样式表中）。
+- 您可以通过将 SVG 标记包在[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a)元素中，使其成为超链接。
+
+#### 缺点
+
+- 这种方法只适用于在一个地方使用的SVG。多次使用会导致资源密集型维护（resource-intensive maintenance）。
+- 额外的 SVG 代码会增加HTML文件的大小。
+- 浏览器不能像缓存普通图片一样缓存内联SVG。
+- 您可能会在[``](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/foreignObject) 元素中包含回退，但支持 SVG 的浏览器仍然会下载任何后备图像。你需要考虑仅仅为支持过时的浏览器，而增加额外开销是否真的值得。
+
+
+
+### 如何使用 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe) 嵌入SVG[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8_%3Ciframe%3E_%E5%B5%8C%E5%85%A5SVG)
+
+您可以在浏览器中打开 SVG 图像，就像网页一样。 因此，使用`<iframe>`嵌入 SVG 文档就像我们在 [从对象到iframe - 其他嵌入技术](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF) 中进行研究一样。
+
+这是一个快速回顾：
+
+```html
+<iframe src="triangle.svg" width="500" height="500" sandbox>
+    <img src="triangle.png" alt="Triangle with three unequal sides" />
+</iframe>
+```
+
+这绝对不是最好的方法：
+
+#### 缺点
+
+- 如你所知， `iframe`有一个回退机制，如果浏览器不支持`iframe`，则只会显示回退。
+- 此外，除非 SVG 和您当前的网页具有相同的 [origin](https://developer.mozilla.org/en-US/docs/Glossary/origin)，否则你不能在主页面上使用 JavaScript 来操纵 SVG。
+
+## 动手学习：使用SVG[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BD%BF%E7%94%A8SVG)
+
+在这个动手学习部分中，我们希望你能够体验一下 SVG 的乐趣。 在下面的“input”部分，您将看到我们已经提供了一些样例来开始使用。 您还可以访问 [SVG元素参考](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element)，了解更多关于SVG可以使用的其他玩具的细节，也可以尝试一下。 这部分都是为了锻炼你的研究技巧，并且有一些乐趣。
+
+如果你卡住了，无法使你的代码工作，你可以随时使用 Reset 按钮进行重置。
+
+
+
+## 总结[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E6%80%BB%E7%BB%93)
+
+本文提供了一个矢量图形和 SVG 的快速浏览，让你了解他们的作用，以及如何在网页中引入 SVG。 它从来没有打算成为学习 SVG 的完整教程，只是一个指南，让你在网上遇到 SVG 时知道它是什么。 所以不要觉得你不是一个 SVG 专家而担心。如果你想了解更多关于它的工作原理，我们在下面列出了一些可能会帮助您的信息。
+
+在本模块的最后一篇文章中，我们将详细探索响应式图像，查看 HTML 可以让您的图像在不同设备上更好地适配。
+
+## 相关链接[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5)
+
+- [SVG tutorial](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Getting_Started) on MDN
+- [Quick tips for responsive SVGs](http://thenewcode.com/744/Making-SVG-Responsive)
+- [Sara Soueidan's tutorial on responsive SVG images](http://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/)
+- [Accessibility benefits of SVG](http://www.w3.org/TR/SVG-access/)
+- [How to scale SVGs ](https://css-tricks.com/scale-svg/) （它不像光栅图形那么简单！）
+
+#   响应式图片
+
+在这篇文章中我们将学习关于响应式图片——一种可以在不同的屏幕尺寸和分辨率的设备上都能良好工作以及其他特性的图片，并且看看HTML提供了什么工具来帮助实现它们。响应式图片仅仅只是响应式web设计的一部分（奠定了响应式web设计的良好基础），我们会在未来的[CSS topic](https://developer.mozilla.org/en-US/docs/Learn/CSS)模块中学到更多关于这一主题的知识。
+
+| 学习本章节的前提: | 你应该已经了解了 [HTML的基础](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML) 以及如何 [在网站上添加静态图片](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML). |
+| ----------------- | ------------------------------------------------------------ |
+| 目的:             | 学习如何使用 `srcset` 以及 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture) 元素，来实现网页中的响应式图片处理方法。 |
+
+## 为什么要用自适应的图片？[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9B%BE%E7%89%87%EF%BC%9F)
+
+让我们来看一个典型的场景。一个典型的网站可能会有一张页首图片，这让访问者看起来感到愉快。图片下面可能会添加一些内容图像。页首图像的跨度可能是整个页首的宽度。而内容图像会适应内容纵列的某处。此处有个简单的例子：
+
+![Our example site as viewed on a wide screen - here the first image works ok, as it is big enough to see the detail in the center.](https://mdn.mozillademos.org/files/12940/picture-element-wide.png)
+
+这个网页在宽屏设备上表现良好，例如笔记本电脑或台式机（你可以[查看在线演示](http://mdn.github.io/learning-area/html/multimedia-and-embedding/responsive-images/not-responsive.html)并且在GitHub上查看[源代码](https://github.com/mdn/learning-area/blob/master/html/multimedia-and-embedding/responsive-images/not-responsive.html)）。我们不会在这一节课中讨论CSS，除了下面提到的那些：
+
+- 正文内容被设置的最大宽度为1200像素——在高于该宽度的视口中，正文保持在1200像素，并将其本身置于可用空间的中间。在该宽度以下的视口中，正文将保持在视口宽度的100%。
+- 页眉图像被设置为使其中心始终位于页眉的中心，无论页眉的宽度是多少。所以如果网站被显示在窄屏上，图片中心的重要细节（里面的人）仍然可以看到，而两边超出的部分都消失了。它的高度是200px。
+- 内容图片已经被设置为如果body元素比图像更小，图像就开始缩小，这样图像总是在正文里，而不是溢出正文。
+
+然而，当你尝试在一个狭小的屏幕设备上查看本页面时，问题就会产生。网页的页眉看起来还可以，但是页眉这张图片占据了屏幕的一大部分的高度，在这个尺寸下，你在第一张图片的内容里很难看到人。
+
+![Our example site as viewed on a narrow screen; the first image has shrunk to the point where it is hard to make out the detail on it.](https://mdn.mozillademos.org/files/12936/non-responsive-narrow.png)
+
+一个改进的方法是，当网站在狭窄的屏幕上观看时，显示一幅图片的包含了重要细节的裁剪版本，第二个被裁剪的图片会在像平板电脑这样的中等宽度的屏幕设备上显示，这就是众所周知的**艺术方向问题（art direction problem）**。
+
+另外，如果是在小屏手机屏幕上显示网页，那么没有必要在网页上嵌入这样大的图片。这被称之为**分辨率切换问题（resolution switching problem）**—一张位图被设置为固定像素的宽和高。当我们看[矢量图形](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web)时，一张较小的位图看来会有颗粒感，如果位图显示的尺寸大于原始尺寸（然而矢量图不会这样）。
+
+相反，没有必要在比图片实际尺寸小的屏幕上显示一张大图，这样做会浪费带宽——当可以在设备上使用小图像时，手机用户尤其不愿意因为下载用于桌面的大图像而浪费带宽。理想的情况是当访问网站时依靠不同的设备来提供不同的分辨率图片和不同尺寸的图片。
+
+让事情变得复杂的是，有些设备有很高的分辨率，为了显示的更出色，可能需要超出你预料的更大的图像。这从本质上是一样的问题，但在环境上有一些不同。
+
+你可能会认为矢量图形能解决这些问题，在某种程度上是这样的——它们无论是文件大小还是比例都合适，无论在哪里你都应该尽可能的使用它们。然而，它们并不适合所有的图片类型，虽然在简单图形、图案、界面元素等方面较好，但如果是有大量的细节的照片，创建矢量图像会变得非常复杂。像JPEG格式这样的位图会更适合上面例子中的图像。
+
+当web第一次出现时，这样的问题并不存在，在上世纪90年代中期，仅仅可以通过笔记本电脑和台式机来浏览web页面，所以浏览器开发者和规范制定者甚至没有想到要实现这种解决方式（响应式开发）。最近应用的响应式图像技术，通过让浏览器提供多个图像文件来解决上述问题，比如使用相同显示效果的图片但包含多个不同的分辨率（分辨率切换），或者使用不同的图片以适应不同的空间分配（艺术方向）。
+
+**注意**: 在这篇文章中讨论的新特性 — `srcset`/`sizes`/[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture) — 都已经被新版本的现代浏览器和移动浏览器所支持（包括Edge，而不是IE）。
+
+## 怎样创建自适应的图片?[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E6%80%8E%E6%A0%B7%E5%88%9B%E5%BB%BA%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9B%BE%E7%89%87)
+
+在这一部分中，我们将看看上面说明的两个问题，并且展示怎样用HTML的响应式图片来解决这些问题。需要注意的是，如以上示例所示，在本节中我们将专注于HTML的 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)，但网站页眉的图片仅是装饰性的，实际上应该要用CSS的背景图片来实现。[CSS是比HTML更好的响应式设计的工具](http://blog.cloudfour.com/responsive-images-101-part-8-css-images/)，我们会在未来的CSS模块中讨论。
+
+### 分辨率切换：不同的尺寸[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%88%86%E8%BE%A8%E7%8E%87%E5%88%87%E6%8D%A2%EF%BC%9A%E4%B8%8D%E5%90%8C%E7%9A%84%E5%B0%BA%E5%AF%B8)
+
+那么，我们想要用分辨率切换解决什么问题呢？我们想要显示相同的图片内容，仅仅依据设备来显示更大或更小的图片——这是我们在示例中使用第二个内容图像的情况。标准的[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)元素传统上仅仅让你给浏览器指定唯一的资源文件。
+
+```html
+<img src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy">
+```
+
+我们可以使用两个新的属性——`srcset` 和 `sizes`——来提供更多额外的资源图像和提示，帮助浏览器选择正确的一个资源。你可以看到 [reponsive.html](http://mdn.github.io/learning-area/html/multimedia-and-embedding/responsive-images/responsive.html) 的例子，也可以在GitHub上看到[source code](https://github.com/mdn/learning-area/blob/master/html/multimedia-and-embedding/responsive-images/responsive.html)：
+
+```html
+<img srcset="elva-fairy-320w.jpg 320w,
+             elva-fairy-480w.jpg 480w,
+             elva-fairy-800w.jpg 800w"
+     sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px"
+     src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy">
+```
+
+`srcset`和`sizes`属性看起来很复杂，但是如果你按照上图所示进行格式化，那么他们并不是很难理解，每一行有不同的属性值。每个值都包含逗号分隔的列表。列表的每一部分由三个子部分组成。让我们来看看现在的每一个内容：
+
+**srcset**定义了我们允许浏览器选择的图像集，以及每个图像的大小。在每个逗号之前，我们写：
+
+1. 一个**文件名** (`elva-fairy-480w.jpg`.)
+2. 一个空格
+3. **图像的固有宽度**（以像素为单位）（480w）——注意到这里使用`w`单位，而不是你预计的`px`。这是图像的真实大小，可以通过检查你电脑上的图片文件找到（例如，在Mac上，你可以在Finder上选择这个图像，然后按 Cmd + I 来显示信息）。
+
+`**sizes**`定义了一组媒体条件（例如屏幕宽度）并且指明当某些媒体条件为真时，什么样的图片尺寸是最佳选择—我们在之前已经讨论了一些提示。在这种情况下，在每个逗号之前，我们写：
+
+1. 一个**媒体条件**（`(max-width:480px)`）——你会在 [CSS topic](https://developer.mozilla.org/en-US/docs/Learn/CSS)中学到更多的。但是现在我们仅仅讨论的是媒体条件描述了屏幕可能处于的状态。在这里，我们说“当视窗的宽度是480像素或更少”。
+2. 一个空格
+3. 当媒体条件为真时，图像将填充的**槽的宽度**（`440px`）
+
+**注意**: 对于槽的宽度，你也许会提供一个固定值 (`px`, `em`) 或者是一个相对于视口的长度(`vw`)，但不是百分比。你也许以及注意到最后一个槽的宽度是没有媒体条件的，它是默认的，当没有任何一个媒体条件为真时，它就会生效。 当浏览器成功匹配第一个媒体条件的时候，剩下所有的东西都会被忽略，所以要注意媒体条件的顺序。
+
+所以，有了这些属性，浏览器会：
+
+1. 查看设备宽度
+2. 检查`sizes`列表中哪个媒体条件是第一个为真
+3. 查看给予该媒体查询的槽大小
+4. 加载`srcset`列表中引用的最接近所选的槽大小的图像
+
+就是这样！所以在这里，如果支持浏览器以视窗宽度为480px来加载页面，那么`(max-width: 480px)`的媒体条件为真，因此`440px`的槽会被选择，所以`elva-fairy-480w.jpg`将加载，因为它的的固定宽度（`480w`）最接近于`440px`。800px的照片大小为128KB而480px版本仅有63KB大小—节省了65KB。现在想象一下，如果这是一个有很多图片的页面。使用这种技术会节省移动端用户的大量带宽。
+
+老旧的浏览器不支持这些特性，它会忽略这些特征。并继续正常加载 `src`属性引用的图像文件。
+
+**注意**: 在 HTML 文件中的 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/head) 标签里， 你将会找到这一行代码 `<meta name="viewport" content="width=device-width">`: 这行代码会强制地让手机浏览器采用它们真实视图的宽度来加载网页（有些手机浏览器会提供不真实的视图宽度, 然后加载比浏览器真实视图的宽度大的宽度的网页，然后再缩小加载的页面，这样的做法对响应式图片或其他设计，没有任何帮助。我们会在未来的模块教给你更多关于这方面的知识）。
+
+### 一些有用的开发工具[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7)
+
+这里有一些在浏览器中的非常实用的[开发者工具](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)用来帮助制定重要的槽宽度，以及其他你可能会用到的场景。当我在设置槽宽度的时候，我先加载了示例中的无响应的版本（`not-responsive.html`），然后进入 [响应设计视图](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode) （*Tools > Web Developer > Responsive Design View），*这个工具允许你在不同设备的屏幕宽度场景下查看网页的布局。
+
+我设置我的视图宽度为 320px，然后再改为 480px；每一次宽度的改变我就进入 [DOM 检查 ](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector)，点击我们感兴趣的 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 元素，然后在显示屏右侧的 Box Model 视图选项卡中查看它的大小。 你应该会看到，这种无响应式的做法会让你的图片在不同屏幕宽度下有着固定的宽度。
+
+![A screenshot of the firefox devtools with an image element highlighted in the dom, showing its dimensions as 440 by 293 pixels.](https://mdn.mozillademos.org/files/12932/box-model-devtools.png)
+
+接着, 你可以检查 `srcset` 是否正常工作，你需要将视图的宽度设置为你想要的，(比如，把宽度设置的比较小，让页面看起来比较狭窄），打开网络检查（*Tools > Web Developer > Network），*然后重新加载页面。网络检查工具会给你一个列表，里面的文件都是已经被下载来构造网页的。然后你可以在这里看到哪个图像文件被下载了。
+
+**注意**: 在 Chrome 中测试时，通过如下方式禁用缓存：打开 DevTools ，并选中下 Settings > Preferences > Network 的选择框。否则，Chrome 会优先选择缓存图片而不是恰好适配的那个。
+
+![a screenshot of the network inspector in firefox devtools, showing that the HTML for the page has been downloaded, along with three images, which include the two 800 wide versions of the responsive images](https://mdn.mozillademos.org/files/12934/network-devtools.png)
+
+### 分辨率切换: 相同的尺寸, 不同的分辨率[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%88%86%E8%BE%A8%E7%8E%87%E5%88%87%E6%8D%A2_%E7%9B%B8%E5%90%8C%E7%9A%84%E5%B0%BA%E5%AF%B8_%E4%B8%8D%E5%90%8C%E7%9A%84%E5%88%86%E8%BE%A8%E7%8E%87)
+
+如果你支持多种分辨率显示，但希望每个人在屏幕上看到的图片的实际尺寸是相同的，你可以让浏览器通过`srcset`和x语法结合——一种更简单的语法——而不用`sizes`，来选择适当分辨率的图片。你可以看一个例子 [srcset-resolutions.html](http://mdn.github.io/learning-area/html/multimedia-and-embedding/responsive-images/srcset-resolutions.html)（或 [the source code](https://github.com/mdn/learning-area/blob/master/html/multimedia-and-embedding/responsive-images/srcset-resolutions.html)）：
+
+```html
+<img srcset="elva-fairy-320w.jpg,
+             elva-fairy-480w.jpg 1.5x,
+             elva-fairy-640w.jpg 2x"
+     src="elva-fairy-640w.jpg" alt="Elva dressed as a fairy">
+```
+
+![A picture of a little girl dressed up as a fairy, with an old camera film effect applied to the image](https://mdn.mozillademos.org/files/12942/resolution-example.png)在这个例子中，下面的CSS会应用在图片上，所以它的宽度在屏幕上是320像素（也称作CSS像素）：
+
+```css
+img {
+  width: 320px;
+}
+```
+
+在这种情况下，`sizes`并不需要——浏览器只是计算出正在显示的显示器的分辨率，然后提供`srcset`引用的最适合的图像。因此，如果访问页面的设备具有标准/低分辨率显示，一个设备像素表示一个CSS像素，`elva-fairy-320w.jpg`会被加载（1x 是默认值，所以你不需要写出来）。如果设备有高分辨率，两个或更多的设备像素表示一个CSS像素，`elva-fairy-640w.jpg` 会被加载。640px的图像大小为93KB，320px的图像的大小仅仅有39KB。
+
+### 艺术方向[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E8%89%BA%E6%9C%AF%E6%96%B9%E5%90%91)
+
+回顾一下，**艺术方向问题**涉及要更改显示的图像以适应不同的图像显示尺寸。例如，如果在桌面浏览器上的一个网站上显示一张大的、横向的照片，照片中央有个人，然后当在移动端浏览器上浏览这个网站时，照片会缩小，这时照片上的人会变得非常小，看起来会很糟糕。这种情况可能在移动端显示一个更小的肖像图会更好，这样人物的大小看起来更合适。[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)元素允许我们这样实现。
+
+回到我们最初的例子 [not-responsive.html](http://mdn.github.io/learning-area/html/multimedia-and-embedding/responsive-images/not-responsive.html) ，我们有一张图片需要艺术方向：
+
+```html
+<img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva">
+```
+
+让我们改用 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)！就像[``和``](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)，[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)素包含了一些[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/source)元素，它使浏览器在不同资源间做出选择，紧跟着的是最重要的[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)元素。[responsive.html](http://mdn.github.io/learning-area/html/multimedia-and-embedding/responsive-images/responsive.html)的代码如下：
+
+```html
+<picture>
+  <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg">
+  <source media="(min-width: 800px)" srcset="elva-800w.jpg">
+  <img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva">
+</picture>
+```
+
+-  `<source>`元素包含一个`media`属性，这一属性包含一个媒体条件——就像第一个`srcset`例子，这些条件来决定哪张图片会显示——第一个条件返回真，那么就会显示这张图片。在这种情况下，如果视窗的宽度为799px或更少，第一个`<source>`元素的图片就会显示。如果视窗的宽度是800px或更大，就显示第二张图片。
+- `srcset`属性包含要显示图片的路径。请注意，正如我们在`<img>`上面看到的那样，`<source>`可以使用引用多个图像的`srcset`属性，还有`sizes`属性。所以你可以通过一个 `<picture>`元素提供多个图片，不过也可以给每个图片提供多分辨率的图片。实际上，你可能不想经常做这样的事情。
+- 在任何情况下，你都必须在 `</picture>`之前正确提供一个`<img>`元素以及它的`src`和`alt`属性，否则不会有图片显示。当媒体条件都不返回真的时候（你可以在这个例子中删除第二个`<source>` 元素），它会提供图片；如果浏览器不支持 `<picture>`元素时，它可以作为后备方案。
+
+这样的代码允许我们在宽屏和窄屏上都能显示合适的图片，像下面展示的一样：
+
+![Our example site as viewed on a wide screen - here the first image works ok, as it is big enough to see the detail in the center.](https://mdn.mozillademos.org/files/12940/picture-element-wide.png)![Our example site as viewed on a narrow screen with the picture element used to switch the first image to a portrait close up of the detail, making it a lot more useful on a narrow screen](https://mdn.mozillademos.org/files/12938/picture-element-narrow.png)
+
+**注意**: 你应该仅仅当在艺术方向场景下使用media属性；当你使用media时，不要在sizes属性中也提供媒体条件。
+
+### 为什么我们不能使用 CSS 或 JavaScript 来做到这一效果?[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8_CSS_%E6%88%96_JavaScript_%E6%9D%A5%E5%81%9A%E5%88%B0%E8%BF%99%E4%B8%80%E6%95%88%E6%9E%9C)
+
+当浏览器开始加载一个页面, 它会先下载 (预加载) 任意的图片，这是发生在主解析器开始加载和解析页面的 CSS 和 JavaScript 之前的。这是一个非常有用的技巧，平均来说，页面加载的时间少了 20%。但是, 这对响应式图片一点帮助都没有, 所以需要实现类似 `srcset`的方法。因为你不能先加载好 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 元素后, 再用 JavaScript 检测视图的宽度，如果觉得大小不合适，就动态地加载小的图片替换已经加载好的图片，这样的话, 原始的图像已经被加载了, 然后你也加载了小的图像, 这样的做法对于响应式图像的理念来说，是很糟糕的。
+
+
+
+### 大胆的使用现代图像格式[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%A4%A7%E8%83%86%E7%9A%84%E4%BD%BF%E7%94%A8%E7%8E%B0%E4%BB%A3%E5%9B%BE%E5%83%8F%E6%A0%BC%E5%BC%8F)
+
+有很多令人激动的新图像格式（例如WebP和JPEG-2000）可以在有高质量的同时有较低的文件大小。然而，浏览器对其的支持参差不齐。
+
+`<picture>`让我们能继续满足老式浏览器的需要。你可以在`type`属性中提供MIME类型，这样浏览器就能立即拒绝其不支持的文件类型：
+
+```html
+<picture>
+  <source type="image/svg+xml" srcset="pyramid.svg">
+  <source type="image/webp" srcset="pyramid.webp"> 
+  <img src="pyramid.png" alt="regular pyramid built from four equilateral triangles">
+</picture>
+```
+
+- 不要使用`media`属性，除非你也需要艺术方向。
+- 在`<source>` 元素中，你只可以引用在`type`中声明的文件类型。
+- 像之前一样，如果必要，你可以在`srcset`和`sizes`中使用逗号分割的列表。
+
+## 主动学习：实现属于你的响应式图像[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%AE%9E%E7%8E%B0%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9B%BE%E5%83%8F)
+
+在这次主动学习中，我们希望你变得勇敢和自力更生……我们希望你把自己拍摄的艺术截图，通过 `<picture>`来实现在窄屏幕和宽屏幕下的显示，以及使用 `srcset`切换不同的分辨率。
+
+1. 写一些简单 HTML 来包含你的代码（如果你喜欢，也可以使用 `not-responsive.html` 作为起点）。
+2. 找一张漂亮的宽屏风景图像，其中需要包含一些细节。使用图像编辑器创建一个网页大小的版本。然后裁剪一下，显示一个更小的部分，其中包含放大的细节, 然后创建第二张图片 (差不多 480px 宽度比较好。)
+3. 使用 `<picture>` 元素来实现艺术图片切换器！
+4. 创建不同大小的多张图片, 每个图片的图像都是一样的。
+5. 使用 `srcset`/`size` 来创建一个分辨率切换器示例, 可以在不同的分辨率的情况下，提供相同尺寸的图像, 或者在不同的视图大小的情况下，提供不同尺寸大小的图像。
+
+**注意**: 使用浏览器开发工具来帮助你工作时可以得到你需要的视图大小，就像上文提到的。
+
+## 小结[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%B0%8F%E7%BB%93)
+
+这章节中充满了响应式图像 — 我们希望你学习新技术的过程是享受的。概括来说，有两个不同的问题，文章中我们一直在讨论：
+
+- **艺术方向**：当你想为不同布局提供不同剪裁的图片——比如在桌面布局上显示完整的、横向图片，而在手机布局上显示一张剪裁过的、突出重点的纵向图片，可以用 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)元素来实现。
+- **分辨率切换**：当你想要为窄屏提供更小的图片时，因为小屏幕不需要像桌面端显示那么大的图片；以及你想为高/低分辨率屏幕提供不同分辨率的图片时，都可以通过 [vector graphics](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web) (SVG images)、 `srcset` 以及 `sizes` 属性来实现。
+
+此时整个[Multimedia and embedding](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding) 模块接近尾声！在继续下一个模块之前，你现在唯一要做的就是尝试我们的多媒体评估，看看你做得怎样。玩的开心。
+
+## 参阅[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%8F%82%E9%98%85)
+
+- [Jason Grigsby对响应式图片的出色介绍](http://blog.cloudfour.com/responsive-images-101-definitions)
+- [R响应式图片：如果你只是在改变分辨率，就用srcset](https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/) — 包含了更多关于浏览器如何选择显示图片的解释
+- [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)
+- [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)
+- [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/source)
+
+## 在这个模块中[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%9C%A8%E8%BF%99%E4%B8%AA%E6%A8%A1%E5%9D%97%E4%B8%AD)
+
+- [HTML中的图片](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML)
+- [音视频内容](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
+- [从 到 — 其他嵌入技术](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies)
+- [给网页添加矢量图](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web)
+- [响应式图片](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+- [Mozilla醒目页面](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page)
+
 
   
