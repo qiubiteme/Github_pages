@@ -108,7 +108,7 @@ JavaScript 是一种被用来添加交互功能到你的网站的编程语言。
 
 接下来，拿一支笔和一张纸然后粗略地画出你希望你的网站呈现出来的样子。对于你的第一个简单网页，并没有什么好做的，但是你现在应该养成这样的习惯。这真的很有用——你并不需要成为下一个梵高！
 
-![](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\website-drawing-scan.png)
+![](img/website-drawing-scan.png)
 
 提示：即使是在真正的复杂的网站中，设计团队也是首先在纸上画出草稿，然后在图形编辑器中或者使用 Web 技术作出数码模型；
 
@@ -126,7 +126,7 @@ Web 团队通常包括一个图形设计师和 [用户体验设计师](https://d
 
 要选择一种颜色，访问 [the Color Picker](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Colors/Color_picker_tool) 找出你喜欢的颜色。当你在一种颜色上点击时，你会看到一个类似于 #660066 的奇怪的六位编码。这是十六进制编码，并且表示了你的颜色。复制下来并将它暂时保存在安全的地方。
 
-![](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\Screenshot from 2014-11-03 17_40_49.png)
+![](img/Screenshot from 2014-11-03 17_40_49.png)
 
 ### 图像[Section](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/What_will_your_website_look_like#%E5%9B%BE%E5%83%8F)
 
@@ -136,13 +136,13 @@ Web 团队通常包括一个图形设计师和 [用户体验设计师](https://d
 2. 按下 *查看图像* 按钮。
 3. 在下一页，右击图像（或者在 Mac 上 Ctrl + 点击），选择 *图像另存为...，然后选择一个安全的位置存放你的图像。另外你也可以复制*你的浏览器地址栏上的图像地址以便后来使用。
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\Screenshot from 2014-11-04 15_09_21.png)
+![img](img/Screenshot from 2014-11-04 15_09_21.png)
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\Screenshot from 2014-11-04 15_20_48.png)
+![img](img/Screenshot from 2014-11-04 15_20_48.png)
 
 提示：大部分网络上的图片，包括 Google 中的都是有版权的。为了减少你盗用版权行为的可能，你可以使用 Google 许可过滤器。只需 1）点击搜索按钮，然后 2）选择使用权利：
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\Screenshot from 2014-11-04 14_27_45.png)
+![img](img/Screenshot from 2014-11-04 14_27_45.png)
 
 ### 字体[Section](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/What_will_your_website_look_like#%E5%AD%97%E4%BD%93)
 
@@ -153,11 +153,11 @@ Web 团队通常包括一个图形设计师和 [用户体验设计师](https://d
 3. 点击页面底部面板的 "* Family Selected" 按钮（ "*" 取决于你选择的字体数量）。
 4. 在弹出框中，你可以看到 Google 给你的代码片段并且复制至你的文本编辑器并保存以便后续使用。
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\font1.png)
+![img](img/font1.png)
 
  
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\font2.png)
+![img](img/font2.png)
 
 ## 文件处理
 
@@ -227,7 +227,7 @@ Web 团队通常包括一个图形设计师和 [用户体验设计师](https://d
 
 5. 保存 HTML 文件，然后使用浏览器打开（双击文件）。你应该看到展示着你的图像的新网页！
 
-![A screenshot of our basic website showing just the firefox logo - a flaming fox wrapping the world](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\website-screenshot.png)
+![A screenshot of our basic website showing just the firefox logo - a flaming fox wrapping the world](img/website-screenshot.png)
 
 一些文件路径的通用规则：
 
@@ -244,7 +244,7 @@ Web 团队通常包括一个图形设计师和 [用户体验设计师](https://d
 
 我们差不多都做完了。你的文件夹结构应该像这样：
 
-![A file structure in mac os x finder, showing an images folder with an image in, empty scripts and styles folders, and an index.html file](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\file-structure.png)
+![A file structure in mac os x finder, showing an images folder with an image in, empty scripts and styles folders, and an index.html file](img/file-structure.png)
 
 ## HTML 基础
 
@@ -270,7 +270,7 @@ My cat is very grumpy
 
 让我们深入探索一下这个段落元素。
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\grumpy-cat-small.png)
+![img](img/grumpy-cat-small.png)
 
 这个元素的主要部分有：
 
@@ -281,7 +281,7 @@ My cat is very grumpy
 
 元素也可以有属性，看起来像这样：
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\grumpy-cat-attribute-small.png)
+![img](img/grumpy-cat-attribute-small.png)
 
 属性（Attribute）包含了关于元素的一些额外的信息，这些信息本身并不需要被显现在内容中。在这个例子中，`class` 是一个属性名称，`editor-note` 是属性的值 。`class` 属性允许你为元素提供一个标识名称，以便进一步为元素指定样式或进行其他操作时使用。
 
@@ -458,7 +458,7 @@ alt 属性的关键就是要“可以描述图像的文本”。当被读出来�
 
 如果你一直跟着这篇文章里的指导做的话，你应该完成了一个像下面这样的页面。（你也可以[从这查看](http://mdn.github.io/beginner-html-site/)）：
 
-![A web page screenshot showing a firefox logo, a heading saying mozilla is cool, and two paragraphs of filler text](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\finished-test-page-small.png)
+![A web page screenshot showing a firefox logo, a heading saying mozilla is cool, and two paragraphs of filler text](img/finished-test-page-small.png)
 
 如果你遇到困难，你可以将 Github 上的[完整示例代码](https://github.com/mdn/beginner-html-site/blob/gh-pages/index.html)上与你的文件进行比较。
 
@@ -490,13 +490,13 @@ p {
 
 2. 保存 `index.html` 并用浏览器将其打开。你应该看到这样的页面：
 
-![A mozilla logo and some paragraphs. The paragraph text has been styled red by our css.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\website-screenshot-styled.png)如果你的段落文字现在是红色的了，那么祝贺你，你已经成功地写下了你的第一句 CSS 代码！
+![A mozilla logo and some paragraphs. The paragraph text has been styled red by our css.](img/website-screenshot-styled.png)如果你的段落文字现在是红色的了，那么祝贺你，你已经成功地写下了你的第一句 CSS 代码！
 
 ### 解析CSS规则集[Section](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics#%E8%A7%A3%E6%9E%90CSS%E8%A7%84%E5%88%99%E9%9B%86)
 
 让我们仔细看一看 CSS ：
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\css-declaration-small.png)
+![img](img/css-declaration-small.png)
 
 整个结构称为 CSS 的**规则集**（通常被简称为“规则”），注意里面单独的部分也是一样：
 
@@ -596,13 +596,13 @@ p, li, h1 {
 
 你可以调整这些 `px` 值到任何你喜欢的值来让你的设计更符合你的心意，不过通常你的设计应该看起来像这样：
 
-![a mozilla logo and some paragraphs. a sans-serif font has been set, the font sizes, line height and letter spacing are adjusted, and the main page heading has been centered](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\website-screenshot-font-small.png)
+![a mozilla logo and some paragraphs. a sans-serif font has been set, the font sizes, line height and letter spacing are adjusted, and the main page heading has been centered](img/website-screenshot-font-small.png)
 
 ### 盒子，盒子，一切都与盒子有关[Section](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/CSS_basics#%E7%9B%92%E5%AD%90%EF%BC%8C%E7%9B%92%E5%AD%90%EF%BC%8C%E4%B8%80%E5%88%87%E9%83%BD%E4%B8%8E%E7%9B%92%E5%AD%90%E6%9C%89%E5%85%B3)
 
 在你写 CSS 时你会发现它大部分都是关于盒子——设置它们的尺寸，颜色，位置等等。你的页面里大部分 HTML 元素都可以被看作一个一个层叠的盒子。
 
-![a big stack of boxes or crates sat on top of one another](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\boxes.jpg)
+![a big stack of boxes or crates sat on top of one another](img/boxes.jpg)
 
 并不意外，CSS 布局主要就是基于盒模型的。每个占据你页面空间的块都有这样的属性：
 
@@ -610,7 +610,7 @@ p, li, h1 {
 - **边框**（`border`），紧接着内边距的实体线段
 - **外边距**（`margin`），围绕元素外部的空间
 
-![three boxes sat inside one another. From outside to in they are labelled margin, border and padding](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\box-model.png)
+![three boxes sat inside one another. From outside to in they are labelled margin, border and padding](img/box-model.png)
 
 在这一部分我们用：
 
@@ -693,7 +693,7 @@ img {
 
 如果你一直跟随我们的说明，那么到最后你应该得到一个这样的页面（你也可以在[这里](http://mdn.github.io/beginner-html-site-styled/)查看我们的版本）：
 
-![a mozilla logo, centered, and a header and paragraphs. It now looks nicely styled, with a blue background for the whole page and orange background for the centered main content strip.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\website-screenshot-final.png)
+![a mozilla logo, centered, and a header and paragraphs. It now looks nicely styled, with a blue background for the whole page and orange background for the centered main content strip.](img/website-screenshot-final.png)
 
 如果你有遇到问题，你可以将你的代码与我们GitHub上的[完整示例代码](https://github.com/mdn/beginner-html-site-styled/blob/gh-pages/styles/style.css)做对比。
 
@@ -746,7 +746,7 @@ JavaScript 本身是相当简洁却非常灵活的。开发者们在 JavaScript 
 
 5. 最后，确保 HTML 和 JavaScript 文件已经保存好，然后用浏览器打开 `index.html` 。你应该看到如下内容：
 
-   ![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\hello-world.png)
+   ![img](img/hello-world.png)
 
 提示：我们之所以**将 *<script>* 元素放在 HTML 文件底部**，是因为浏览器会按照代码在文件中的顺序解析 HTML。如果应该要影响下面 HTML 的 JavaScript 先被加载，那么它可能由于 HTML 尚未被加载而失效。所以**将 JavaScript 代码放在靠近 HTML 页面底部的位置是通常最好的选择**。
 
@@ -1022,7 +1022,7 @@ myHTML.onclick = function() {};
 
 如果你一直跟随我们的指导，那么到最后你应该得到如下页面（你也可以在[这里](https://mdn.github.io/beginner-html-site-scripted/)查看我们的版本）：
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\website-screen-scripted.png)
+![img](img/website-screen-scripted.png)
 
 如果你有遇到问题，你可以将你的代码与我们GitHub上的[完整示例代码](https://github.com/mdn/beginner-html-site-scripted/blob/gh-pages/scripts/main.js)做对比。
 
@@ -1047,7 +1047,7 @@ myHTML.onclick = function() {};
 
 此外，你将需要一个 [文件传输协议](https://developer.mozilla.org/en-US/docs/Glossary/FTP) 程序 ( 点击[钻研在网络上做某些事情要花费多少：软件](https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/How_much_does_it_cost#%E8%BD%AF%E4%BB%B6)查看详细信息 ) 来将网站文件上传到服务器。不同的 FTP 程序涵盖了不同的范围， 但是你通常需要使用主机服务提供商给你的详细信息（比如用户名、密码、主机名）登录到 Web 服务器 。然后程序在两个窗口里分别显示本地文件和服务器文件，这样你就可以在它们之间进行传输：
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\ftp.jpg)
+![img](img/ftp.jpg)
 
 **寻找主机服务和域名的建议**
 
@@ -1076,7 +1076,7 @@ myHTML.onclick = function() {};
 - [JSBin](http://jsbin.com/)
 - [CodePen](https://codepen.io/)
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\jsbin-screen.png)
+![img](img/jsbin-screen.png)
 
 ### **通过GitHub发布[Section](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/Publishing_your_website#%E9%80%9A%E8%BF%87GitHub%E5%8F%91%E5%B8%83)**
 
@@ -1089,7 +1089,7 @@ myHTML.onclick = function() {};
 3. 在这个页面上，在 *Repository name* 输入框里输入  *username*.github.io，username 是你的用户名。
 
    比如，我们的朋友 bobsmith 会输入  *bobsmith.github.io。*
-   同时勾选 *Initialize this repository with a README* ，然后点击Create repository。![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\github-create-repo.png)
+   同时勾选 *Initialize this repository with a README* ，然后点击Create repository。![img](img/github-create-repo.png)
 
 4. 然后，将你的网页文件夹拖拽到你的资源库( repository )，再点击 Commit changes。
 
@@ -1119,7 +1119,7 @@ myHTML.onclick = function() {};
 
 连接到互联网的计算机被称作客户端和服务器。下面是一个简单描述它们如何交互的图表：
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\Client-server.jpg)
+![img](img/Client-server.jpg)
 
 - 客户端是典型的Web用户入网设备（比如，你连接了Wi-Fi的电脑，或接入移动网络的手机）和设备上可联网的软件（通常使用像 Firefox 和 Chrome的浏览器）。
 - 服务器是存储网页，站点和应用的计算机。当一个客户端设备想要获取一个网页时，一份网页的拷贝将从服务器上下载到客户端机器上来在用户浏览器上显示。
@@ -1130,7 +1130,7 @@ myHTML.onclick = function() {};
 
 现在，让我们假设 Web 就是一条路。路的一端是客户端，就像你的家。另一端则是服务器，就像你想去的商店。
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\road.jpg)
+![img](img/road.jpg)
 
 除了客户端和服务器，我们还需要了解：
 
@@ -1166,7 +1166,7 @@ myHTML.onclick = function() {};
 
 网页可以通过  [IP地址](https://developer.mozilla.org/en-US/docs/Glossary/IP_Address)直接访问。试试通过输入 `63.245.217.105` 来访问 Mozilla网站。能准确访问的IP是：63.245.215.20。
 
-![A domain name is just another form of an IP address](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\dns-ip.png)
+![A domain name is just another form of an IP address](img/dns-ip.png)
 
 ### 数据包解析[Section](https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web/How_the_Web_works#%E6%95%B0%E6%8D%AE%E5%8C%85%E8%A7%A3%E6%9E%90)
 
@@ -1329,7 +1329,7 @@ My cat is very grumpy
 
 让我们进一步探讨我们的段落元素：
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\grumpy-cat-small.png)
+![img](img/grumpy-cat-small.png)
 
 我们的元素的主要部分是：
 
@@ -1403,7 +1403,7 @@ My cat is very grumpy
 
 显示如下：
 
-![](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\firefox-icon.png)
+![](img/firefox-icon.png)
 
 在 CodePen 中打开在 JSFiddle 中打开
 
@@ -1413,7 +1413,7 @@ My cat is very grumpy
 
 元素也可以拥有属性，如下：
 
-![&lt;p class="editor-note">My cat is very grumpy&lt;/p>](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\grumpy-cat-attribute-small.png)
+![&lt;p class="editor-note">My cat is very grumpy&lt;/p>](img/grumpy-cat-attribute-small.png)
 
 属性包含元素的额外信息，这些信息不会出现在实际的内容中。在上述例子中，这个class属性给元素赋了一个识别的名字（id），这个名字此后可以被用来识别此元素的样式信息和其他信息。
 
@@ -1649,7 +1649,7 @@ My cat is very grumpy
 
 你可以打开浏览器看看这段代码的效果是什么样的，然后改变代码刷新浏览器看看新的结果。 最开始的代码是这样的效果：
 
-![A simple HTML page that says This is my page](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\template-screenshot.png)
+![A simple HTML page that says This is my page](img/template-screenshot.png)
 
 所以在这段练习中, 你可以用你的电脑在本地编写运行代码，如上所述, 你也可以在下面的简单可编辑窗口编辑它 (此时这个简单的可编辑窗口仅显示<body>标签内的内容.) 我们希望您能够实践以下步骤：
 
@@ -1790,7 +1790,7 @@ head 标签是 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/he
 
 2. 在浏览器中打开文件，你会看到类似这样效果:
 
-   ![A simple web page with the title set to <title> element, and the <h1> set to <h1> element.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\title-example.png)
+   ![A simple web page with the title set to <title> element, and the <h1> set to <h1> element.](img/title-example.png)
 
    现在很明显的可以看到 `<h1>` 出现的地方, 和  `<title>` 出现的地方!
 
@@ -1798,7 +1798,7 @@ head 标签是 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/he
 
 元素 `<title>` 也被以其他的方式使用着. 比如说，如果你尝试为某个页面添加书签，(*Bookmarks > Bookmark This Page*, 在火狐浏览器中), 你会看到 `<title>` 的内容被作为建议的书签名.
 
-![A webpage being bookmarked in firefox; the bookmark name has been automatically filled in with the contents of the <title> element ](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\bookmark-example.png)
+![A webpage being bookmarked in firefox; the bookmark name has been automatically filled in with the contents of the <title> element ](img/bookmark-example.png)
 
 元素 `<title>` 的内容也被用在搜索的结果中，正如你下面看到的那样。
 
@@ -1816,11 +1816,11 @@ head 标签是 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/he
 
 这个元素简单的指定了文档的字符编码 —— 在这个文档中被允许使用的字符集。 `utf-8` 是一个通用的字符集，它包含了任何人类语言中的大部分的字符。 这意味着你的web页面可以显示任意的语言; 所以对于你的每一个页面，使用这个设置是很好的! 比如说，你的页面可以很好的处理英语和日语:
 
-![a web page containing English and Japanese characters, with the character encoding set to universal, or utf-8. Both languages display fine,](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\correct-encoding.png)
+![a web page containing English and Japanese characters, with the character encoding set to universal, or utf-8. Both languages display fine,](img/correct-encoding.png)
 
 比如说，如果你将你的字符集设置为 `ISO-8859-1` (拉丁字母的字符集), 那么你的页面会是乱码的:
 
-![a web page containing English and Japanese characters, with the character encoding set to latin. The Japanese characters don't display correctly](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\bad-encoding.png)
+![a web page containing English and Japanese characters, with the character encoding set to latin. The Japanese characters don't display correctly](img/bad-encoding.png)
 
 ### 交互式学习： 体验字符集[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%AD%A6%E4%B9%A0%EF%BC%9A_%E4%BD%93%E9%AA%8C%E5%AD%97%E7%AC%A6%E9%9B%86)
 
@@ -1868,7 +1868,7 @@ description也被使用在搜索引擎显示的结果页中。 下面通过一�
 
 4. 现在，在你喜欢的搜索引擎里搜索”Mozilla Developer Network“ (下图展示的是在雅虎搜索里的情况.) 。你会看到description `<meta>` and `<title>` 元素如何在搜索结果里显示— 很值得这样做哦！
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\Screen Shot 2018-01-24 at 17.35.04.png)
+![img](img/Screen Shot 2018-01-24 at 17.35.04.png)
 
  
 
@@ -1894,7 +1894,7 @@ and HTML5 Apps. It also documents Mozilla products, like Firefox OS.">
 
 
 
-![Open graph protocol data from the MDN homepage as displayed on facebook, showing an image, title, and description.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\facebook-output.png)
+![Open graph protocol data from the MDN homepage as displayed on facebook, showing an image, title, and description.](img/facebook-output.png)
 
 Twitter 还拥有自己的类型的专有元数据协议，当网站的 URL 显示在 twitter.com 上时，它具有相似的效果。例如下面：
 
@@ -1919,7 +1919,7 @@ Twitter 还拥有自己的类型的专有元数据协议，当网站的 URL 显�
    ```
 
 现代浏览器在各种场合使用favicons，如打开的页面标签页和书签面板中的书签页面。下面是一个favicon 出现在书签面板中的例子：
-![The Firefox bookmarks panel, showing a bookmarked example with a favicon displayed next to it.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\bookmark-favicon.png)
+![The Firefox bookmarks panel, showing a bookmarked example with a favicon displayed next to it.](img/bookmark-favicon.png)
 
 
 
@@ -1967,7 +1967,7 @@ Twitter 还拥有自己的类型的专有元数据协议，当网站的 URL 显�
 
 如果按照上述步骤正确地执行, 当你保存HTML文件并重新刷新浏览器的话，你会发现页面已经变样了：
 
-![Example showing a page with CSS and JavaScript applied to it. The CSS has made the page go green, whereas the JavaScript has added a dynamic list to the page.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\js-and-css.png)
+![Example showing a page with CSS and JavaScript applied to it. The CSS has made the page go green, whereas the JavaScript has added a dynamic list to the page.](img/js-and-css.png)
 
 - JavaScript在页面中添加了一个空列表。现在当你点击列表中的任何地方，浏览器会弹出一个对话框要求你为新列表项输入一些文本内容。 当你点击OK按钮，刚刚那个新的列表项会添加到页面上，当你点击那些已有的列表项，会弹出一个对话框允许你修改列表项的文本。
 - CSS使页面背景变成了绿色，文本变得大了一点。它还将JavaScript添加到页面中的一些内容进行了样式化，（带有黑色边框的红色条是CSS添加到js生成的列表中的样式。）
@@ -2008,7 +2008,7 @@ HTML的主要工作是编辑文本结构和文本内容（也称为语义[semant
 
 大部分的文本结构由标题和段落组成。 不管是小说、报刊、教科书还是杂志等。
 
-![An example of a newspaper front cover, showing use of a top level heading, subheadings and paragraphs.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\newspaper_small.jpg)
+![An example of a newspaper front cover, showing use of a top level heading, subheadings and paragraphs.](img/newspaper_small.jpg)
 
 
 
@@ -2062,7 +2062,7 @@ HTML的主要工作是编辑文本结构和文本内容（也称为语义[semant
 
 然而，当您在浏览器中打开文档时，您会看到文本显示为一整块！
 
-![A webpage that shows a wall of unformatted text, because there are no elements on the page to structure it.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\text-no-formatting.png)
+![A webpage that shows a wall of unformatted text, because there are no elements on the page to structure it.](img/text-no-formatting.png)
 
 
 
@@ -2351,7 +2351,7 @@ HTML5用新的语义规则重新定义了`<b>`,`<i>`和`<u>`,稍微有点混乱�
 
 例如，BBC 主页包含大量的链接，不仅指向多个新闻故事，而且指向网站的不同区域（导航功能），登录/注册页面（用户工具）等等。
 
-![frontpage of bbc.co.uk, showing many news items, and navigation menu functionality](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\bbc-homepage.png)
+![frontpage of bbc.co.uk, showing many news items, and navigation menu functionality](img/bbc-homepage.png)
 
 ### **链接的解析[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#%E9%93%BE%E6%8E%A5%E7%9A%84%E8%A7%A3%E6%9E%90)**
 
@@ -2412,7 +2412,7 @@ I'm creating a link to [the Mozilla homepage](https://www.mozilla.org/en-US/).
 
 URL使用路径查找文件。路径指定文件系统中您感兴趣的文件所在的位置。看一下一个简单的目录结构的例子 (see the [creating-hyperlinks](https://github.com/mdn/learning-area/tree/master/html/introduction-to-html/creating-hyperlinks) directory.)
 
-![A simple directory structure. The parent directory is called creating-hyperlinks and contains two files called index.html and contacts.html, and two directories called projects and pdfs, which contain an index.html and a project-brief.pdf file, respectively](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\simple-directory.png)
+![A simple directory structure. The parent directory is called creating-hyperlinks and contains two files called index.html and contacts.html, and two directories called projects and pdfs, which contain an index.html and a project-brief.pdf file, respectively](img/simple-directory.png)
 
 此目录结构的根目录称为`creation-hyperlinks`。当在网站上工作时， 你会有一个包含整个网站的目录。在根目录，我们有一个`index.html`和一个`contacts.html`文件。在真实的网站上，`index.html` 将会成为我们的主页或登录页面。
 
@@ -2571,7 +2571,7 @@ to download Firefox</p>
 
 最终的例子应该是这样的：
 
-![An example of a simple HTML navigation menu, with home, pictures, projects, and social menu items](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\navigation-example.png)
+![An example of a simple HTML navigation menu, with home, pictures, projects, and social menu items](img/navigation-example.png)
 
 
 
@@ -3005,7 +3005,7 @@ para.onclick = function() {
 
 一个“典型的网站”可能会这样布局：
 
-![a simple website structure example featuring a main heading, navigation menu, main content, side bar, and footer.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\sample-website.png)
+![a simple website structure example featuring a main heading, navigation menu, main content, side bar, and footer.](img/sample-website.png)
 
 ### **用于结构化网站的HTML[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84#%E7%94%A8%E4%BA%8E%E7%BB%93%E6%9E%84%E5%8C%96%E7%BD%91%E7%AB%99%E7%9A%84HTML)**
 
@@ -3207,17 +3207,17 @@ Meanwhile, Harry was sitting at home, staring at his royalty statement and ponde
 
 1. 记住, 你的大多数（不是全部）页面会使用一些相同的元素 — 例如导航菜单，以及页脚。如果你的网站是一个商业网站，那么你就可以在每个页面都使用相同的页脚，页脚内容可以包括你的联系方式，这或许是一个不错的主意。所以说，如果在你的设计中，每个页面都有一些内容是重复的，你可以先把这些重复的内容记录下来。
 
-   ![the common features of the travel site to go on every page: title and logo, contact, copyright, terms and conditions, language chooser, accessibility policy](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\common-features.png)
+   ![the common features of the travel site to go on every page: title and logo, contact, copyright, terms and conditions, language chooser, accessibility policy](img/common-features.png)
 
-2. 接下来，你可以通过画一个草图的方式来说明你希望的每个页面的结构的样子，（或许你画出来的草图和我们上文中提到的示例页面比较像），在空白段落上做上标记，来说明之后要填充在这里的内容。![A simple diagram of a sample site structure, with a header, main content area, two optional sidebars, and footer](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\site-structure.png)
+2. 接下来，你可以通过画一个草图的方式来说明你希望的每个页面的结构的样子，（或许你画出来的草图和我们上文中提到的示例页面比较像），在空白段落上做上标记，来说明之后要填充在这里的内容。![A simple diagram of a sample site structure, with a header, main content area, two optional sidebars, and footer](img/site-structure.png)
 
 3. 现在，所有的网站设计人员可以一起讨论，还希望网站上显示哪些内容 （不包括每个页面的重复页面）— 以列表的形式写下来。
 
-   ![A long list of all the features that we could put on our travel site, from searching, to special offers and country-specific info](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\feature-list.png)
+   ![A long list of all the features that we could put on our travel site, from searching, to special offers and country-specific info](img/feature-list.png)
 
-4. 接着，尝试把这些内容进行分组，这样可以让你了解哪些内容可以放在一个相同的页面上。这种做法和 [Card sorting](https://developer.mozilla.org/en-US/docs/Glossary/Card_sorting) 非常相似。![The items that should appear on a holiday site sorted into 5 categories: Search, Specials, Country-specific info, Search results, and Buy things](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\card-sorting.png)
+4. 接着，尝试把这些内容进行分组，这样可以让你了解哪些内容可以放在一个相同的页面上。这种做法和 [Card sorting](https://developer.mozilla.org/en-US/docs/Glossary/Card_sorting) 非常相似。![The items that should appear on a holiday site sorted into 5 categories: Search, Specials, Country-specific info, Search results, and Buy things](img/card-sorting.png)
 
-5. 现在，尝试着再画一个网站的草图 — 每个气泡代表网站的一个页面，在气泡与气泡之间用连线的方式，来说明它们之间的联系。主页面可能位于中心位置，并且链接到其他的大多数页面；对于一个小型网站，大多数页面都可以从主页的导航栏中链接跳转，虽然也存在例外。你可能也希望记录下内容将如何显示的笔记。![A map of the site showing the homepage, country page, search results, specials page, checkout, and buy page](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\site-map.png)
+5. 现在，尝试着再画一个网站的草图 — 每个气泡代表网站的一个页面，在气泡与气泡之间用连线的方式，来说明它们之间的联系。主页面可能位于中心位置，并且链接到其他的大多数页面；对于一个小型网站，大多数页面都可以从主页的导航栏中链接跳转，虽然也存在例外。你可能也希望记录下内容将如何显示的笔记。![A map of the site showing the homepage, country page, search results, specials page, checkout, and buy page](img/site-map.png)
 
 ### 主动学习：创建你自己的站点地图[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84#%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%88%9B%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE)
 
@@ -3245,7 +3245,7 @@ Meanwhile, Harry was sitting at home, staring at his royalty statement and ponde
 
 在编写某种代码时，通常一切都是正常的，直到你犯了某个错误那可怕的时刻便发生了，你的代码无效了 — 无论这是不是你想要的。例如下面，当我们想用[compile](https://developer.mozilla.org/en-US/docs/Glossary/compile)Rust语言去写一个简单的程序的时候，错误报告便会出现。
 
-![A console window showing the result of trying to compile a rust program with a missing quote around a string in a print statement. The error message reported is error: unterminated double quote string.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\error-message.png)
+![A console window showing the result of trying to compile a rust program with a missing quote around a string in a print statement. The error message reported is error: unterminated double quote string.](img/error-message.png)
 
 这里错误信息比较容易理解 — "双引号字符串未闭合"。如果你查看列表，你大概会看到`(Hello, world!");` 这里缺少了一个双引号 ，然而当程序变庞大的时候错误信息也会变得更复杂和更难解释，甚至上面这样简单的例子对于不了解Rust语言的人来说就会有点吓人。
 
@@ -3274,7 +3274,7 @@ HTML本身不容易因语法错误出错，因为浏览器是以宽松模式来�
 
 2. 接着，在浏览器中打开—你会看到下面的样子：
 
-   ![A simple HTML document with a title of HTML debugging examples, and some information about common HTML errors, such as unclosed elements, badly nested elements, and unclosed attributes. ](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\badly-formed-html.png)
+   ![A simple HTML document with a title of HTML debugging examples, and some information about common HTML errors, such as unclosed elements, badly nested elements, and unclosed attributes. ](img/badly-formed-html.png)
 
 3. 这看起来一点儿也不好；让我们来看看源代码，看看我们是否能找出为什么（只显示了 body 的内容）：
 
@@ -3308,7 +3308,7 @@ HTML本身不容易因语法错误出错，因为浏览器是以宽松模式来�
 
 6. 在开发者模式中的审查器件，你可以看到被渲染出来的标记语言会像这样。
 
-   ![The HTML inspector in Firefox, with our example's paragraph highlighted, showing the text "What causes errors in HTML?" Here you can see that the paragraph element has been closed by the browser.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\html-inspector.png)
+   ![The HTML inspector in Firefox, with our example's paragraph highlighted, showing the text "What causes errors in HTML?" Here you can see that the paragraph element has been closed by the browser.](img/html-inspector.png)
 
 7. 使用开发者模式下的审查器，可以非常清楚地看到浏览器尝试修补我们的代码错误（下面是火狐浏览器中的情况，其他浏览器也会进行修补）
 
@@ -3340,7 +3340,7 @@ HTML本身不容易因语法错误出错，因为浏览器是以宽松模式来�
 
 最好的方法就是让你的HTML页面通过 [Markup Validation Service](https://validator.w3.org/) — 由W3C创立并维护的，这个网站紧跟定义 HTML，CSS，和其他网络技术的具体内容. 这个网页将 HTML 文档作为输入,并运行 ，然后给你一个报告告诉你你的 HTML 有哪些错误.
 
-![The HTML validator homepage](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\validator.png)
+![The HTML validator homepage](img/validator.png)
 
 为了确定需要验证的HTML，你可以输入一个指向该HTML页面的网址，或者上传一份HTML文件，或者直接输入一些HTML代码。
 
@@ -3383,7 +3383,7 @@ HTML本身不容易因语法错误出错，因为浏览器是以宽松模式来�
 
 当你所有的错误都修复之后，会得到下面的输出。
 
-![](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\valid-html-banner.png)
+![](img/valid-html-banner.png)
 
 ### **总结[Section](https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/Debugging_HTML#%E6%80%BB%E7%BB%93)**
 
@@ -3439,7 +3439,7 @@ HTML本身不容易因语法错误出错，因为浏览器是以宽松模式来�
 
 下面的截图展示了这封信被标记完成之后可能会是什么样子。
 
-![img](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\letter-screengrab.png)
+![img](img/letter-screengrab.png)
 
 ### 评估[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Marking_up_a_letter#%E8%AF%84%E4%BC%B0)
 
@@ -3498,7 +3498,7 @@ HTML本身不容易因语法错误出错，因为浏览器是以宽松模式来�
 
 添加标记后的主页的样子的一个可能示例，如以下截图所示：
 
-![The finished example for the assessment; a simple webpage about birdwatching, including a heading of "Birdwatching", bird photos, and a welcome message](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\example-page.png)
+![The finished example for the assessment; a simple webpage about birdwatching, including a heading of "Birdwatching", bird photos, and a welcome message](img/example-page.png)
 
 ### 评估[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML/Structuring_a_page_of_content#%E8%AF%84%E4%BC%B0)
 
@@ -3596,7 +3596,7 @@ HTML本身不容易因语法错误出错，因为浏览器是以宽松模式来�
 
 我们上面的代码会展示如下的结果页面：
 
-![A basic image of a dinosaur, embedded in a browser, with Images in HTML written above it](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\basic-image.png)
+![A basic image of a dinosaur, embedded in a browser, with Images in HTML written above it](img/basic-image.png)
 
 **注意：**像[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)和[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video)这样的元素有时被称之为**替换元素**，因为这样的元素的内容和尺寸由外部资源（像是一个图片或视频文件）所定义，而不是元素自身。
 
@@ -3614,7 +3614,7 @@ HTML本身不容易因语法错误出错，因为浏览器是以宽松模式来�
 
 测试`alt` 属性最简单的方式就是故意拼错图片文件名，这样浏览器就无法找到该图片从而显示备选的文本。如果我们将上例的图片文件名改为 `dinosooooor.jpg`，浏览器就不能显示图片，而显示：
 
-![The Images in HTML title, but this time the dinosaur image is not displayed, and alt text is in its place.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\alt-text.png)
+![The Images in HTML title, but this time the dinosaur image is not displayed, and alt text is in its place.](img/alt-text.png)
 
 那么，为什么我们需要备选文本呢？它可以派上用场的原因有很多：
 
@@ -3649,7 +3649,7 @@ HTML本身不容易因语法错误出错，因为浏览器是以宽松模式来�
 
 在正常的情况下，这不会对显示产生很大的影响， 但是如果图片没有显示（例如用户刚刚开始浏览网页，但是图片还没有加载完成），你会注意到浏览器会为要显示的图片留下一定的空间：
 
-![The Images in HTML title, with dinosaur alt text, displayed inside a large box that results from width and height settings](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\alt-text-with-width-height.png)
+![The Images in HTML title, with dinosaur alt text, displayed inside a large box that results from width and height settings](img/alt-text-with-width-height.png)
 
 这是一件好事情——这使得页面加载的更快速更流畅。
 
@@ -3672,7 +3672,7 @@ HTML本身不容易因语法错误出错，因为浏览器是以宽松模式来�
 
 这会给我们一个提示，看起来就像链接标题：
 
-![The dinosaur image, with a tooltip title on top of it that reads A T-Rex on display at the Manchester University Museum ](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\image-with-title.png)
+![The dinosaur image, with a tooltip title on top of it that reads A T-Rex on display at the Manchester University Museum ](img/image-with-title.png)
 
 图片标题并不必须要包含有意义的信息，通常来说，将这样的支持信息放到主要文本中而不是附着于图片会更好。不过，在有些环境中这样做更有用，比如当没有空间显示提示时，也就是在图片栏中。
 
@@ -3824,7 +3824,7 @@ web 开发者们一直以来想在 Web 中使用音频和视频，自21世纪初
 
 已嵌入视频文件的网页样式如下：
 
-![A simple video player showing a video of a small white rabbit](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\simple-video.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+![A simple video player showing a video of a small white rabbit](img/simple-video.png)
 
 你可以点击[这里](http://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/simple-video.html)查看网页，或者点击[这里](https://github.com/mdn/learning-area/blob/master/html/multimedia-and-embedding/video-and-audio-content/simple-video.html)查看源代码。
 
@@ -3880,7 +3880,7 @@ web 开发者们一直以来想在 Web 中使用音频和视频，自21世纪初
 
 这串代码将会给我们呈现出如下页面：
 
-![A video player showing a poster image before it plays. The poster image says HTML5 video example, OMG hell yeah!](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\extra-video-features.png)新的特性：
+![A video player showing a poster image before it plays. The poster image says HTML5 video example, OMG hell yeah!](img/extra-video-features.png)新的特性：
 
 - `width` 和 `height`
 
@@ -3922,7 +3922,7 @@ web 开发者们一直以来想在 Web 中使用音频和视频，自21世纪初
 
 这串代码将会产生如下的效果：
 
-![A simple audio player with a play button, timer, volume control, and progress bar](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\audio-player.png)
+![A simple audio player with a play button, timer, volume control, and progress bar](img/audio-player.png)
 
 **Note**: 你可以点击这里[查看](http://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/multiple-audio-formats.html)以上例子，或者点击[这里](https://github.com/mdn/learning-area/blob/gh-pages/html/multimedia-and-embedding/video-and-audio-content/multiple-audio-formats.html)查看源代码。
 
@@ -3992,7 +3992,7 @@ This is the second.
 
 上面这串代码会显示一段带有字幕的视频，如下：
 
-![Video player with stand controls such as play, stop, volume, and captions on and off. The video playing shows a scene of a man holding a spear-like weapon, and a caption reads "Esta hoja tiene pasado oscuro."](D:\ProjectList\Github_pages\WEB前端开发最佳实践\img\video-player-with-captions.png)
+![Video player with stand controls such as play, stop, volume, and captions on and off. The video playing shows a scene of a man holding a spear-like weapon, and a caption reads "Esta hoja tiene pasado oscuro."](img/video-player-with-captions.png)
 
 如果你想了解更多细节，你可以阅读 [Adding captions and subtitles to HTML5 video](https://developer.mozilla.org/en-US/Apps/Build/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video)。在 Github 上你可以找到与本文相关的样例，他们由 Ian Devlin 编写，点击[这里](http://iandevlin.github.io/mdn/video-player-with-captions/)可以查看该样例，或者点击[这里](https://github.com/iandevlin/iandevlin.github.io/tree/master/mdn/video-player-with-captions)查看源代码。这个样例使用了 JavaScript 代码，它使得用户可以选择不同的字幕。注意，若想要显示字幕，你需要点击 "CC" 按钮，并且选择一种语言 — English, Deutsch, 或 Español。
 
