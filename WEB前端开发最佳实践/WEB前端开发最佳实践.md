@@ -4066,15 +4066,17 @@ This is the second.
 
 如果你犯了某些错误，你可以点击*Reset按钮以重置编辑器。*如果你确实被卡住了， 按下Show *solution按钮以借鉴答案。*
 
-
+<iframe src="https://mdn.mozillademos.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF$samples/Playable_code?revision=1396428" height="600" width="700" id="frame_Playable_code" class="live-sample-frame sample-code-frame" frameborder="0" style="font-style: normal; max-width: calc((100% - 40px) - 6px); margin: 0px; padding: 20px; border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(61, 126, 154); border-image: initial; width: calc((100% - 40px) - 6px); color: rgb(51, 51, 51); font-family: Verdana, arial, x-locale-body, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.05328px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"></iframe>
 
 在 CodePen 中打开在 JSFiddle 中打开
 
 
 
-## Iframe详解[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#Iframe%E8%AF%A6%E8%A7%A3)
 
-是不是很简单又有趣呢？[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)元素旨在允许您将其他Web文档嵌入到当前文档中。这很适合将第三方内容纳入您的网站，您可能无法直接控制，也不希望实现自己的版本 - 例如来自在线视频提供商的视频，[Disqus](https://disqus.com/)等评论系统，在线地图提供商，广告横幅等。您通过本课程使用的实时可编辑示例就是使用`<iframe>` 实现的。
+
+### **Iframe详解[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#Iframe%E8%AF%A6%E8%A7%A3)**
+
+是不是很简单又有趣呢？[`iframe`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)元素旨在允许您将其他Web文档嵌入到当前文档中。这很适合将第三方内容纳入您的网站，您可能无法直接控制，也不希望实现自己的版本 - 例如来自在线视频提供商的视频，[Disqus](https://disqus.com/)等评论系统，在线地图提供商，广告横幅等。您通过本课程使用的实时可编辑示例就是使用`<iframe>` 实现的。
 
 我们会在后面提到，关于`<iframe>`有一些严重的[安全隐患](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3)需要考虑，但这并不意味着你不应该在你的网站上使用它们 — 它只需要一些知识和仔细地思考。让我们更详细地探索这些代码。假设您想在其中一个网页上加入MDN词汇表，您可以尝试以下方式：
 
@@ -4100,7 +4102,7 @@ This is the second.
 
 - `src`
 
-  该属性与[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)/`<img>`一样包含指向要嵌入文档的URL路径。
+  该属性与[`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)/`<img>`一样包含指向要嵌入文档的URL路径。
 
 - `width` 和 `height`
 
@@ -4161,9 +4163,9 @@ This is the second.
 
 **注意**：您可以阅读Frederik Braun的帖子[在X-Frame-Options安全性头上](https://blog.mozilla.org/security/2013/12/12/on-the-x-frame-options-security-header/)来获取有关此主题的更多背景信息。显然，在这篇文章中已经解释得很清楚了。
 
-## <embed>和<object>元素[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%3Cembed%3E%E5%92%8C%3Cobject%3E%E5%85%83%E7%B4%A0)
+### &lt;**embed>和&lt;object>元素[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%3Cembed%3E%E5%92%8C%3Cobject%3E%E5%85%83%E7%B4%A0)**
 
-[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)和`<object>`元素的功能不同于`<iframe>`—— 这些元素是用来嵌入多种类型的外部内容的通用嵌入工具，其中包括像Java小程序和Flash，PDF（可在浏览器中显示为一个PDF插件）这样的插件技术，甚至像视频，SVG和图像的内容！
+[`<embed>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)和`<object>`元素的功能不同于`<iframe>`—— 这些元素是用来嵌入多种类型的外部内容的通用嵌入工具，其中包括像Java小程序和Flash，PDF（可在浏览器中显示为一个PDF插件）这样的插件技术，甚至像视频，SVG和图像的内容！
 
 **注意**：**插件**是一种对浏览器原生无法读取的内容提供访问权限的软件。
 
@@ -4171,7 +4173,7 @@ This is the second.
 
 如果您发现自己需要嵌入插件内容，那么您至少需要一些这样的信息：
 
-|                                                              | [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/embed) | [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/object) |
+|                                                              | [`embed`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/embed) | [`object`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/object) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 嵌入内容的[网址](https://developer.mozilla.org/en-US/docs/Glossary/URL) | `src`                                                        | `data`                                                       |
 | 嵌入内容的*准确*[媒体类型](https://developer.mozilla.org/en-US/docs/Glossary/MIME_type) | `type`                                                       | `type`                                                       |
@@ -4181,7 +4183,7 @@ This is the second.
 
 **注意**：`<object>`需要`data`属性，`type`属性或两者。如果您同时使用这两个，您也可以使用该`typemustmatch`属性（仅在Firefox中实现，在本文中）。`typemustmatch`保持嵌入文件不运行，除非`type`属性提供正确的媒体类型。`typemustmatch`因此，当您嵌入来自不同[来源的](https://developer.mozilla.org/en-US/docs/Glossary/origin)内容（可以防止攻击者通过插件运行任意脚本）时，可以赋予重要的安全优势。
 
-下面是一个使用该[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)元素嵌入Flash影片的示例（请参阅此处的[Github](http://mdn.github.io/learning-area/html/multimedia-and-embedding/other-embedding-technologies/embed-flash.html)，并[检查源代码](https://github.com/mdn/learning-area/blob/gh-pages/html/multimedia-and-embedding/other-embedding-technologies/embed-flash.html)）：
+下面是一个使用该[`embed`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)元素嵌入Flash影片的示例（请参阅此处的[Github](http://mdn.github.io/learning-area/html/multimedia-and-embedding/other-embedding-technologies/embed-flash.html)，并[检查源代码](https://github.com/mdn/learning-area/blob/gh-pages/html/multimedia-and-embedding/other-embedding-technologies/embed-flash.html)）：
 
 ```html
 <embed src="whoosh.swf" quality="medium"
@@ -4214,11 +4216,11 @@ PDF是纸与数据之间重要的阶梯，但它们[在可访问性上有些问�
 
 那你该怎么办？如果您需要交互性，HTML和[JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript)可以轻松地为您完成工作，而不需要Java小程序或过时的ActiveX / BHO技术。您可以使用[HTML5视频](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Add_audio_or_video_content_to_a_webpage)来满足媒体需求，矢量图形[SVG](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Add_vector_image_to_a_webpage)，以及复杂图像和动画[画布](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial)。[彼得·埃尔斯特（Peter Elst）几年前已经提到](https://plus.google.com/+PeterElst/posts/P5t4pFhptvp)，对于工作Adobe Flash极少是正确的工具，除了专门的游戏和商业应用。对于ActiveX，即使微软的[Edge](https://developer.mozilla.org/en-US/docs/Glossary/Microsoft_Edge)浏览器也不再支持。
 
-## 概要[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%E6%A6%82%E8%A6%81)
+### **概要[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%E6%A6%82%E8%A6%81)**
 
 在Web文档中嵌入其他内容这一主题可以很快变得非常复杂，因此在本文中，我们尝试以一种简单而熟悉的方式来介绍它，这种介绍方式将立即显示出相关性，同时仍暗示了一些涉及更高级功能的技术。刚开始，除了嵌入第三方内容（如地图和视频），您不太可能在网页上使用到嵌入技术。当你变得更有经验时，你可能会开始为他们找到更多的用途。
 
-除了我们在这里讨论的那些外，还有许多涉及嵌入外部内容的技术。我们看到了一些在前面的文章中出现的，如[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)，[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)和[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)，但还有其它的有待关注，如  [``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)用于JavaScript生成的2D和3D图形，`<svg>`用于嵌入矢量图形。我们将在此学习模块的下一篇文章中学习[SVG](https://developer.mozilla.org/en-US/docs/Web/SVG)。
+除了我们在这里讨论的那些外，还有许多涉及嵌入外部内容的技术。我们看到了一些在前面的文章中出现的，如[`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)，[`<audio>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)和[`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)，但还有其它的有待关注，如  [`<canvas>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)用于JavaScript生成的2D和3D图形，`<svg>`用于嵌入矢量图形。我们将在此学习模块的下一篇文章中学习[SVG](https://developer.mozilla.org/en-US/docs/Web/SVG)。
 
 # 在网页中添加矢量图形
 
