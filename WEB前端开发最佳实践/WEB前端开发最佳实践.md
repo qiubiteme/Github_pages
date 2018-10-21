@@ -4244,9 +4244,9 @@ PDF是纸与数据之间重要的阶梯，但它们[在可访问性上有些问�
 
 当你放大网页的时候，区别就会变得明显起来 — 随着你的放大，PNG 图片变得像素化了，因为它存储是每个像素的颜色和位置信息 — 当它被放大时，每个像素就被放大以填满屏幕上更多的像素，所以图像就会开始变得马赛克感觉。矢量图像看起来仍然效果很好且清晰，因为无论它的尺寸如何，都使用算法来计算出图像的形状，仅仅是根据放大的倍数来调整算法中的值。
 
-![Two star images, one raster and one vector. At their default size they look identical](D:\ProjectList\Github_pages\WEB前端开发最佳实践\raster-vector-default-size.png)
+![Two star images, one raster and one vector. At their default size they look identical](img/raster-vector-default-size.png)
 
-![Two star images zoomed in. The raster one on the left starts to look pixellated, whereas the vector one still looks crisp.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\raster-vector-zoomed.png)
+![Two star images zoomed in. The raster one on the left starts to look pixellated, whereas the vector one still looks crisp.](img/raster-vector-zoomed.png)
 
 **注意**: 上面的图片实际上都是 PNG 图片 —— 每个例子中左边的图片代表光栅图片，右边的星星代表矢量图。还有，访问 [vector-versus-raster.html](http://mdn.github.io/learning-area/html/multimedia-and-embedding/adding-vector-graphics-to-the-web/vector-versus-raster.html) 示例来查看真正的例子！
 
@@ -4270,7 +4270,7 @@ PDF是纸与数据之间重要的阶梯，但它们[在可访问性上有些问�
 
 这将创建以下输出：
 
-![](svg.png)
+![](img/svg.png)
 
 从上面的例子可以看出，SVG很容易手工编码。 是的，您可以在文本编辑器中手动编写简单的SVG，但是对于复杂的图像，这很快就开始变得非常困难。 为了创建SVG图像，大多数人使用矢量图形编辑器，如 [Inkscape](https://inkscape.org/en/) 或 [Illustrator](https://en.wikipedia.org/wiki/Adobe_Illustrator)。 这些软件包允许您使用各种图形工具创建各种插图，并创建照片的近似值（例如Inkscape的跟踪位图功能）。
 
