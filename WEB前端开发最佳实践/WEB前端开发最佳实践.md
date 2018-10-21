@@ -1179,7 +1179,7 @@ myHTML.onclick = function() {};
 - [HTTP: Let’s GET It On!](https://dev.opera.com/articles/http-lets-get-it-on/)
 - [HTTP: Response Codes](https://dev.opera.com/articles/http-response-codes/)
 
-#   HTML
+#   HTML介绍
 
 ## HTML学习路线
 
@@ -4031,25 +4031,25 @@ This is the second.
 
 ## 从对象到iframe - 其他嵌入技术
 
-到目前为止，您应该掌握了将图像、视频和音频嵌入到网页上的诀窍了。此刻，让我们继续深入学习，来看一些能让您在网页中嵌入各种内容类型的元素： [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe), [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/embed) 和[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/object) 元素。`<iframe>`用于嵌入其他网页，另外两个元素则允许您嵌入PDF，SVG，甚至Flash — 一种正在被淘汰的技术，但您仍然会时不时的看到它。
+到目前为止，您应该掌握了将图像、视频和音频嵌入到网页上的诀窍了。此刻，让我们继续深入学习，来看一些能让您在网页中嵌入各种内容类型的元素： [`iframe`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe), [`embed`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/embed) 和[`object`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/object) 元素。`<iframe>`用于嵌入其他网页，另外两个元素则允许您嵌入PDF，SVG，甚至Flash — 一种正在被淘汰的技术，但您仍然会时不时的看到它。
 
 | 先决条件: | 基本的计算机素养，[安装的基本软件](https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/Installing_basic_software)，[使用文件](https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/Dealing_with_files)的基本知识，熟悉HTML基础知识（参考HTML [入门](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started)）以及本模块中以前的文章。 |
 | --------- | ------------------------------------------------------------ |
-| 目的:     | 要了解如何使用`<object>、`[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)以及[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)在网页中嵌入部件，例如Flash电影或其他网页。 |
+| 目的:     | 要了解如何使用`<object>、`[`embed`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)以及[`iframe`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)在网页中嵌入部件，例如Flash电影或其他网页。 |
 
-## 嵌入的简史[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%E5%B5%8C%E5%85%A5%E7%9A%84%E7%AE%80%E5%8F%B2)
+### 嵌入的简史[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%E5%B5%8C%E5%85%A5%E7%9A%84%E7%AE%80%E5%8F%B2)
 
 很久以前，很流行在网络上使用**框架**创建网站 — 网站的一小部分存储于单独的HTML页面中。这些被嵌入在一个称为**框架集**的主文档中，它允许您指定每个框架能够填充在屏幕上的区域，而不像调整表格的列和行的大小。这些做法在90年代中期至90年代后期被认为是比较酷的，有证据表明，将网页分解成较小的块，这样有利于下载速度 —值得注意的是当时网络连接速度十分缓慢。然而，这些技术有很多问题，随着网络速度越来越快，这些技术带来的问题远超过它们带来的积极因素，所以你再也看不到它们被使用了。
 
-一小段时间之后（20世纪90年代末，21世纪初），插件技术变得非常受欢迎，例如[Java Applet](https://developer.mozilla.org/en-US/docs/Glossary/Java)和[Flash](https://developer.mozilla.org/en-US/docs/Glossary/Adobe_Flash) — 这些技术允许网络开发者将丰富的内容嵌入到网页中，例如视频和动画等，这些内容不能通过HTML单独实现。嵌入这些技术是通过诸如[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object)和较少使用[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)的元素来实现的，当时它们非常有用。由于许多问题，包括可访问性、安全性、文件大小等，它们已经过时了; 如今，大多数移动设备不再支持这些插件，桌面端也逐渐不再支持。
+一小段时间之后（20世纪90年代末，21世纪初），插件技术变得非常受欢迎，例如[Java Applet](https://developer.mozilla.org/en-US/docs/Glossary/Java)和[Flash](https://developer.mozilla.org/en-US/docs/Glossary/Adobe_Flash) — 这些技术允许网络开发者将丰富的内容嵌入到网页中，例如视频和动画等，这些内容不能通过HTML单独实现。嵌入这些技术是通过诸如[`object`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object)和较少使用[`embed`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed)的元素来实现的，当时它们非常有用。由于许多问题，包括可访问性、安全性、文件大小等，它们已经过时了; 如今，大多数移动设备不再支持这些插件，桌面端也逐渐不再支持。
 
-最后，[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)元素出现了（连同其他嵌入内容的方式，如[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)，[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)等），它提供了一种将整个web页嵌入到另一个网页的方法，看起来就像那个web页是另一个网页的一个[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)或其他元素一样。[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe)现在经常被使用。
+最后，[`iframe`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)元素出现了（连同其他嵌入内容的方式，如[`canvas`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)，[`video`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)等），它提供了一种将整个web页嵌入到另一个网页的方法，看起来就像那个web页是另一个网页的一个[`img`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)或其他元素一样。[`iframe`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe)现在经常被使用。
 
 了解完历史之后，让我们继续往下看以了解如何使用它们。
 
-## 自主学习：嵌入类型的使用[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%E8%87%AA%E4%B8%BB%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%B5%8C%E5%85%A5%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%BD%BF%E7%94%A8)
+### 自主学习：嵌入类型的使用[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#%E8%87%AA%E4%B8%BB%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%B5%8C%E5%85%A5%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%BD%BF%E7%94%A8)
 
-在这篇文章中，我们将直接进入自主学习部分，让你立即体会到嵌入技术的实用性。大家都非常熟悉[Youtube](https://www.youtube.com/)，但很多人不了解它所提供的一些分享功能。让我们来看看Youtube如何让我们通过[``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)在页面中嵌入喜欢的视频。
+在这篇文章中，我们将直接进入自主学习部分，让你立即体会到嵌入技术的实用性。大家都非常熟悉[Youtube](https://www.youtube.com/)，但很多人不了解它所提供的一些分享功能。让我们来看看Youtube如何让我们通过[`iframe`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)在页面中嵌入喜欢的视频。
 
 1. 首先，去Youtube找一个喜欢的视频。
 2. 在视频下方，您会看到一个*共享*按钮 - 点击查看共享选项。
