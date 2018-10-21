@@ -4222,7 +4222,7 @@ PDF是纸与数据之间重要的阶梯，但它们[在可访问性上有些问�
 
 除了我们在这里讨论的那些外，还有许多涉及嵌入外部内容的技术。我们看到了一些在前面的文章中出现的，如[`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)，[`<audio>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)和[`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)，但还有其它的有待关注，如  [`<canvas>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)用于JavaScript生成的2D和3D图形，`<svg>`用于嵌入矢量图形。我们将在此学习模块的下一篇文章中学习[SVG](https://developer.mozilla.org/en-US/docs/Web/SVG)。
 
-# 在网页中添加矢量图形
+## 在网页中添加矢量图形
 
 
   矢量图形在很多情况下非常有用 — 它们拥有较小的文件尺寸，却高度可缩放，所以它们不会在镜头拉近或者放大图像时像素化。在这篇文章中，我们将为您呈现如何在网页中添加矢量图形。
@@ -4233,7 +4233,7 @@ PDF是纸与数据之间重要的阶梯，但它们[在可访问性上有些问�
 
 **提示：** 本文的目的并不是教你 SVG；仅仅是告诉你它是什么，以及如何在网页中添加它。
 
-## 什么是矢量图形？[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E4%BB%80%E4%B9%88%E6%98%AF%E7%9F%A2%E9%87%8F%E5%9B%BE%E5%BD%A2%EF%BC%9F)
+### **什么是矢量图形？[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E4%BB%80%E4%B9%88%E6%98%AF%E7%9F%A2%E9%87%8F%E5%9B%BE%E5%BD%A2%EF%BC%9F)**
 
 在网上，你会和两种类型的图片打交道 — 位图和矢量图:
 
@@ -4244,17 +4244,17 @@ PDF是纸与数据之间重要的阶梯，但它们[在可访问性上有些问�
 
 当你放大网页的时候，区别就会变得明显起来 — 随着你的放大，PNG 图片变得像素化了，因为它存储是每个像素的颜色和位置信息 — 当它被放大时，每个像素就被放大以填满屏幕上更多的像素，所以图像就会开始变得马赛克感觉。矢量图像看起来仍然效果很好且清晰，因为无论它的尺寸如何，都使用算法来计算出图像的形状，仅仅是根据放大的倍数来调整算法中的值。
 
-![Two star images, one raster and one vector. At their default size they look identical](https://mdn.mozillademos.org/files/12866/raster-vector-default-size.png)
+![Two star images, one raster and one vector. At their default size they look identical](D:\ProjectList\Github_pages\WEB前端开发最佳实践\raster-vector-default-size.png)
 
-![Two star images zoomed in. The raster one on the left starts to look pixellated, whereas the vector one still looks crisp.](https://mdn.mozillademos.org/files/12868/raster-vector-zoomed.png)
+![Two star images zoomed in. The raster one on the left starts to look pixellated, whereas the vector one still looks crisp.](D:\ProjectList\Github_pages\WEB前端开发最佳实践\raster-vector-zoomed.png)
 
 **注意**: 上面的图片实际上都是 PNG 图片 —— 每个例子中左边的图片代表光栅图片，右边的星星代表矢量图。还有，访问 [vector-versus-raster.html](http://mdn.github.io/learning-area/html/multimedia-and-embedding/adding-vector-graphics-to-the-web/vector-versus-raster.html) 示例来查看真正的例子！
 
 此外，矢量图形相较于同样的位图，通常拥有更小的体积，因为它们仅需储存少量的算法，而不是逐个储存每个像素的信息。
 
-## SVG是什么？[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#SVG%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F)
+### SVG是什么？[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#SVG%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F)
 
-[SVG](https://developer.mozilla.org/zh-CN/docs/Web/SVG) 是用于描述矢量图像的[XML](https://developer.mozilla.org/en-US/docs/Glossary/XML)语言。 它基本上是像HTML一样的标记，除了你有许多不同的元素来定义你想要出现在图像中的形状，以及你想要应用于这些形状的效果。 SVG用于标记图形，而不是内容。 非常简单，你有一些元素来创建简单图形，如[``](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/circle) 和[``](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/rect)。更高级的SVG功能包括 [``](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/feColorMatrix)（使用变换矩阵转换颜色）[``](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/animate) （矢量图形的动画部分）和 [``](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/mask)（在图像顶部应用蒙版）
+[SVG](https://developer.mozilla.org/zh-CN/docs/Web/SVG) 是用于描述矢量图像的[XML](https://developer.mozilla.org/en-US/docs/Glossary/XML)语言。 它基本上是像HTML一样的标记，除了你有许多不同的元素来定义你想要出现在图像中的形状，以及你想要应用于这些形状的效果。 SVG用于标记图形，而不是内容。 非常简单，你有一些元素来创建简单图形，如[`<circle>`](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/circle) 和[`<rect>`](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/rect)。更高级的SVG功能包括 [`<feColorMatrix>`](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/feColorMatrix)（使用变换矩阵转换颜色）[`<animate>`](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/animate) （矢量图形的动画部分）和 [`<mask>`](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/mask)（在图像顶部应用蒙版）
 
 作为一个简单的例子，以下代码创建一个圆和一个矩形：
 
@@ -4270,7 +4270,7 @@ PDF是纸与数据之间重要的阶梯，但它们[在可访问性上有些问�
 
 这将创建以下输出：
 
-
+![](svg.png)
 
 从上面的例子可以看出，SVG很容易手工编码。 是的，您可以在文本编辑器中手动编写简单的SVG，但是对于复杂的图像，这很快就开始变得非常困难。 为了创建SVG图像，大多数人使用矢量图形编辑器，如 [Inkscape](https://inkscape.org/en/) 或 [Illustrator](https://en.wikipedia.org/wiki/Adobe_Illustrator)。 这些软件包允许您使用各种图形工具创建各种插图，并创建照片的近似值（例如Inkscape的跟踪位图功能）。
 
