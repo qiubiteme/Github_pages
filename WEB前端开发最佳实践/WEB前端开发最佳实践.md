@@ -1,3 +1,5 @@
+
+
 # WEB前端开发最佳实践
 
 # WEB入门
@@ -3506,6 +3508,15 @@ HTML本身不容易因语法错误出错，因为浏览器是以宽松模式来�
 
 # 多媒体与嵌入
 
+**章节主要内容**
+
+- **[HTML中的图片](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML)**
+- **[音视频内容](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)**
+- **[从<object> 到 <iframe>— 其他嵌入技术](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies)**
+- **[给网页添加矢量图](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web)**
+- **[响应式图片](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)**
+- **[Mozilla醒目页面](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page)**
+
 ## 多媒体与嵌入概述
 
 在这份教程中，到目前为止我们已经看到了许多的文字了。真的很多文字。但是网页除了文本之外什么都没有，真的非常无聊，所以，让我们开始看看怎样让网页动起来。用更多有趣的内容！本模块要探索怎样用HTML来让你的网页包含多媒体，包括可以包含图像的不同方式，以及怎样嵌入视频，甚至是整个其他的网页。
@@ -4390,13 +4401,13 @@ background-size: contain;
 
 
 
-## 总结[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E6%80%BB%E7%BB%93)
+### 总结[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E6%80%BB%E7%BB%93)
 
 本文提供了一个矢量图形和 SVG 的快速浏览，让你了解他们的作用，以及如何在网页中引入 SVG。 它从来没有打算成为学习 SVG 的完整教程，只是一个指南，让你在网上遇到 SVG 时知道它是什么。 所以不要觉得你不是一个 SVG 专家而担心。如果你想了解更多关于它的工作原理，我们在下面列出了一些可能会帮助您的信息。
 
 在本模块的最后一篇文章中，我们将详细探索响应式图像，查看 HTML 可以让您的图像在不同设备上更好地适配。
 
-## 相关链接[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5)
+### 相关链接[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5)
 
 - [SVG tutorial](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Getting_Started) on MDN
 - [Quick tips for responsive SVGs](http://thenewcode.com/744/Making-SVG-Responsive)
@@ -4404,19 +4415,19 @@ background-size: contain;
 - [Accessibility benefits of SVG](http://www.w3.org/TR/SVG-access/)
 - [How to scale SVGs ](https://css-tricks.com/scale-svg/) （它不像光栅图形那么简单！）
 
-#   响应式图片
+##   响应式图片
 
 在这篇文章中我们将学习关于响应式图片——一种可以在不同的屏幕尺寸和分辨率的设备上都能良好工作以及其他特性的图片，并且看看HTML提供了什么工具来帮助实现它们。响应式图片仅仅只是响应式web设计的一部分（奠定了响应式web设计的良好基础），我们会在未来的[CSS topic](https://developer.mozilla.org/en-US/docs/Learn/CSS)模块中学到更多关于这一主题的知识。
 
 | 学习本章节的前提: | 你应该已经了解了 [HTML的基础](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML) 以及如何 [在网站上添加静态图片](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML). |
 | ----------------- | ------------------------------------------------------------ |
-| 目的:             | 学习如何使用 `srcset` 以及 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture) 元素，来实现网页中的响应式图片处理方法。 |
+| 目的:             | 学习如何使用 `srcset` 以及 [`<picture>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture) 元素，来实现网页中的响应式图片处理方法。 |
 
-## 为什么要用自适应的图片？[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9B%BE%E7%89%87%EF%BC%9F)
+### 为什么要用自适应的图片？[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9B%BE%E7%89%87%EF%BC%9F)
 
 让我们来看一个典型的场景。一个典型的网站可能会有一张页首图片，这让访问者看起来感到愉快。图片下面可能会添加一些内容图像。页首图像的跨度可能是整个页首的宽度。而内容图像会适应内容纵列的某处。此处有个简单的例子：
 
-![Our example site as viewed on a wide screen - here the first image works ok, as it is big enough to see the detail in the center.](https://mdn.mozillademos.org/files/12940/picture-element-wide.png)
+![Our example site as viewed on a wide screen - here the first image works ok, as it is big enough to see the detail in the center.](img/picture-element-wide.png)
 
 这个网页在宽屏设备上表现良好，例如笔记本电脑或台式机（你可以[查看在线演示](http://mdn.github.io/learning-area/html/multimedia-and-embedding/responsive-images/not-responsive.html)并且在GitHub上查看[源代码](https://github.com/mdn/learning-area/blob/master/html/multimedia-and-embedding/responsive-images/not-responsive.html)）。我们不会在这一节课中讨论CSS，除了下面提到的那些：
 
@@ -4426,7 +4437,7 @@ background-size: contain;
 
 然而，当你尝试在一个狭小的屏幕设备上查看本页面时，问题就会产生。网页的页眉看起来还可以，但是页眉这张图片占据了屏幕的一大部分的高度，在这个尺寸下，你在第一张图片的内容里很难看到人。
 
-![Our example site as viewed on a narrow screen; the first image has shrunk to the point where it is hard to make out the detail on it.](https://mdn.mozillademos.org/files/12936/non-responsive-narrow.png)
+![Our example site as viewed on a narrow screen; the first image has shrunk to the point where it is hard to make out the detail on it.](img/non-responsive-narrow.png)
 
 一个改进的方法是，当网站在狭窄的屏幕上观看时，显示一幅图片的包含了重要细节的裁剪版本，第二个被裁剪的图片会在像平板电脑这样的中等宽度的屏幕设备上显示，这就是众所周知的**艺术方向问题（art direction problem）**。
 
@@ -4440,15 +4451,15 @@ background-size: contain;
 
 当web第一次出现时，这样的问题并不存在，在上世纪90年代中期，仅仅可以通过笔记本电脑和台式机来浏览web页面，所以浏览器开发者和规范制定者甚至没有想到要实现这种解决方式（响应式开发）。最近应用的响应式图像技术，通过让浏览器提供多个图像文件来解决上述问题，比如使用相同显示效果的图片但包含多个不同的分辨率（分辨率切换），或者使用不同的图片以适应不同的空间分配（艺术方向）。
 
-**注意**: 在这篇文章中讨论的新特性 — `srcset`/`sizes`/[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture) — 都已经被新版本的现代浏览器和移动浏览器所支持（包括Edge，而不是IE）。
+**注意**: 在这篇文章中讨论的新特性 — `srcset`/`sizes`/[`<picture>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture) — 都已经被新版本的现代浏览器和移动浏览器所支持（包括Edge，而不是IE）。
 
-## 怎样创建自适应的图片?[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E6%80%8E%E6%A0%B7%E5%88%9B%E5%BB%BA%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9B%BE%E7%89%87)
+### **怎样创建自适应的图片?[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E6%80%8E%E6%A0%B7%E5%88%9B%E5%BB%BA%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E5%9B%BE%E7%89%87)**
 
-在这一部分中，我们将看看上面说明的两个问题，并且展示怎样用HTML的响应式图片来解决这些问题。需要注意的是，如以上示例所示，在本节中我们将专注于HTML的 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)，但网站页眉的图片仅是装饰性的，实际上应该要用CSS的背景图片来实现。[CSS是比HTML更好的响应式设计的工具](http://blog.cloudfour.com/responsive-images-101-part-8-css-images/)，我们会在未来的CSS模块中讨论。
+在这一部分中，我们将看看上面说明的两个问题，并且展示怎样用HTML的响应式图片来解决这些问题。需要注意的是，如以上示例所示，在本节中我们将专注于HTML的 [`<img>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)，但网站页眉的图片仅是装饰性的，实际上应该要用CSS的背景图片来实现。[CSS是比HTML更好的响应式设计的工具](http://blog.cloudfour.com/responsive-images-101-part-8-css-images/)，我们会在未来的CSS模块中讨论。
 
-### 分辨率切换：不同的尺寸[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%88%86%E8%BE%A8%E7%8E%87%E5%88%87%E6%8D%A2%EF%BC%9A%E4%B8%8D%E5%90%8C%E7%9A%84%E5%B0%BA%E5%AF%B8)
+### **分辨率切换：不同的尺寸[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%88%86%E8%BE%A8%E7%8E%87%E5%88%87%E6%8D%A2%EF%BC%9A%E4%B8%8D%E5%90%8C%E7%9A%84%E5%B0%BA%E5%AF%B8)**
 
-那么，我们想要用分辨率切换解决什么问题呢？我们想要显示相同的图片内容，仅仅依据设备来显示更大或更小的图片——这是我们在示例中使用第二个内容图像的情况。标准的[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)元素传统上仅仅让你给浏览器指定唯一的资源文件。
+那么，我们想要用分辨率切换解决什么问题呢？我们想要显示相同的图片内容，仅仅依据设备来显示更大或更小的图片——这是我们在示例中使用第二个内容图像的情况。标准的[`<img>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)元素传统上仅仅让你给浏览器指定唯一的资源文件。
 
 ```html
 <img src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy">
@@ -4474,7 +4485,7 @@ background-size: contain;
 2. 一个空格
 3. **图像的固有宽度**（以像素为单位）（480w）——注意到这里使用`w`单位，而不是你预计的`px`。这是图像的真实大小，可以通过检查你电脑上的图片文件找到（例如，在Mac上，你可以在Finder上选择这个图像，然后按 Cmd + I 来显示信息）。
 
-`**sizes**`定义了一组媒体条件（例如屏幕宽度）并且指明当某些媒体条件为真时，什么样的图片尺寸是最佳选择—我们在之前已经讨论了一些提示。在这种情况下，在每个逗号之前，我们写：
+**sizes**`定义了一组媒体条件（例如屏幕宽度）并且指明当某些媒体条件为真时，什么样的图片尺寸是最佳选择—我们在之前已经讨论了一些提示。在这种情况下，在每个逗号之前，我们写：
 
 1. 一个**媒体条件**（`(max-width:480px)`）——你会在 [CSS topic](https://developer.mozilla.org/en-US/docs/Learn/CSS)中学到更多的。但是现在我们仅仅讨论的是媒体条件描述了屏幕可能处于的状态。在这里，我们说“当视窗的宽度是480像素或更少”。
 2. 一个空格
@@ -4493,21 +4504,21 @@ background-size: contain;
 
 老旧的浏览器不支持这些特性，它会忽略这些特征。并继续正常加载 `src`属性引用的图像文件。
 
-**注意**: 在 HTML 文件中的 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/head) 标签里， 你将会找到这一行代码 `<meta name="viewport" content="width=device-width">`: 这行代码会强制地让手机浏览器采用它们真实视图的宽度来加载网页（有些手机浏览器会提供不真实的视图宽度, 然后加载比浏览器真实视图的宽度大的宽度的网页，然后再缩小加载的页面，这样的做法对响应式图片或其他设计，没有任何帮助。我们会在未来的模块教给你更多关于这方面的知识）。
+**注意**: 在 HTML 文件中的 [`<head>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/head) 标签里， 你将会找到这一行代码 `<meta name="viewport" content="width=device-width">`: 这行代码会强制地让手机浏览器采用它们真实视图的宽度来加载网页（有些手机浏览器会提供不真实的视图宽度, 然后加载比浏览器真实视图的宽度大的宽度的网页，然后再缩小加载的页面，这样的做法对响应式图片或其他设计，没有任何帮助。我们会在未来的模块教给你更多关于这方面的知识）。
 
 ### 一些有用的开发工具[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7)
 
 这里有一些在浏览器中的非常实用的[开发者工具](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools)用来帮助制定重要的槽宽度，以及其他你可能会用到的场景。当我在设置槽宽度的时候，我先加载了示例中的无响应的版本（`not-responsive.html`），然后进入 [响应设计视图](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode) （*Tools > Web Developer > Responsive Design View），*这个工具允许你在不同设备的屏幕宽度场景下查看网页的布局。
 
-我设置我的视图宽度为 320px，然后再改为 480px；每一次宽度的改变我就进入 [DOM 检查 ](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector)，点击我们感兴趣的 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 元素，然后在显示屏右侧的 Box Model 视图选项卡中查看它的大小。 你应该会看到，这种无响应式的做法会让你的图片在不同屏幕宽度下有着固定的宽度。
+我设置我的视图宽度为 320px，然后再改为 480px；每一次宽度的改变我就进入 [DOM 检查 ](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector)，点击我们感兴趣的 [`<img>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 元素，然后在显示屏右侧的 Box Model 视图选项卡中查看它的大小。 你应该会看到，这种无响应式的做法会让你的图片在不同屏幕宽度下有着固定的宽度。
 
-![A screenshot of the firefox devtools with an image element highlighted in the dom, showing its dimensions as 440 by 293 pixels.](https://mdn.mozillademos.org/files/12932/box-model-devtools.png)
+![A screenshot of the firefox devtools with an image element highlighted in the dom, showing its dimensions as 440 by 293 pixels.](img/box-model-devtools.png)
 
 接着, 你可以检查 `srcset` 是否正常工作，你需要将视图的宽度设置为你想要的，(比如，把宽度设置的比较小，让页面看起来比较狭窄），打开网络检查（*Tools > Web Developer > Network），*然后重新加载页面。网络检查工具会给你一个列表，里面的文件都是已经被下载来构造网页的。然后你可以在这里看到哪个图像文件被下载了。
 
 **注意**: 在 Chrome 中测试时，通过如下方式禁用缓存：打开 DevTools ，并选中下 Settings > Preferences > Network 的选择框。否则，Chrome 会优先选择缓存图片而不是恰好适配的那个。
 
-![a screenshot of the network inspector in firefox devtools, showing that the HTML for the page has been downloaded, along with three images, which include the two 800 wide versions of the responsive images](https://mdn.mozillademos.org/files/12934/network-devtools.png)
+![a screenshot of the network inspector in firefox devtools, showing that the HTML for the page has been downloaded, along with three images, which include the two 800 wide versions of the responsive images](img/network-devtools.png)
 
 ### 分辨率切换: 相同的尺寸, 不同的分辨率[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%88%86%E8%BE%A8%E7%8E%87%E5%88%87%E6%8D%A2_%E7%9B%B8%E5%90%8C%E7%9A%84%E5%B0%BA%E5%AF%B8_%E4%B8%8D%E5%90%8C%E7%9A%84%E5%88%86%E8%BE%A8%E7%8E%87)
 
@@ -4520,7 +4531,9 @@ background-size: contain;
      src="elva-fairy-640w.jpg" alt="Elva dressed as a fairy">
 ```
 
-![A picture of a little girl dressed up as a fairy, with an old camera film effect applied to the image](https://mdn.mozillademos.org/files/12942/resolution-example.png)在这个例子中，下面的CSS会应用在图片上，所以它的宽度在屏幕上是320像素（也称作CSS像素）：
+![A picture of a little girl dressed up as a fairy, with an old camera film effect applied to the image](img/resolution-example.png)
+
+在这个例子中，下面的CSS会应用在图片上，所以它的宽度在屏幕上是320像素（也称作CSS像素）：
 
 ```css
 img {
@@ -4540,7 +4553,7 @@ img {
 <img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva">
 ```
 
-让我们改用 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)！就像[``和``](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)，[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)素包含了一些[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/source)元素，它使浏览器在不同资源间做出选择，紧跟着的是最重要的[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)元素。[responsive.html](http://mdn.github.io/learning-area/html/multimedia-and-embedding/responsive-images/responsive.html)的代码如下：
+让我们改用 [`<picture>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)！就像[`<video>`和`<audio>`](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)，[`<picture>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)素包含了一些[`<source>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/source)元素，它使浏览器在不同资源间做出选择，紧跟着的是最重要的[`<img>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)元素。[responsive.html](http://mdn.github.io/learning-area/html/multimedia-and-embedding/responsive-images/responsive.html)的代码如下：
 
 ```html
 <picture>
@@ -4556,13 +4569,17 @@ img {
 
 这样的代码允许我们在宽屏和窄屏上都能显示合适的图片，像下面展示的一样：
 
-![Our example site as viewed on a wide screen - here the first image works ok, as it is big enough to see the detail in the center.](https://mdn.mozillademos.org/files/12940/picture-element-wide.png)![Our example site as viewed on a narrow screen with the picture element used to switch the first image to a portrait close up of the detail, making it a lot more useful on a narrow screen](https://mdn.mozillademos.org/files/12938/picture-element-narrow.png)
+![Our example site as viewed on a wide screen - here the first image works ok, as it is big enough to see the detail in the center.](img/picture-element-wide (1).png)
+
+
+
+![Our example site as viewed on a narrow screen with the picture element used to switch the first image to a portrait close up of the detail, making it a lot more useful on a narrow screen](img/picture-element-narrow.png)
 
 **注意**: 你应该仅仅当在艺术方向场景下使用media属性；当你使用media时，不要在sizes属性中也提供媒体条件。
 
-### 为什么我们不能使用 CSS 或 JavaScript 来做到这一效果?[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8_CSS_%E6%88%96_JavaScript_%E6%9D%A5%E5%81%9A%E5%88%B0%E8%BF%99%E4%B8%80%E6%95%88%E6%9E%9C)
+**为什么我们不能使用 CSS 或 JavaScript 来做到这一效果?[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8_CSS_%E6%88%96_JavaScript_%E6%9D%A5%E5%81%9A%E5%88%B0%E8%BF%99%E4%B8%80%E6%95%88%E6%9E%9C)**
 
-当浏览器开始加载一个页面, 它会先下载 (预加载) 任意的图片，这是发生在主解析器开始加载和解析页面的 CSS 和 JavaScript 之前的。这是一个非常有用的技巧，平均来说，页面加载的时间少了 20%。但是, 这对响应式图片一点帮助都没有, 所以需要实现类似 `srcset`的方法。因为你不能先加载好 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 元素后, 再用 JavaScript 检测视图的宽度，如果觉得大小不合适，就动态地加载小的图片替换已经加载好的图片，这样的话, 原始的图像已经被加载了, 然后你也加载了小的图像, 这样的做法对于响应式图像的理念来说，是很糟糕的。
+当浏览器开始加载一个页面, 它会先下载 (预加载) 任意的图片，这是发生在主解析器开始加载和解析页面的 CSS 和 JavaScript 之前的。这是一个非常有用的技巧，平均来说，页面加载的时间少了 20%。但是, 这对响应式图片一点帮助都没有, 所以需要实现类似 `srcset`的方法。因为你不能先加载好 [`<img>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 元素后, 再用 JavaScript 检测视图的宽度，如果觉得大小不合适，就动态地加载小的图片替换已经加载好的图片，这样的话, 原始的图像已经被加载了, 然后你也加载了小的图像, 这样的做法对于响应式图像的理念来说，是很糟糕的。
 
 
 
@@ -4584,7 +4601,7 @@ img {
 - 在`<source>` 元素中，你只可以引用在`type`中声明的文件类型。
 - 像之前一样，如果必要，你可以在`srcset`和`sizes`中使用逗号分割的列表。
 
-## 主动学习：实现属于你的响应式图像[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%AE%9E%E7%8E%B0%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9B%BE%E5%83%8F)
+### 主动学习：实现属于你的响应式图像[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0%EF%BC%9A%E5%AE%9E%E7%8E%B0%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9B%BE%E5%83%8F)
 
 在这次主动学习中，我们希望你变得勇敢和自力更生……我们希望你把自己拍摄的艺术截图，通过 `<picture>`来实现在窄屏幕和宽屏幕下的显示，以及使用 `srcset`切换不同的分辨率。
 
@@ -4596,33 +4613,26 @@ img {
 
 **注意**: 使用浏览器开发工具来帮助你工作时可以得到你需要的视图大小，就像上文提到的。
 
-## 小结[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%B0%8F%E7%BB%93)
+### 小结[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%B0%8F%E7%BB%93)
 
 这章节中充满了响应式图像 — 我们希望你学习新技术的过程是享受的。概括来说，有两个不同的问题，文章中我们一直在讨论：
 
-- **艺术方向**：当你想为不同布局提供不同剪裁的图片——比如在桌面布局上显示完整的、横向图片，而在手机布局上显示一张剪裁过的、突出重点的纵向图片，可以用 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)元素来实现。
+- **艺术方向**：当你想为不同布局提供不同剪裁的图片——比如在桌面布局上显示完整的、横向图片，而在手机布局上显示一张剪裁过的、突出重点的纵向图片，可以用 [`<picture>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)元素来实现。
 - **分辨率切换**：当你想要为窄屏提供更小的图片时，因为小屏幕不需要像桌面端显示那么大的图片；以及你想为高/低分辨率屏幕提供不同分辨率的图片时，都可以通过 [vector graphics](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web) (SVG images)、 `srcset` 以及 `sizes` 属性来实现。
 
 此时整个[Multimedia and embedding](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding) 模块接近尾声！在继续下一个模块之前，你现在唯一要做的就是尝试我们的多媒体评估，看看你做得怎样。玩的开心。
 
-## 参阅[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%8F%82%E9%98%85)
+### 参阅[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%8F%82%E9%98%85)
 
 - [Jason Grigsby对响应式图片的出色介绍](http://blog.cloudfour.com/responsive-images-101-definitions)
 - [R响应式图片：如果你只是在改变分辨率，就用srcset](https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/) — 包含了更多关于浏览器如何选择显示图片的解释
-- [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)
-- [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)
-- [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/source)
+- [`<img>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)
+- [`<picture>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)
+- [`<source>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/source)
 
-## 在这个模块中[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%9C%A8%E8%BF%99%E4%B8%AA%E6%A8%A1%E5%9D%97%E4%B8%AD)
 
-- [HTML中的图片](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML)
-- [音视频内容](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
-- [从 到 — 其他嵌入技术](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies)
-- [给网页添加矢量图](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web)
-- [响应式图片](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
-- [Mozilla醒目页面](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page)
 
-#   Mozilla醒目页面
+##   Mozilla醒目页面
 
 在这个测验中，我们将测试你对于本模块文章所讨论的技术的掌握程度，让你将一些有关于 Mozilla 的图片和视频添加到一个漂亮的页面上！
 
@@ -4630,7 +4640,7 @@ img {
 | ----------------- | ------------------------------------------------------------ |
 | 目的:             | 测试这些知识的掌握程度：在页面中嵌入图片和视频，框架，和 HTML 响应式图片技术。 |
 
-## 起点[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page#%E8%B5%B7%E7%82%B9)
+### 起点[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page#%E8%B5%B7%E7%82%B9)
 
 为了开始这次测验，你需要从[mdn-splash-page-start](https://github.com/mdn/learning-area/blob/master/html/multimedia-and-embedding/mdn-splash-page-start/)这个GitHub目录下下载HTML和图片。在你本地设备上新建一个 `index.html` 文件，并将  [index.html](https://github.com/mdn/learning-area/blob/master/html/multimedia-and-embedding/mdn-splash-page-start/index.html) 的内容复制到进去。 然后把 [pattern.png](https://github.com/mdn/learning-area/blob/master/html/multimedia-and-embedding/mdn-splash-page-start/pattern.png) 保存在同一目录下（右键图片有下载选项）。
 
@@ -4638,7 +4648,7 @@ img {
 
 **注意**: 这个示例的 HTML 文件包含一些页面的 CSS 样式。你不需要去碰 CSS 的内容，而只是 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body) 元素中的 HTML 部分，只要你插入了正确的标记，样式就会正确显示。
 
-## 项目概要[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page#%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%A6%81)
+### **项目概要[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page#%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%A6%81)**
 
 在这个测验中，我们为你呈现了一个接近完成了的 Mozilla醒目页面，旨在说明一些关于Mozilla的有趣的事情，以及提供一些更一步的资源链接。但目前还没有添加任何视频或图片，这份工作就交给你了！你需要添加一些图片、视频等多媒体元素，好让页面变得更漂亮和更有意义。下一小节详细描述了你需要做的工作：
 
@@ -4660,15 +4670,15 @@ img {
 
 ### 为 header 添加一个图标[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page#%E4%B8%BA_header_%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E5%9B%BE%E6%A0%87)
 
-在 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/header) 元素中添加一个 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 元素，嵌入一个小尺寸版本的火狐图标。
+在 [`<header>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/header) 元素中添加一个 [`<img>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 元素，嵌入一个小尺寸版本的火狐图标。
 
 ### 为主 article 添加一个视频[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page#%E4%B8%BA%E4%B8%BB_article_%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E8%A7%86%E9%A2%91)
 
-就在 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article) 元素中（开放标签下面），嵌入一个YouTube视频（<https://www.youtube.com/watch?v=ojcNcvb1olg>），使用合适YouTube工具来生成所需的代码。视频的宽度应该是 400px。
+就在 [`<article>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article) 元素中（开放标签下面），嵌入一个YouTube视频（<https://www.youtube.com/watch?v=ojcNcvb1olg>），使用合适YouTube工具来生成所需的代码。视频的宽度应该是 400px。
 
 ### 为 further info 的链接添加响应式图片[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page#%E4%B8%BA_further_info_%E7%9A%84%E9%93%BE%E6%8E%A5%E6%B7%BB%E5%8A%A0%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9B%BE%E7%89%87)
 
-在`further-info`类的 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/div)里你会看到四个 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a) 元素，每个都指向一个有趣的、关于 Mozilla 的页面。为了完成这一部分，你需要在每个[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a) 元素里插入一个 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 元素，需要包含合适的 `src`，`alt`，`srcset` 和 `sizes` 属性。
+在`further-info`类的 [`<div>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/div)里你会看到四个 [`<a>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a) 元素，每个都指向一个有趣的、关于 Mozilla 的页面。为了完成这一部分，你需要在每个[`<a>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a) 元素里插入一个 [`<img>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 元素，需要包含合适的 `src`，`alt`，`srcset` 和 `sizes` 属性。
 
 我们希望每张图片（除了某个本身就是响应式的）在浏览器的视口的宽度小于等于480px时使用的120px宽的图片，其他情况下选择400px 的版本.
 
@@ -4678,31 +4688,33 @@ img {
 
 ### 一个艺术方向性的红色熊猫[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page#%E4%B8%80%E4%B8%AA%E8%89%BA%E6%9C%AF%E6%96%B9%E5%90%91%E6%80%A7%E7%9A%84%E7%BA%A2%E8%89%B2%E7%86%8A%E7%8C%AB)
 
-在`red-panda`类的[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/div) 中，我们希望插入一个[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)元素，在视口宽度小于等于600px时使用那张比较小的纵向的熊猫图片，在其他情况下则使用大的横向的图片。
+在`red-panda`类的[`<div>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/div) 中，我们希望插入一个[`<picture>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)元素`，在视口宽度小于等于600px时使用那张比较小的纵向的熊猫图片，在其他情况下则使用大的横向的图片。
 
-## 示例[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page#%E7%A4%BA%E4%BE%8B)
+### 示例[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page#%E7%A4%BA%E4%BE%8B)
 
 下面的截图展示了在正确标记后，醒目页面在宽屏和窄屏下的样子。
 
-![A wide shot of our example splash page](https://mdn.mozillademos.org/files/12946/wide-shot.png)
+![A wide shot of our example splash page](img/wide-shot.png)
 
-![A narrow shot of our example splash page](https://mdn.mozillademos.org/files/12944/narrow-shot.png)
+![A narrow shot of our example splash page](img/narrow-shot.png)
 
-## 评估[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page#%E8%AF%84%E4%BC%B0)
+### 评估[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page#%E8%AF%84%E4%BC%B0)
 
 如果这个评估是一系列课程的一部分，你应该可以让你的老师或导师为你批改。 如果你是自学，可以很容易地在 [discussion thread about this exercise](https://discourse.mozilla.org/t/mozilla-splash-page-assignment/24679)或[Mozilla IRC](https://wiki.mozilla.org/IRC)的[#mdn](irc://irc.mozilla.org/mdn) IRC频道回复得到批改指南。请先自己试着做——作弊学不到任何东西！
 
  
 
-## 在这个模块中[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page#%E5%9C%A8%E8%BF%99%E4%B8%AA%E6%A8%A1%E5%9D%97%E4%B8%AD)
+### 在这个模块中[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#%E5%9C%A8%E8%BF%99%E4%B8%AA%E6%A8%A1%E5%9D%97%E4%B8%AD)
 
 - [HTML中的图片](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML)
 - [音视频内容](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
-- [从 到 — 其他嵌入技术](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies)
+- [从<object> 到 <iframe>— 其他嵌入技术](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies)
 - [给网页添加矢量图](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web)
 - [响应式图片](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 - [Mozilla醒目页面](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Mozilla_splash_page)
 
-###### 
+
+
+
 
 
