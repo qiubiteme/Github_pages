@@ -4289,13 +4289,13 @@ SVG除了迄今为止所描述的以外还有其他优点：
 
 **注意：**在Inkscape中，将文件保存为纯SVG以节省空间。 另请参阅[如何为Web准备SVG](http://tavmjong.free.fr/INKSCAPE/MANUAL/html/Web-Inkscape.html)。
 
-## 将SVG添加到页面[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E5%B0%86SVG%E6%B7%BB%E5%8A%A0%E5%88%B0%E9%A1%B5%E9%9D%A2)
+### **将SVG添加到页面[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E5%B0%86SVG%E6%B7%BB%E5%8A%A0%E5%88%B0%E9%A1%B5%E9%9D%A2)**
 
 在本节中，我们将介绍将SVG矢量图形添加到网页的不同方式。
 
-### 快捷方式：[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%EF%BC%9A%3Cimg%3E)
+**快捷方式：[`<img>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%EF%BC%9A%3Cimg%3E)**
 
-要通过 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)元素嵌入SVG，你只需要按照预期的方式在 src 属性中引用它。你将需要一个`height`或`width`属性（或者如果您的SVG没有固有的宽高比）。如果还没有这样做，请阅读[HTML中的图片](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML) 。
+要通过 [`<img>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)元素嵌入SVG，你只需要按照预期的方式在 src 属性中引用它。你将需要一个`height`或`width`属性（或者如果您的SVG没有固有的宽高比）。如果还没有这样做，请阅读[HTML中的图片](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML) 。
 
 ```html
 <img 
@@ -4305,12 +4305,12 @@ SVG除了迄今为止所描述的以外还有其他优点：
     width="100px" />
 ```
 
-#### 优点
+**优点**
 
 - 快速，熟悉的图像语法与`alt`属性中提供的内置文本等效。
-- 可以通过在[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a)元素嵌套`<img>`，使图像轻松地成为超链接。
+- 可以通过在[`<a>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a)元素嵌套`<img>`，使图像轻松地成为超链接。
 
-#### 缺点
+**缺点**
 
 - 无法使用JavaScript操作图像。
 - 如果要使用CSS控制SVG内容，则必须在SVG代码中包含内联CSS样式。 （从SVG文件调用的外部样式表不起作用）
@@ -4347,23 +4347,23 @@ background-size: contain;
 </svg>
 ```
 
-#### 优点
+**优点**
 
 - 将 SVG 内联减少 HTTP 请求，可以减少加载时间。
 - 您可以为 SVG 元素分配`class`和`id`，并使用 CSS 修改样式，无论是在SVG中，还是 HTML 文档中的 CSS 样式规则。 实际上，您可以使用任何 [SVG外观属性](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute#Presentation_attributes) 作为CSS属性。
 - 内联SVG是唯一可以让您在SVG图像上使用CSS交互（如`:focus`）和CSS动画的方法（即使在常规样式表中）。
-- 您可以通过将 SVG 标记包在[``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a)元素中，使其成为超链接。
+- 您可以通过将 SVG 标记包在[`<a>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a)元素中，使其成为超链接。
 
-#### 缺点
+**缺点**
 
 - 这种方法只适用于在一个地方使用的SVG。多次使用会导致资源密集型维护（resource-intensive maintenance）。
 - 额外的 SVG 代码会增加HTML文件的大小。
 - 浏览器不能像缓存普通图片一样缓存内联SVG。
-- 您可能会在[``](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/foreignObject) 元素中包含回退，但支持 SVG 的浏览器仍然会下载任何后备图像。你需要考虑仅仅为支持过时的浏览器，而增加额外开销是否真的值得。
+- 您可能会在[`<foreignObject>`](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element/foreignObject) 元素中包含回退，但支持 SVG 的浏览器仍然会下载任何后备图像。你需要考虑仅仅为支持过时的浏览器，而增加额外开销是否真的值得。
 
 
 
-### 如何使用 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe) 嵌入SVG[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8_%3Ciframe%3E_%E5%B5%8C%E5%85%A5SVG)
+### 如何使用 [`<iframe>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe) 嵌入SVG[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8_%3Ciframe%3E_%E5%B5%8C%E5%85%A5SVG)
 
 您可以在浏览器中打开 SVG 图像，就像网页一样。 因此，使用`<iframe>`嵌入 SVG 文档就像我们在 [从对象到iframe - 其他嵌入技术](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF) 中进行研究一样。
 
@@ -4377,12 +4377,12 @@ background-size: contain;
 
 这绝对不是最好的方法：
 
-#### 缺点
+**缺点**
 
 - 如你所知， `iframe`有一个回退机制，如果浏览器不支持`iframe`，则只会显示回退。
 - 此外，除非 SVG 和您当前的网页具有相同的 [origin](https://developer.mozilla.org/en-US/docs/Glossary/origin)，否则你不能在主页面上使用 JavaScript 来操纵 SVG。
 
-## 动手学习：使用SVG[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BD%BF%E7%94%A8SVG)
+### 动手学习：使用SVG[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#%E5%8A%A8%E6%89%8B%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BD%BF%E7%94%A8SVG)
 
 在这个动手学习部分中，我们希望你能够体验一下 SVG 的乐趣。 在下面的“input”部分，您将看到我们已经提供了一些样例来开始使用。 您还可以访问 [SVG元素参考](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element)，了解更多关于SVG可以使用的其他玩具的细节，也可以尝试一下。 这部分都是为了锻炼你的研究技巧，并且有一些乐趣。
 
@@ -4706,4 +4706,3 @@ img {
 ###### 
 
 
-  
