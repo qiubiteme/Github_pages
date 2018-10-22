@@ -4715,6 +4715,578 @@ img {
 
 
 
+# HTML 表格
 
+##   HTML 表格概述
+
+在HTML中一个很普通的任务是构建表格数据，有大量的元素和属性是来满足这种需求的。只需要一点儿的CSS来设定风格，HTML让在web上显示表格数据变的很容易，例如你的学校的教学计划，你当地的游泳馆的时刻表， 或者是关于你最爱的恐龙或足球队的统计数据。这个模块会教给你所有你需要知道的关于用HTML构建表格数据的知识。
+
+### 先决条件[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables#%E5%85%88%E5%86%B3%E6%9D%A1%E4%BB%B6)
+
+在你开始这一模块之前，你需要已经了解了HTML的基础知识——看[Introduction to HTML](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Introduction_to_HTML).
+
+**Note**: 如果你是在计算机/平板电脑等其他你无法创建文件的设备上的话，你可以尝试在在线代码编辑平台上运行代码例如 [JSBin](http://jsbin.com/) 或 [Thimble](https://thimble.mozilla.org/).
+
+### 向导[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables#%E5%90%91%E5%AF%BC)
+
+本模块包含以下的文章
+
+- [HTML 表格基础](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics)
+
+  本文将帮助你学习如何使用 HTML 格式，包括如行、列、表头、跨列的行或跨行的列等基本特性，以及如何将多行进行分组进行样式化。
+
+- [HTML 表格高级功能与可访问性](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced)
+
+  在本模块第二篇文章中，我们将了解一些 HTML 表格的高级功能 —— 比如表名称/表摘要，因为可访问性的原因，将表格内容划分为表头、主体以及脚部等章节。
+
+### 练习[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables#%E7%BB%83%E4%B9%A0)
+
+- [构造行星的数据结构](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Structuring_planet_data)
+
+  在表格的练习中，我们向你提供了一些在我们太阳系的行星的数据，不妨你把它构造成一个HTML的表格吧。
+
+## HTML 表格基础
+
+本文将从HTML表格开始，介绍一些基本的内容，如行和单元格、标题、使单元格跨越多个列和行，以及如何将列中的所有单元组合在一起进行样式化。
+
+| 前置知识: | HTML基本概念 (参见 [Introduction to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML))。 |
+| --------- | ------------------------------------------------------------ |
+| 目标:     | 了解熟悉HTML表格基本知识。                                   |
+
+### 什么是表格？[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics#%E4%BB%80%E4%B9%88%E6%98%AF%E8%A1%A8%E6%A0%BC%EF%BC%9F)
+
+表格是由行和列组成的结构化数据集(表格数据)，它能够使你简捷迅速地查找某个表示不同类型数据之间的某种关系的值 。比如说，某个人和他的年龄，一天或是一周，当地游泳池的时间表 。
+
+![A sample table showing names and ages of some people - Chris 38, Dennis 45, Sarah 29, Karen 47.](img/numbers-table.png)
+
+![A swimming timetable showing a sample data table](img/swimming-timetable.png)
+
+表格在人类社会中很常见，而且已经存在很长时间了，下面这张1800年的美国人口普查文件中就可以证明：
+
+![A very old parchment document; the data is not easily readable, but it clearly shows a data table being used.](img/1800-census.jpg)
+
+因此，HTML的创建者们提供了一种方法来构建和呈现web上的表格数据，这也就不足为奇了。
+
+### 表格如何工作？[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics#%E8%A1%A8%E6%A0%BC%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%EF%BC%9F)
+
+表格的一个特点就是严格. 通过在行和列的标题之间进行视觉关联的方法，就可以让信息能够很简单地被解读出来。观察下面的示例表格，然后找一个单数人称代词，这个单数人称代词是用于第三人称的, 用于女性的, 用作句子中的对象. 你可以把相应的行和列的标题关联起来，找到答案。
+
+人称代词
+
+![](img/tab.png)
+
+正确完成后, 即使是盲人也可以解析 HTML 表格中的数据，一个成功的 HTML 表格应该做到无论用户是视力正常还是视力受损，都能提高用户的体验。
+
+### 表格风格[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics#%E8%A1%A8%E6%A0%BC%E9%A3%8E%E6%A0%BC)
+
+你可以在 GitHub 上找到上面表格的 [HTML源码](https://github.com/mdn/learning-area/blob/master/html/tables/basic/personal-pronouns.html) ; 先去看看, 当然也可以看看这个 [look at the live example](http://mdn.github.io/learning-area/html/tables/basic/personal-pronouns.html)! 你也许会注意到一件事情，那就是这个表格看上去可读性不是很好，那是因为现在这个页面上面的那个表格通过 MDN 站点添加了一些样式, 而 GitHub 上面的并没有添加。
+
+不要幻想; 为了能够让表格在网页上有效, 你需要提供一些 CSS 的样式信息，以及尽可能好的 HTML 固定结构. 在这个模块中，我们将专注于 HTML 部分; 在你完成这里的内容之后，你可以浏览 [Styling tables](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_boxes/Styling_tables) 来了解 CSS 的部分。
+
+虽然在这个模块中我们不会专注于 CSS, 但是我们提供了一个较小的 CSS 样式表让你使用，和默认的没有采用任何 CSS 样式的表相比，表格会更加可读。 你可以在 [stylesheet here](https://github.com/mdn/learning-area/blob/master/html/tables/basic/minimal-table.css) 获取样式表，以及在 [HTML template](https://github.com/mdn/learning-area/blob/master/html/tables/basic/blank-template.html) 获取 HTML 文件来应用样式表，这些会让你在 “测试 HTML 表格” 中有一个好的起点。
+
+**注意**: 也可以看下 [personal_pronouns table with this styling applied](http://mdn.github.io/learning-area/html/tables/basic/personal-pronouns-styled.html) 这个版本, 这个是应用了 CSS 以后表格看上去的样子。
+
+### 什么时候你不应该使用 HTML 表格?[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BD%A0%E4%B8%8D%E5%BA%94%E8%AF%A5%E4%BD%BF%E7%94%A8_HTML_%E8%A1%A8%E6%A0%BC)
+
+HTML 表格 应该用于表格数据 ，这正是 HTML 表格设计出来的用途. 不幸的是, 许多人习惯用 HTML 表格来实现网页布局， e.g. 一行包含 header, 一行包含几列内容, 一行包含 footer, etc. 你可以在我们的 [Accessibility Learning Module](https://developer.mozilla.org/en-US/docs/Learn/Accessibility) 中的  [Page Layouts](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#Page_layouts) 获得更多细节内容和一个示例。这种做法以前是很常见的，因为以前 CSS 在不同浏览器上的兼容性比较糟糕 ; 表格布局现在不太普遍，但您可能仍然会在网络的某些角落看到它们。
+
+简单来说, 使用表格布局而不使用 [CSS layout techniques](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout) 是很糟糕的. 主要的理由有以下几个:
+
+1. **表格布局减少了视觉受损的用户的可访问性**: [屏幕阅读器](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility#Screenreaders), 被盲人所使用, 解析存在于 HTML 页面上的标签，然后为用户读出其中的内容。因为对于布局来说，表格不是一个正确的工具， 使用的标记比使用 CSS 布局技术更复杂, 所以屏幕阅读器的输出会让他们的用户感到困惑。
+2. **表格会产生很多标签**: 正如刚才提到的, 表格布局通常会比正确的布局技术涉及更复杂的标签结构，这会导致代码变得更难于编写、维护、调试.
+3. **表格不能自动响应**: 当你使用正确的布局容器 (比如 [`<header>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/header), [`<section>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/section), [`<>article`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article), 或是 [`<div>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/div)), 它们的默认宽度是父元素的 100%. 而表格的的默认大小是根据其内容而定的。因此，需要采取额外的措施来获取表格布局样式，以便有效地在各种设备上工作。
+
+### 动手练习: 创建你的第一个表格[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics#%E5%8A%A8%E6%89%8B%E7%BB%83%E4%B9%A0_%E5%88%9B%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A1%A8%E6%A0%BC)
+
+对于表格的理论知识，我们已经说了很多了，所以, 让我们来看一个使用的例子，并建立一个简单的表格.
+
+1. 首先, 将 [blank-template.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/blank-template.html) 和 [minimal-table.css](https://github.com/mdn/learning-area/blob/master/html/tables/basic/minimal-table.css) 拷贝到你的本地环境上。
+
+2. 每一个表格的内容都包含在这两个标签中 : **<table></table>**. 在你的 HTML 的 [`<body>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body) 中添加这些内容。
+
+3. 在表格中，最小的内容容器是单元格, 是通过 <td>元素创建的 ('td' 代表 'table data'). 把下面的内容添加到你的表格标签中:
+
+   ```html
+   <td>Hi, I'm your first cell.</td>
+   ```
+
+4. 如果我们想要一行四个单元格，我们需要把这组标签拷贝三次，更新你表中的内容，让它看起来是这样的:
+
+   ```html
+   <td>Hi, I'm your first cell.</td>
+   <td>I'm your second cell.</td>
+   <td>I'm your third cell.</td>
+   <td>I'm your fourth cell.</td>
+   ```
+
+你会看到, 单元格不会放置在彼此的下方, 而是自动与同一行上的其他单元格对齐. 每个 `<td>`元素 创建一个单独单元格，它们共同组成了第一行。我们添加的每个单元格都使行的长度变长。
+
+如果想让这一行停止增加，并让单元格从第二行开始，我们需要使用 **<tr>** 元素 ('tr' 代表 'table row'). 让我们现在来证实一下。
+
+1. 把你已经创建好的 4 个单元格放入 <tr>标签, 就像:
+
+   ```html
+   <tr>
+     <td>Hi, I'm your first cell.</td>
+     <td>I'm your second cell.</td>
+     <td>I'm your third cell.</td>
+     <td>I'm your fourth cell.</td>
+   </tr>
+   ```
+
+2. 现在你已经实现了一行，可以继续增加至两行、三行。每一行都需要一个额外的 `<tr>` 元素来包装，每个单元格的内容都应该写在 `<td>`中。
+
+这样会产生一个如下所示的表:
+
+| Hi, I'm your first cell. | I'm your second cell. | I'm your third cell. | I'm your fourth cell. |
+| ------------------------ | --------------------- | -------------------- | --------------------- |
+| Second row, first cell.  | Cell 2.               | Cell 3.              | Cell 4.               |
+
+**注意**: 你也可以在 GitHub 中查看 [simple-table.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/simple-table.html) ([see it live also](http://mdn.github.io/learning-area/html/tables/basic/simple-table.html)).
+
+### 使用 &lt;th> 元素添加标题[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics#%E4%BD%BF%E7%94%A8_%3Cth%3E_%E5%85%83%E7%B4%A0%E6%B7%BB%E5%8A%A0%E6%A0%87%E9%A2%98)
+
+现在，让我们把注意力转向表格标题，表格中的标题是特殊的单元格，通常在行或列的开始处，定义行或列包含的数据类型 (举个例子, 看到本篇文章中第一个示例中的 "单数" 或者 "Object"  ). 为了说明它们为什么这么有用, 来看下面这个例子，首先是源代码:
+
+```html
+<table>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Knocky</td>
+    <td>Flor</td>
+    <td>Ella</td>
+    <td>Juan</td>
+  </tr>
+  <tr>
+    <td>Breed</td>
+    <td>Jack Russell</td>
+    <td>Poodle</td>
+    <td>Streetdog</td>
+    <td>Cocker Spaniel</td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td>16</td>
+    <td>9</td>
+    <td>10</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>Owner</td>
+    <td>Mother-in-law</td>
+    <td>Me</td>
+    <td>Me</td>
+    <td>Sister-in-law</td>
+  </tr>
+  <tr>
+    <td>Eating Habits</td>
+    <td>Eats everyone's leftovers</td>
+    <td>Nibbles at food</td>
+    <td>Hearty eater</td>
+    <td>Will eat till he explodes</td>
+  </tr>
+</table>
+```
+
+这是表格实际呈现的效果:
+
+|               | Knocky                    | Flor            | Ella         | Juan                      |
+| ------------- | ------------------------- | --------------- | ------------ | ------------------------- |
+| Breed         | Jack Russell              | Poodle          | Streetdog    | Cocker Spaniel            |
+| Age           | 16                        | 9               | 10           | 5                         |
+| Owner         | Mother-in-law             | Me              | Me           | Sister-in-law             |
+| Eating Habits | Eats everyone's leftovers | Nibbles at food | Hearty eater | Will eat till he explodes |
+
+这里的问题是：虽然你可以弄清楚发生了什么，但是尽可能的交叉参考数据并不容易。如果列和行的标题以某种方式出现，那将会更好。
+
+### 动手练习: 表格标题[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics#%E5%8A%A8%E6%89%8B%E7%BB%83%E4%B9%A0_%E8%A1%A8%E6%A0%BC%E6%A0%87%E9%A2%98)
+
+让我们来改进这个表格.
+
+1. 首先, 把 [dogs-table.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/dogs-table.html) 和 [minimal-table.css](https://github.com/mdn/learning-area/blob/master/html/tables/basic/minimal-table.css) 文件保存到你的本地环境，HTML 文件包含上文你看到的几种狗的数据。
+2. 为了将表格的标题在视觉上和语义上都能被识别为标题，你可以使用 **<th>** 元素 ('th' 代表 'table header'). 用法和 `<td>`是一样的，除了它表示为标题，不是普通的单元格以外。进入你的 HTML 文件, 将表格中应该是标题的 `<td>` 元素标记的内容，都改为用 `<th>` 元素标记。
+3. 保存你的 HTML 文件，然后在浏览器中加载，然后你应该会看到，现在的标题更像标题了。
+
+**注意**: 你可以在 GitHub 中找到完成的版本 [dogs-table-fixed.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/dogs-table-fixed.html)  ([see it live also](http://mdn.github.io/learning-area/html/tables/basic/dogs-table-fixed.html)).
+
+### 为什么标题是有用的?[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%A0%87%E9%A2%98%E6%98%AF%E6%9C%89%E7%94%A8%E7%9A%84)
+
+我们已经给出了部分答案，当标题明显突出的时候，你可以更加简单地找到你想找的数据，设计上也会看起来更好。
+
+**注意**: 即使你不给表格添加你自己的样式，表格标题也会带有一些默认样式：加粗和居中，让标题可以突出显示。
+
+表格标题也有额外的好处，随着 `scope` 属性 (我们将在下一篇文章中了解到)，这个属性允许你让表格变得更加无障碍，每个标题与相同行或列中的所有数据相关联。屏幕阅读设备能一次读出一列或一行的数据，这是非常有帮助的。
+
+### 允许单元格跨越多行和列[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics#%E5%85%81%E8%AE%B8%E5%8D%95%E5%85%83%E6%A0%BC%E8%B7%A8%E8%B6%8A%E5%A4%9A%E8%A1%8C%E5%92%8C%E5%88%97)
+
+有时我们希望单元格跨越多行或多列。以下是一个简单的例子，显示了一些常见动物的名字。在某些情况下，我们要显示动物名称旁边的男性和女性的名字。有时候我们又不需要，那不需要的情况下，我们希望写着动物的名字的单元格的宽度可以是两个单元格的宽度 (因为写着名字的行会有两列，而没有写名字的行只有一列，行的宽度是不一样的)。
+
+一开始的标记写法是这样的:
+
+```html
+<table>
+  <tr>
+    <th>Animals</th>
+  </tr>
+  <tr>
+    <th>Hippopotamus</th>
+  </tr>
+  <tr>
+    <th>Horse</th>
+    <td>Mare</td>
+  </tr>
+  <tr>
+    <td>Stallion</td>
+  </tr>
+  <tr>
+    <th>Crocodile</th>
+  </tr>
+  <tr>
+    <th>Chicken</th>
+    <td>Cock</td>
+  </tr>
+  <tr>
+    <td>Rooster</td>
+  </tr>
+</table>
+```
+
+但是输出的结果不是我们想要的:
+
+![](img/tab2.png)
+
+我们需要一个方法，让 "Animals", "Hippopotamus", 和 "Crocodile" 的单元格的宽度变为两个单元格， "Horse" 和 "Chicken" 的高度变为两行 (因为要拥有一个男性名字和女性名字，可以先看效果图)。幸好, 表格中的标题和单元格有 `colspan` 和 `rowspan` 属性，这两个属性可以帮助我们实现这些效果。这两个属性接受一个没有单位的数字值，数字决定了它们的宽度或高度是几个单元格。比如, `colspan="2"` 使一个单元格的宽度是两个单元格。
+
+让我们使用 `colspan` 和 `rowspan` 来改进现有的表格。
+
+1. 首先，把 [animals-table.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/animals-table.html) 和 [minimal-table.css](https://github.com/mdn/learning-area/blob/master/html/tables/basic/minimal-table.css) 文件复制到你的本地环境，HTML 文件中包含了你刚才看到的动物示例的数据。
+2. 接着，使用 `colspan` 让 "Animals", "Hippopotamus", 和 "Crocodile" 占 2 个单元格的宽度。
+3. 最后，使用 `rowspan` 让 "Horse" 和 "Chicken" 占 2 个单元格的高度。
+4. 保存后，用浏览器打开你写的 HTML 文件，看看改进的地方。
+
+**注意**: 你也可以在 GitHub 上找到完成的版本 [animals-table-fixed.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/animals-table-fixed.html)  ([see it live also](http://mdn.github.io/learning-area/html/tables/basic/animals-table-fixed.html)).
+
+### 为表格中的列提供共同的样式[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics#%E4%B8%BA%E8%A1%A8%E6%A0%BC%E4%B8%AD%E7%9A%84%E5%88%97%E6%8F%90%E4%BE%9B%E5%85%B1%E5%90%8C%E7%9A%84%E6%A0%B7%E5%BC%8F)
+
+在我们继续介绍之前，我们将介绍本文中的最后一个功能。HTML有一种方法可以定义整列数据的样式信息：就是 **&lt;col>** 和 **&lt;colgroup>** 元素。 它们存在是因为如果你想让一列中的每个数据的样式都一样，那么你就要为每个数据都添加一个样式，这样的做法是令人厌烦和低效的。你通常需要在列中的每个 `<td>` 或 `<th>` 上定义样式，或者使用一个复杂的选择器，比如 [`:nth-child()`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child())。
+
+下面是一个简单的示例:
+
+```html
+<table>
+  <tr>
+    <th>Data 1</th>
+    <th style="background-color: yellow">Data 2</th>
+  </tr>
+  <tr>
+    <td>Calcutta</td>
+    <td style="background-color: yellow">Orange</td>
+  </tr>
+  <tr>
+    <td>Robots</td>
+    <td style="background-color: yellow">Jazz</td>
+  </tr>
+</table>
+```
+
+下面就是上述代码的结果:
+
+![](img/tab3.png)
+
+这样不太理想，因为我们不得不在列中的每个单元格中重复那些样式信息 (在真实的项目中，我们或许会设置一个 `class` 包含那三个单元格 ，然后在一个单独的样式表中定义样式). 为了舍弃这种做法，我们可以只定义一次，在 `<col>` 元素中。`<col>` 元素被规定包含在 `<colgroup>`容器中，而 `<colgroup>`就在 `<table>` 标签的下方。我们可以通过如下的做法来创建与上面相同的效果:
+
+```html
+<table>
+  <colgroup>
+    <col>
+    <col style="background-color: yellow">
+  </colgroup>
+  <tr>
+    <th>Data 1</th>
+    <th>Data 2</th>
+  </tr>
+  <tr>
+    <td>Calcutta</td>
+    <td>Orange</td>
+  </tr>
+  <tr>
+    <td>Robots</td>
+    <td>Jazz</td>
+  </tr>
+</table>
+```
+
+我们使用了两个 `<col>`来定义“列的样式”，每一个`<col>`都会制定每列的样式，对于第一列，我们没有采取任何样式，但是我们仍然需要添加一个空的 `<col>` 元素，如果不这样做，那么我们的样式就会应用到第一列上，这和我们预想的不一样。
+
+如果你想把这种样式信息应用到每一列，我们可以只使用一个 `<col>` 元素，不过需要包含 span 属性，像这样：
+
+```html
+<colgroup>
+  <col style="background-color: yellow" span="2">
+</colgroup>
+```
+
+就像 `colspan` 和 `rowspan`, `span` 需要一个无单位的数字值，用来制定你想要让这个样式应用到表格中多少列
+
+### 动手练习: colgroup and col[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics#%E5%8A%A8%E6%89%8B%E7%BB%83%E4%B9%A0_colgroup_and_col)
+
+又到了需要你自己独立完成的时间了。
+
+下面你可以看到一位语言老师的时间表。星期五，她有一个新的课程，全天教荷兰语，但是在星期二和星期四的几个时间点，她也教德语。她想把那些包含她教学的日子的列高亮显示。
+
+<iframe src="https://mdn.github.io/learning-area/html/tables/basic/timetable-fixed.html" height="320" class="live-sample-frame" frameborder="0" width="100%" style="font-style: normal; max-width: 100%; margin: 0px; padding: 0px; border: 0px; color: rgb(51, 51, 51); font-family: Verdana, arial, x-locale-body, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.05328px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"></iframe>
+
+
+
+通过下面这些步骤来重构这个表格。
+
+1. 首先，把 [timetable.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/timetable.html) 文件复制到你的本地环境。这个 HTML 文件包含你在上文中看到的表格，不过是减去样式信息的。
+2. 在 table 的顶部添加一个 `<colgroup>` 元素，就放在 `<table>` 标签下面，`<colgroup>`可以添加 `<col>` 元素 (继续看下面剩余的步骤)。
+3. 第一列和第二列不需要应用样式。
+4. 为第三列添加一个背景颜色。`style` 属性是 `background-color:#97DB9A;`
+5. 为第四列设置一个独立的宽度，`style` 属性是 `width: 42px;`
+6. 为第五列添加一个背景颜色。`style` 属性是 `background-color: #97DB9A;`
+7. 为第六列添加不同的背景颜色和边框，表示这是一个特殊的日子，表示她正在教一个新的课。  `style` 属性是 `background-color:#DCC48E; border:4px solid #C1437A;`
+8. 最后两天是休息日，所以只需将它们设置为无背景颜色，但需要设置宽度；`style` 属性是 `width: 42px;`
+
+看看你是否能完成这个示例，如果你遇到了困难，或想要核对你完成的作品，你可以在 GitHub 上找到完成的版本 [timetable-fixed.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/timetable-fixed.html) ([see it live also](http://mdn.github.io/learning-area/html/tables/basic/timetable-fixed.html))。
+
+### 小结[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Basics#%E5%B0%8F%E7%BB%93)
+
+本章节仅仅包含了 HTML 表格的基础。在下一篇文章中，我们将介绍一些稍微更高级的表格功能，并开始考虑方便视力障碍的人士的访问
+
+##   HTML表格高级特性和可访问性
+
+这个模块的第二篇文章中，我们来看一下 HTML 表格更高级的功能，比如像 表格的标题/摘要，以及将你表格中的各行分组成头部、正文、页脚部分，提高视力受损用户的可访问性。
+
+| 学习本章节的前提条件: | HTML 的基础知识 (see [Introduction to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)). |
+| --------------------- | ------------------------------------------------------------ |
+| 目的:                 | 学习 HTML 表格进一步的功能，以及表格的无障碍访问性。         |
+
+### 使用 &lt;caption> 为你的表格增加一个标题[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced#%E4%BD%BF%E7%94%A8_%3Ccaption%3E_%E4%B8%BA%E4%BD%A0%E7%9A%84%E8%A1%A8%E6%A0%BC%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%A0%87%E9%A2%98)
+
+你可以为你的表格增加一个标题，通过 [`<caption>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/caption) 元素，再把 [`<caption>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/caption) 元素放入 [`<table>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table) 元素中. 你应该把它放在`<table>` 标签的下面。
+
+```html
+<table>
+  <caption>Dinosaurs in the Jurassic period</caption>
+
+  ...
+</table>
+```
+
+从上面简单的例子可以推断，标题意味着包含对于表格内容的描述，这对那些希望可以快速浏览网页中的表格对他们是否有帮助的读者们来说，是非常好的功能。特别是盲人用户，不需要让屏幕阅读设备读出很多单元格的内容，来让用户了解这张表格讲的是什么，而是可以依靠标题的内容，来决定是否需要了解更详细的内容。
+
+标题就放在 `<table>` 标签的下面。
+
+**注意**: 这个 `summary` 属性也可以在`<table>` 元素中使用，用来提供一段描述，同样可以被屏幕阅读设备阅读。我们推荐使用 `<caption>` 元素来代替使用，因为 `summary` 被 HTML5 规范， [deprecated](https://developer.mozilla.org/zh-CN/docs/Glossary/deprecated) (废除了)，也不能被视力正常的用户阅读。 (它不会出现在页面上)
+
+### 动手练习: 添加一个标题[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced#%E5%8A%A8%E6%89%8B%E7%BB%83%E4%B9%A0_%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%A0%87%E9%A2%98)
+
+我们来试试看吧，回顾一下我们在之前的文章中第一次遇到的例子。.
+
+1. 打开你的语言老师的学校时间表，就是 [HTML Table Basics](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics#Active_learning_colgroup_and_col) 结尾中的例子，或者把 [timetable-fixed.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/timetable-fixed.html) 文件复制下面.
+2. 为表格添加一个合适的标题。
+3. 保存你的代码，然后用浏览器打开，看看你的表格是什么样的。
+
+**注意**:你也可以在 GitHub 上找到我们的版本 [timetable-caption.html](https://github.com/mdn/learning-area/blob/master/html/tables/advanced/timetable-caption.html) ([see it live also](http://mdn.github.io/learning-area/html/tables/advanced/timetable-caption.html)).
+
+### 添加 &lt;thead>, &lt;tfoot>, 和 &lt;tbody> 结构[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced#%E6%B7%BB%E5%8A%A0_%3Cthead%3E_%3Ctfoot%3E_%E5%92%8C_%3Ctbody%3E_%E7%BB%93%E6%9E%84)
+
+由于你的表格在结构上有点复杂，如果把它们定义得更加结构化，那会帮助我们更能了解结构。一个明确的方法是使用 , ,和 , 这些元素允许你把表格中的部分标记为表头、页脚、正文部分。
+
+这些元素不会使表格更易于屏幕阅读器用户访问，也不会造成任何视觉上的改变。然而，它们在应用样式和布局上会起到作用，可以更好地让 CSS 应用到表格上。给你一些有趣的例子，在长表格的情况下，你可以在每个打印页面上使表格页眉和页脚重复，你也可以让表格的正文部分显示在一个单独的页面上，并通过上下滚动来获得内容。
+
+试着使用它们:
+
+-  `<thead>` 需要嵌套在 table 元素中，放置在头部的位置，因为它通常代表第一行，第一行中往往都是每列的标题，但是不是每种情况都是这样的。如果你使用了&lt;col> / &lt;colgroup>元素，那么 `<thead>`元素就需要放在它们的下面。
+-  `<tfoot>` 需要嵌套在 table 元素中，放置在底部 (页脚)的位置，一般是最后一行，往往是对前面所有行的总结，比如，你可以按照预想的方式将`<tfoot>`放在表格的底部，或者就放在 `<thead>` 的下面。(浏览器仍将它呈现在表格的底部)
+-  `<tbody>` 需要嵌套在 table 元素中，放置在 `<thead>`的下面或者是 `<tfoot>` 的下面，这取决于你如何设计你的结构。(`<tfoot>`放在`<thead>`下面也可以生效.)
+
+**注意**: `<tbody>` 总是包含在每个表中，如果你没有在代码中指定它，那就是隐式的。可以来验证一下，打开一个你之前没有包含 `<tbody>` 的例子，然后在你的 [browser developer tools](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools) 中观察你的代码，你会看到浏览器为你添加了这个标签。你也许会想问，为什么你应该在所有表中都需要这个元素，因为它可以让你更好地控制表格结构和样式。
+
+### 动手练习: 添加表格结构[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced#%E5%8A%A8%E6%89%8B%E7%BB%83%E4%B9%A0_%E6%B7%BB%E5%8A%A0%E8%A1%A8%E6%A0%BC%E7%BB%93%E6%9E%84)
+
+让我们动手使用这些新元素。
+
+1. 首先，把 [spending-record.html](https://github.com/mdn/learning-area/blob/master/html/tables/advanced/spending-record.html) 和 [minimal-table.css](https://github.com/mdn/learning-area/blob/master/html/tables/advanced/minimal-table.css) 拷贝到你的本地环境。
+
+2. 尝试在浏览器中打开它，你会发现看起来不错，但是它可以被改善得更好。 "SUM" 行包含了已经使用的金额的总和，不过它出现在了错误的位置，以及代码中还遗失了一些细节。
+
+3. 将明显的标题行改为使用 `<thead>` 元素，"SUM" 行使用 `<tfoot>` 元素，剩余的内容使用 `<tbody>` 元素。
+
+4. 先保存，再刷新。你会看到，添加了 `<tfoot>` 元素后，导致 "SUM" 这行跑到了表格的底部。
+
+5. 接着, 添加一个 `colspan` 属性，使 "SUM" 单元格占 4 个单元格的位置，所以实际数字是显示在 “Cost” 列的底部。
+
+6. 让我们为表格添加一些简单的额外属性，能够让你理解这些属性是如何帮助更好地让表格应用 CSS 的。在你的 HTML 文件的 head 标签部分，你会看到一个空的 
+
+    
+
+   元素. 在 style 元素中添加下列 CSS 代码：
+
+   ```css
+   tbody {
+     font-size: 90%;
+     font-style: italic;
+   }
+   
+   tfoot {
+     font-weight: bold;
+   }
+   ```
+
+7. 先保存，再刷新，然后观察一下结果。如果没有 `<tbody>` 和 `<tfoot>` 元素，你也许会写更加复杂的选择器来应用同样的样式。
+
+**注意**: 我们并不期望目前你可以理解所有 CSS 的内容。当你经过我们的 CSS 模块的时候，你应该会了解更多 ([Introduction to CSS](https://developer.mozilla.org/zh_CN/docs/Learn/CSS/Introduction_to_CSS) 是一个好的起点；我们也有专门的文章 [styling tables](https://developer.mozilla.org/zh_CN/docs/Learn/CSS/Styling_boxes/Styling_tables)).
+
+你完成的表格应该如下所示：
+
+![](img/tab4.png)
+
+**注意**: 你也可以在 GitHub 上找到 [spending-record-finished.html](https://github.com/mdn/learning-area/blob/master/html/tables/advanced/spending-record-finished.html) ([see it live also](http://mdn.github.io/learning-area/html/tables/advanced/spending-record-finished.html)).
+
+### 嵌套表格[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced#%E5%B5%8C%E5%A5%97%E8%A1%A8%E6%A0%BC)
+
+在一个表格中嵌套另外一个表格是可能的，只要你包含完整的结构，包括 `<table>` 元素。这样通常是不建议的，因为这种做法会使标记看上去很难理解，对使用屏幕阅读的用户来说，可访问性也降低了。以及在很多情况下，也许你只需要插入额外的 单元格/行/列 到已有的表格中。然而有时候是必要的，比如你想要从其他资源中更简单地导入内容。
+
+下面的代码演示了一个简单的嵌套表格:
+
+```html
+<table id="table1">
+  <tr>
+    <th>title1</th>
+    <th>title2</th>
+    <th>title3</th>
+  </tr>
+  <tr>
+    <td id="nested">
+      <table id="table2">
+        <tr>
+          <td>cell1</td>
+          <td>cell2</td>
+          <td>cell3</td>
+        </tr>
+      </table>
+    </td>
+    <td>cell2</td>
+    <td>cell3</td>
+  </tr>
+  <tr>
+    <td>cell4</td>
+    <td>cell5</td>
+    <td>cell6</td>
+  </tr>
+</table>
+```
+
+输出看起来是这样的：
+
+![](img/tab5.png)
+
+### 对于视力受损的用户的表格[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced#%E5%AF%B9%E4%BA%8E%E8%A7%86%E5%8A%9B%E5%8F%97%E6%8D%9F%E7%9A%84%E7%94%A8%E6%88%B7%E7%9A%84%E8%A1%A8%E6%A0%BC)
+
+让我们简要回顾一下如何使用数据表。一个表格可以是一个便利的工具，或者让我们快速访问数据，并允许我们查找不同的值。比如，你只需要稍微看一眼下列的表格，你就能得知 2016 年 8 月份在 Gent 出售了多少个 Rings (戒指)。为了理解信息，我们让数据与列标题或行标题之间建立视觉联系。
+
+![](img/tab6.png)
+
+但假设你无法通过视觉关联这些数据呢? 那么你应该如何阅读上述的表格? 视力受损的用户经常使用一个屏幕阅读设备来为他们读出网页上的信息。对于盲人来说，阅读简单的文字没有什么问题，但是要理解一张表格的内容，这就有一些难度了。虽然，使用正确的标记，我们可以用程序化来代替视觉关联。
+
+**注意**: 根据[世界卫生组织 2017 年的数据](http://www.who.int/zh/news-room/fact-sheets/detail/blindness-and-visual-impairment)，大约有 2.53 亿人患有视觉障碍。
+
+本篇文章提供了更一步的技术来使表格的可访问性尽可能地提高。
+
+### 使用列和行的标题[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced#%E4%BD%BF%E7%94%A8%E5%88%97%E5%92%8C%E8%A1%8C%E7%9A%84%E6%A0%87%E9%A2%98)
+
+屏幕阅读设备会识别所有的标题，然后在它们和它们所关联的单元格之间产生编程关联。列和行标题的组合将标识和解释每个单元格中的数据，以便屏幕阅读器用户可以类似于视力正常的用户的操作来理解表格。
+
+我们之前的文章就提到过这一点，可见  elements](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics#Adding_headers_with_%3Cth%3E_elements).
+
+### scope 属性[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced#scope_%E5%B1%9E%E6%80%A7)
+
+本篇文章的一个新话题是 `scope` 属性，可以添加在`<th>` 元素中，用来帮助屏幕阅读设备更好地理解那些标题单元格，这个标题单元格到底是列标题呢，还是行标题。比如： 回顾我们早期的支出记录示例，您可以明确地将列标题这样定义：
+
+```html
+<thead>
+  <tr>
+    <th scope="col">Purchase</th>
+    <th scope="col">Location</th>
+    <th scope="col">Date</th>
+    <th scope="col">Evaluation</th>
+    <th scope="col">Cost (€)</th>
+  </tr>
+</thead>
+```
+
+以及每一行都可以这样定义一个行标题 (如果我们已经使用了 th 和 td 元素):
+
+```html
+<tr>
+  <th scope="row">Haircut</th>
+  <td>Hairdresser</td>
+  <td>12/09</td>
+  <td>Great idea</td>
+  <td>30</td>
+</tr>
+```
+
+屏幕阅读设备会识别这种结构化的标记，并一次读出整列或整行，比如：
+
+`scope` 还有两个可选的值 ： `colgroup` 和 `rowgroup`。这些用于位于多个列或行的顶部的标题。 如果你回顾一些文章开始部分的 "Items sold..." 表格。你会看到 "Clothes" 单元格在"Trousers", "Skirts", 和 "Dresses" 单元格的上面，且包括了它们三个。像 "Clothes" 这种单元格应该被标记为 (`<th>`)，但是 "Clothes" 是一个位于顶部的标题，且定义了其他三个子标题。 因此 "Clothes" 应该有一个 `scope="colgroup"`属性，而另外三个子标题应该用 `scope="col"`属性。
+
+### id 和标题属性[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced#id_%E5%92%8C%E6%A0%87%E9%A2%98%E5%B1%9E%E6%80%A7)
+
+如果要替代 `scope` 属性，可以使用 `id` 和 `headers` 属性来创造标题与单元格之间的联系。使用方法如下:
+
+1. 为每个`<th>` 元素添加一个 `id` (id 不能重复)。
+2. 为每个 `<td>` 元素添加一个 `headers` 属性。每个 `headers` 属性需要包含 th 元素的 `id` 。 如果这个单元格是属于一个 th 元素下的，那么就需要包含 th 元素的 id 的值，如果属于多个 th 元素，那么可以用空格分隔这些 id。
+
+这给你的HTML表格一个明确的定义，关于表格中每个单元格的位置。通过 headers 属性来定义属于哪些行或列。像一个电子表格，为了正常工作，该表确实需要列和行标题。
+
+回到我们的花费成本示例，前两个片段可以重写为：
+
+```html
+<thead>
+  <tr>
+    <th id="purchase">Purchase</th>
+    <th id="location">Location</th>
+    <th id="date">Date</th>
+    <th id="evaluation">Evaluation</th>
+    <th id="cost">Cost (€)</th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th id="haircut">Haircut</th>
+  <td headers="location haircut">Hairdresser</td>
+  <td headers="date haircut">12/09</td>
+  <td headers="evaluation haircut">Great idea</td>
+  <td headers="cost haircut">30</td>
+</tr>
+
+  ...
+
+</tbody>
+```
+
+**注意**: 这个放进为标题单元格和数据单元格之间创造了非常精确的联系。但是这个方法使用了大量的标记，所以容错率比较低。使用 `scope` 的方法对于大多数表格来说，也够用了。
+
+### 动手练习: 使用 scope 和 headers[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced#%E5%8A%A8%E6%89%8B%E7%BB%83%E4%B9%A0_%E4%BD%BF%E7%94%A8_scope_%E5%92%8C_headers)
+
+1. 对于这个最后的练习，首先把 [items-sold.html](https://github.com/mdn/learning-area/blob/master/html/tables/advanced/items-sold.html) 和 [minimal-table.css](https://github.com/mdn/learning-area/blob/master/html/tables/advanced/minimal-table.css),拷贝到你的本地环境。
+2. 现在尝试添加适当的 `scope` 属性来让表格变得更加恰当。
+3. 最后，尝试把未添加 `scope` 属性的源文件再复制一份。这次使用 `id` 和 `headers` 属性让表格变得更加恰当。
+
+**注意**: 你可以根据我们完成的例子检查你的工作，请看 [items-sold-scope.html](https://github.com/mdn/learning-area/blob/master/html/tables/advanced/items-sold-scope.html) ([also see this live](http://mdn.github.io/learning-area/html/tables/advanced/items-sold-scope.html)) 和 [items-sold-headers.html](https://github.com/mdn/learning-area/blob/master/html/tables/advanced/items-sold-headers.html) ([see this live too](http://mdn.github.io/learning-area/html/tables/advanced/items-sold-headers.html)).
+
+### 总结[Section](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Tables/Advanced#%E6%80%BB%E7%BB%93)
+
+关于 HTML 表格你还可以学习其他一些东西，但是我们目前已经把大部分你需要知道的内容都告诉你了。在此刻，如果你想学习关于 HTML 表格的样式，可以阅读 [Styling Tables](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_boxes/Styling_tables).
+
+###### 
+
+
+  
 
 
