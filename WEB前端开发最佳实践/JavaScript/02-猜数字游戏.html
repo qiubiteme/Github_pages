@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <title>02-猜数字游戏.html</title>
+    <style>
+        html {
+            font-family: sans-serif, '黑体';
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .lastResult {
+            color: white;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+<h1>猜数字游戏</h1>
+<p>我刚才随机选定了一个100以内的自然数。
+    看你能否在 10 次以内猜中它。每次我
+    都会告诉你所猜的结果是高了还是低了
+<div class="form">
+    <label for="guessField">请猜数: </label>
+    <input type="text" id="guessField" class="guessField">
+    <input type="submit" value="确定" class="guessSubmit">
+</div>
+<div class="resultParas">
+    <p class="guesses"></p>
+    <p class="lastResult"></p>
+    <p class="lowOrHi"></p>
+</div>
+<script>
+    /*  猜数字游戏中的随机数*/
+    var randomNumber = Math.floor(Math.random() * 100) + 1;
+    /*   猜测的数字*/
+    var guesses = document.querySelector('.guesses');
+    /*   猜测的结果*/
+    var lastResult = document.querySelector('.lastResult');
+    /*   低于或者高于猜测数字*/
+    var lowOrHi = document.querySelector('.lowOrHi');
+    /*   提交猜测表单数据*/
+    var guessSubmit = document.querySelector('.guessSubmit');
+    /*   猜测的表单数据*/
+    var guessField = document.querySelector('.guessField');
+
+    /*猜测的次数*/
+    var guessCount = 1;
+    /*重置按钮的引用*/
+    var resetButton;
+
+    function checkGuess() {
+        /*猜测输入的数字*/
+        var userGuess = Number(guessField.value);
+        /*玩家是不是第一次猜数字*/
+        if (guessCount === 1) {
+            //第一次猜测的数字
+            guesses.textContent = '上次猜的数：';
+        }
+        //后续每次猜测的数字和后续数字相加,连接成一个字符串
+        guesses.textContent += userGuess + ' ';
+
+        //判断猜测数字是否为随机数
+        if (userGuess === randomNumber) {
+            //猜测正确,返回恭喜
+            lastResult.textContent = '恭喜你！猜对了';
+            // 改变,猜测的结构背景色
+            lastResult.style.backgroundColor = 'green';
+            // 低于或者高于猜测数字提示,设置为空字符串
+            lowOrHi.textContent = '';
+            setGameOver();
+            //    猜测的次数,等于10次时,挑战失败,游戏结束
+        } else if (guessCount === 10) {
+            lastResult.textContent = '!!!GAME OVER!!!';
+            setGameOver();
+        } else {
+            //    10次以内的猜测结果,错误的判断
+            lastResult.textContent = '你猜错了！';
+            //修改猜测结果文本背景
+            lastResult.style.backgroundColor = 'red';
+            if (userGuess < randomNumber) {
+                lowOrHi.textContent = '你猜低了！';
+            } else if (userGuess > randomNumber) {
+                lowOrHi.textContent = '你猜高了';
+            }
+        }
+        //猜测次数每次自加
+        guessCount++;
+        //每次提交数据后,清空表单
+        guessField.value = '';
+
+        guessField.focus();
+    }
+
+    guessSubmit.addEventListener('click', checkGuess)
+
+    /*游戏结束*/
+    function setGameOver() {
+        //设置input禁止输入
+        guessField.disabled = true;
+        //设置提交按钮禁止点击
+        guessSubmit.disabled = true;
+        //创建一个button按钮
+        resetButton = document.createElement('button');
+        //设置按钮文本
+        resetButton.textContent = 'Start new game';
+        // 添加到文档的底部
+        document.body.appendChild(resetButton);
+        //调用重新开始游戏函数
+        resetButton.addEventListener('click', resetGame);
+    }
+
+    /*重新开始游戏函数*/
+    function resetGame() {
+        //重置猜测次数
+        guessCount = 1;
+        //清除所有提示信息段落。
+        var resetParas = document.querySelectorAll('.resultParas p');
+        for (var i = 0; i < resetParas.length; i++) {
+            resetParas[i].textContent = '';
+        }
+        //删除重置按钮。
+        resetButton.parentNode.removeChild(resetButton);
+        //启用表单元素
+        guessField.disabled = false;
+        // 启用提交按钮
+        guessSubmit.disabled = false;
+        // 清空文本域
+        guessField.value = '';
+        //并聚获取焦点
+        guessField.focus();
+        //删除lastResult段落的背景颜色。
+        lastResult.style.backgroundColor = 'white';
+        //生成一个新的随机数，这样就可以猜测新的数字了！
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+    }
+</script>
+</body>
+</html>
